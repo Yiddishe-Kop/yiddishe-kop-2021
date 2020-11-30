@@ -36,6 +36,9 @@ import { date } from "~/plugins/filters";
 
 export default {
   name: "ArticlesIndex",
+  head: {
+    title: "Writings",
+  },
   async asyncData({ $content }) {
     const articles = await $content("articles").fetch();
     return {

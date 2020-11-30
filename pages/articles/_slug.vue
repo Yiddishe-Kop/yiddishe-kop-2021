@@ -8,12 +8,12 @@
       <span class="">Articles</span>
     </nuxt-link>
 
-    <h1 class="mt-12 text-4xl font-extrabold text-brand">{{ article.title }}</h1>
-    <p class="mt-4 text-sm text-gray-500">{{ article.createdAt | date }}</p>
+    <p class="mt-12 text-sm text-center text-gray-500">{{ article.createdAt | date }}</p>
+    <h1 class="max-w-xl mx-auto mt-2 text-3xl font-extrabold text-center sm:text-4xl lg:text-5xl text-brand">{{ article.title }}</h1>
 
     <nuxt-content
       :document="article"
-      class="mt-12 prose-sm sm:prose lg:prose-lg prose-amber"
+      class="my-16 prose prose-amber"
     />
   </div>
 </template>
@@ -23,6 +23,11 @@ import { date } from "~/plugins/filters";
 
 export default {
   name: "ShowArticle",
+  head() {
+    return {
+      title: this.article.title
+    }
+  },
   async asyncData({ $content, params }) {
     const article = await $content(`articles/${params.slug}`).fetch();
     return {

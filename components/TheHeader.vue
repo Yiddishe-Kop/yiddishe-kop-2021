@@ -1,5 +1,5 @@
 <template>
-  <div class="fixed top-0 left-0 right-0 z-50 bg-white blur-bg bg-opacity-70">
+  <div class="fixed top-0 left-0 right-0 z-50 bg-white bg-opacity-50 blur-bg">
     <header
       class="flex items-center justify-center max-w-screen-lg py-2 mx-auto"
     >
@@ -13,7 +13,7 @@
           :key="item.to"
           :to="item.to"
           active-class="active-nav-item"
-          class="px-8 py-4 text-sm font-bold text-gray-900 transition rounded-md hover:bg-opacity-70 blur-bg hover:bg-amber-100"
+          class="px-8 py-4 text-sm font-bold text-gray-900 transition rounded-md hover:bg-opacity-50 blur-bg hover:bg-amber-100"
         >
           {{ item.label }}
         </nuxt-link>
@@ -45,6 +45,6 @@ export default {
   backdrop-filter: blur(10px);
 }
 .active-nav-item {
-  @apply text-amber-500 bg-opacity-70 bg-amber-100;
+  @apply text-amber-500 bg-opacity-50 bg-amber-100;
 }
 </style>
