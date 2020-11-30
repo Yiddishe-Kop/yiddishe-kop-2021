@@ -23,7 +23,13 @@ export default {
         "AeqGXkYWIHM",
         "kbYD_aSAeg8",
       ],
+      chosenImage: null,
     };
   },
+  mounted() {
+    console.log(this.unsplashImages);
+    this.chosenImage = this.unsplashImages[Math.randomBetween(0, this.unsplashImages.length - 1)]
+    console.log(this.chosenImage);
+  }
 };
 </script>
