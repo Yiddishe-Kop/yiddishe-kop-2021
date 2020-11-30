@@ -6,7 +6,7 @@
       class="object-cover w-full"
     />
     <div
-      class="absolute inset-0 bg-gray-200 bg-opacity-70 bg-gradient-to-t from-gray-200"
+      class="absolute inset-0 bg-gray-200 bg-opacity-80 bg-gradient-to-t from-gray-100"
     ></div>
   </div>
 </template>
@@ -26,11 +26,9 @@ export default {
     };
   },
   mounted() {
-    console.log(this.unsplashImages);
     this.chosenImage = this.unsplashImages[
       Math.randomBetween(0, this.unsplashImages.length - 1)
     ];
-    console.log(this.chosenImage);
   },
 };
 </script>

@@ -19,8 +19,34 @@ module.exports = {
       sans: ['Inter var', ...defaultTheme.fontFamily.sans],
       mono: ['Cascadia', ...defaultTheme.fontFamily.mono],
       siddur: ['siddur', ...defaultTheme.fontFamily.sans],
+    },
+    extend: {
+      typography: theme => ({
+        DEFAULT: {
+          css: {
+            'pre code': {
+              fontFamily: 'Cascadia'
+            },
+            code: {
+              fontFamily: 'Cascadia',
+              padding: '0.2em 0.5em',
+              borderRadius: theme('borderRadius.md'),
+              color: theme('colors.gray.100'),
+              backgroundColor: theme('colors.gray.800'),
+            },
+            'code::before': {
+              content: ''
+            },
+            'code::after': {
+              content: ''
+            },
+          }
+        },
+      })
     }
   },
   variants: {},
-  plugins: []
+  plugins: [
+    require('@tailwindcss/typography')
+  ]
 }

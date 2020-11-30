@@ -1,4 +1,9 @@
 @layer components {
+
+  button, a {
+    @apply rounded outline-none focus:ring-2 ring-amber-400;
+  }
+
   .btn {
     @apply px-4 py-2 text-sm font-semibold transition rounded shadow-sm hover:shadow bg-gray-50;
     &.btn-lg {

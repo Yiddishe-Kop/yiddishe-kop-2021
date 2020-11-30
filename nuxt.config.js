@@ -48,7 +48,16 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
+    '@nuxt/content',
   ],
+
+  content: {
+    markdown: {
+      prism: {
+        theme: '~/assets/css/dracula.css'
+      }
+    }
+  },
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
