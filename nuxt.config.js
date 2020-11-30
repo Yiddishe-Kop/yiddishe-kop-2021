@@ -1,3 +1,4 @@
+const colors = require('tailwindcss/colors')
 
 export default {
   mode: 'universal',
@@ -18,7 +19,7 @@ export default {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#fff' },
+  loading: { color: colors.amber[400] },
   /*
   ** Global CSS
   */
