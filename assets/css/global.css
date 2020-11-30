@@ -1,0 +1,11 @@
+@layer components {
+  .btn {
+    @apply px-4 py-2 text-sm font-semibold transition rounded shadow-sm hover:shadow bg-gray-50;
+    &.btn-lg {
+      @apply px-6 py-3 hover:shadow-md;
+    }
+    &.btn-brand {
+      @apply bg-amber-400 text-amber-900 hover:bg-amber-300;
+    }
+  }
+}

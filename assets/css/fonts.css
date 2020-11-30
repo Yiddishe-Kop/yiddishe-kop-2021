@@ -1,0 +1,24 @@
+@font-face {
+  font-family: "Cascadia";
+  src: url("/fonts/Cascadia.ttf");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "siddur";
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  src: url("/fonts/SiddurOCGX.woff2") format("woff2");
+}
+
+.font-siddur {
+  margin-top: -0.4em;
+  font-weight: 700;
+  font-variation-settings: "wght" var(--siddur-weight), "wdth" var(--siddur-width);
+}
+
+:root {
+  --siddur-weight: 600;
+  --siddur-width: 100;
+}

@@ -2,6 +2,7 @@ const colors = require('tailwindcss/colors')
 
 export default {
   mode: 'universal',
+  components: true,
   /*
   ** Headers of the page
   */
@@ -24,11 +25,14 @@ export default {
   ** Global CSS
   */
   css: [
+    '~/assets/css/fonts.css',
+    '~/assets/css/global.css',
   ],
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '~/plugins/lib.js'
   ],
   /*
   ** Nuxt.js dev-modules
