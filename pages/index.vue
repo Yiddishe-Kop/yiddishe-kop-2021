@@ -20,7 +20,7 @@
         <li
           v-for="article in articles"
           :key="article.path"
-          class="relative p-4 transition-shadow bg-gray-100 rounded-lg shadow hover:shadow-xl bg-opacity-60 group"
+          class="relative p-4 transition-shadow bg-white rounded-lg shadow hover:shadow-xl bg-opacity-60 group"
         >
           <h2
             class="text-xl font-bold text-blue-900 transition-colors group-hover:text-brand"
@@ -47,7 +47,9 @@ export default {
     title: "Home | Yiddishe Kop",
   },
   async asyncData({ $content }) {
-    const articles = await $content("articles").fetch();
+    const articles = await $content("articles")
+      .sortBy("createdAt", "desc")
+      .fetch();
     return {
       articles,
     };

@@ -2,6 +2,7 @@
 title: NGINX - Optimizing with Gzip & Cache-Control
 description: Configuring cache control and gzip with nginx
 createdAt: 2020-09-11
+image: woWf_VJ7dNs
 ---
 
 Today I was reading about SEO, and how site speed affects the ranking of a site. I wondered how apps built with the [Laravel](https://laravel.com) framework fare in these speed tests. So I ran [Pninim](https://pninim.yiddishe-kop.com/) through a [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/) test (by Google).

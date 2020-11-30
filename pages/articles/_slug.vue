@@ -1,20 +1,39 @@
 <template>
-  <div class="px-2 md:px-4">
-    <nuxt-link
-      to="/articles"
-      class="inline-flex items-center p-1 space-x-1 text-gray-500 transition-colors hover:text-amber-500"
-    >
-      <icon name="arrow-circle-left" class="w-6" />
-      <span class="">Articles</span>
-    </nuxt-link>
+  <div>
+    <cover-image :image="article.image" />
 
-    <p class="mt-12 text-sm text-center text-gray-500">{{ article.createdAt | date }}</p>
-    <h1 class="max-w-xl mx-auto mt-2 text-3xl font-extrabold text-center sm:text-4xl lg:text-5xl text-brand">{{ article.title }}</h1>
+    <div class="relative px-2 md:px-4">
+      <nuxt-link
+        to="/articles"
+        class="inline-flex items-center px-3 py-2 space-x-1 text-gray-500 transition-colors bg-gray-100 hover:bg-opacity-80 bg-opacity-40 hover:text-amber-500"
+      >
+        <icon name="arrow-circle-left" class="w-6" />
+        <span class="">Articles</span>
+      </nuxt-link>
 
-    <nuxt-content
-      :document="article"
-      class="my-16 prose prose-amber"
-    />
+      <p class="mt-12 text-sm text-center text-gray-500">
+        {{ article.createdAt | date }}
+      </p>
+      <h1
+        class="max-w-xl mx-auto mt-2 text-3xl font-extrabold text-center sm:text-4xl lg:text-5xl text-brand"
+      >
+        {{ article.title }}
+      </h1>
+
+      <nuxt-content :document="article" class="my-16 prose prose-amber" />
+
+      <nav class="flex items-stretch justify-between mb-24 space-x-3 text-sm font-semibold text-gray-500">
+        <nuxt-link v-if="prev" :to="prev.path" class="flex items-center justify-start flex-1 p-2 space-x-2 rounded bg-gray-50 hover:bg-amber-100 hover:text-amber-800">
+          <icon name="arrow-circle-left" class="w-6" />
+          <span>{{ prev.title }}</span>
+        </nuxt-link>
+        <nuxt-link v-if="next" :to="next.path" class="flex items-center justify-end flex-1 p-2 space-x-2 text-right rounded bg-gray-50 hover:bg-amber-100 hover:text-amber-800">
+          <span>{{ next.title }}</span>
+          <icon name="arrow-circle-left" class="w-6 transform rotate-180" />
+        </nuxt-link>
+      </nav>
+
+    </div>
   </div>
 </template>
 
@@ -25,13 +44,24 @@ export default {
   name: "ShowArticle",
   head() {
     return {
-      title: this.article.title
-    }
+      title: this.article.title,
+    };
   },
   async asyncData({ $content, params }) {
-    const article = await $content(`articles/${params.slug}`).fetch();
+
+    const article = await $content(`articles/${params.slug}`)
+      .fetch();
+
+    const [prev, next] = await $content("articles")
+      .only(["title", "path"])
+      .sortBy("createdAt", "desc")
+      .surround(params.slug)
+      .fetch();
+
     return {
       article,
+      prev,
+      next
     };
   },
   filters: {

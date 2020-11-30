@@ -14,6 +14,9 @@
 <script>
 export default {
   name: "CoverImage",
+  props: {
+    image: String,
+  },
   data() {
     return {
       unsplashImages: [
@@ -26,6 +29,10 @@ export default {
     };
   },
   mounted() {
+    if (this.image) {
+      this.chosenImage = this.image
+      return
+    }
     this.chosenImage = this.unsplashImages[
       Math.randomBetween(0, this.unsplashImages.length - 1)
     ];
