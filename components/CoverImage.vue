@@ -1,9 +1,8 @@
 <template>
   <div class="absolute top-0 left-0 right-0 z-0 w-full">
     <img
-      :src="`https://source.unsplash.com/${
-        unsplashImages[Math.randomBetween(0, unsplashImages.length - 1)]
-      }`"
+      v-if="chosenImage"
+      :src="`https://source.unsplash.com/${chosenImage}`"
       class="object-cover w-full"
     />
     <div
@@ -28,8 +27,10 @@ export default {
   },
   mounted() {
     console.log(this.unsplashImages);
-    this.chosenImage = this.unsplashImages[Math.randomBetween(0, this.unsplashImages.length - 1)]
+    this.chosenImage = this.unsplashImages[
+      Math.randomBetween(0, this.unsplashImages.length - 1)
+    ];
     console.log(this.chosenImage);
-  }
+  },
 };
 </script>
