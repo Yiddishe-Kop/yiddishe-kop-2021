@@ -18,7 +18,7 @@ First up we can leverage browser caching to speed up subsequent visits to our si
 
 ### How it Works
 
-We can tell the visitors' browser that it doesn't need to refetch assets (like JS, CSS, images & fonts) every time the user visits our site; instead cache it \[save it locally\] after the initial visit for future visits, so future visits will be MUCH faster 🚀.
+We can tell the visitors' browser that it doesn't need to refetch assets (like JS, CSS, images & fonts) every time the user visits our site; instead cache it [save it locally] after the initial visit for future visits, so future visits will be MUCH faster 🚀.
 
 The way we tell this to the browser, is by adding a `Cache-Control` header saying how long the browser can cache the resource.
 
@@ -28,9 +28,9 @@ I'm using **nginx** to serve [Pninim](https://pninim.yiddishe-kop.com/), and sta
 
 We add this to the top of our nginx configuration:
 
-```
-\# Expires map
-map $sent\_http\_content\_type $expires {
+```bash
+# Expires map
+map $sent_http_content_type $expires {
     default                    off;
     text/html                  30d;
     text/css                   max;
@@ -45,7 +45,7 @@ Here we first set the default `expires` to be `off`. Then we override it for spe
 
 Then in our `server` block we add this:
 
-```
+```bash
 expires $expires;
 ```
 
@@ -79,12 +79,12 @@ Another optimization we can add - is gzip compression. Text based resources can 
 
 Turns out it's quite simple to configure in **nginx**:
 
-```
+```bash
 gzip on;
-gzip\_vary on;
-gzip\_proxied any;
-gzip\_comp\_level 6;
-gzip\_types text/plain text/css text/xml application/json application/javascript application/xml+rss application/atom+xml image/svg+xml;
+gzip_vary on;
+gzip_proxied any;
+gzip_comp_level 6;
+gzip_types text/plain text/css text/xml application/json application/javascript application/xml+rss application/atom+xml image/svg+xml;
 ```
 
 In the last line we specify all file types we want to apply gzip compression.

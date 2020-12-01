@@ -1,4 +1,5 @@
 const colors = require('tailwindcss/colors')
+const shiki = require('shiki')
 
 export default {
   components: true,
@@ -53,8 +54,15 @@ export default {
 
   content: {
     markdown: {
-      prism: {
-        theme: '~/assets/css/dracula.css'
+      async highlighter() {
+        const theme = await shiki.loadTheme('./assets/OneDark-Pro.json')
+        const highlighter = await shiki.getHighlighter({
+          // Complete themes: https://github.com/shikijs/shiki/tree/master/packages/themes
+          theme,
+        })
+        return (rawCode, lang) => {
+          return highlighter.codeToHtml(rawCode, lang)
+        }
       }
     }
   },

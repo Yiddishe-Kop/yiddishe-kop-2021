@@ -6,7 +6,7 @@
       class="object-cover w-full"
     />
     <div
-      class="absolute inset-0 bg-gray-200 bg-opacity-80 bg-gradient-to-t from-gray-100"
+      class="absolute inset-0 bg-gray-200 dark:bg-gray-700 dark:bg-opacity-80 bg-opacity-80 bg-gradient-to-t dark:from-gray-800 from-gray-100"
     ></div>
   </div>
 </template>

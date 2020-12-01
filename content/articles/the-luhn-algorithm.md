@@ -1,6 +1,6 @@
 ---
 title: The Luhn Algorithm
-description: Have you ever wondered how a website knows that the credit card or National ID number you mistyped is invalid?
+description: Have you ever wondered how a website knows that the credit card or National ID number you mistyped is invalid? Have you ever wondered how a website knows that the credit card or National ID number you mistyped is invalid?
 dateCreated: 2020-10-28
 image: ex_p4AaBxbs
 ---
