@@ -2,6 +2,18 @@ const colors = require('tailwindcss/colors')
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
+  purge: {
+    enabled: process.env.NODE_ENV === 'production',
+    content: [
+      'components/**/*.vue',
+      'layouts/**/*.vue',
+      'pages/**/*.vue',
+      'plugins/**/*.js',
+      'content/**/*.md',
+      'content/**/*.json',
+      'nuxt.config.js',
+    ]
+  },
   darkMode: 'class',
   theme: {
     colors: {
