@@ -28,6 +28,7 @@ export default {
   css: [
     '~/assets/css/fonts.css',
     '~/assets/css/global.css',
+    '~/assets/css/transitions.css',
   ],
   /*
   ** Plugins to load before mounting the App

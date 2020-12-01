@@ -1,0 +1,38 @@
+[
+  {
+    "type": "feature",
+    "title": "Data table bulk actions & filters",
+    "description": "Added advanced bulk select, filters and search to the DataTable component",
+    "images": [
+      {
+        "href": "/img/bulk-actions.png",
+        "position": "object-right-top"
+      },
+      {
+        "href": "/img/bulk-actions-expanded.png",
+        "position": "object-right-top"
+      }
+    ],
+    "createdAt": "2020-10-01",
+    "slug": "data-tables"
+  },
+  {
+    "type": "open-source",
+    "title": "Released v1 of the Laravel Commerce package",
+    "actions": [
+      {
+        "icon": "bolt",
+        "label": "View Release",
+        "url": "https://github.com/Yiddishe-Kop/laravel-commerce/releases/tag/v1.0.0"
+      },
+      {
+        "icon": "news",
+        "label": "Documentation",
+        "url": "https://laravel-commerce.yiddishe-kop.com/"
+      }
+    ],
+    "description": "I'm super excited to release v1.0.0 (alpha) of LaravelCommerce",
+    "createdAt": "2020-12-01",
+    "slug": "laravel-commerce-v1-alpha-released"
+  }
+]

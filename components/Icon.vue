@@ -129,11 +129,13 @@
     <path d="M0 0h24v24H0z" stroke="none"></path>
     <path d="M5.5 5h13a1 1 0 01.5 1.5L14 12v7l-4-3v-4L5 6.5A1 1 0 015.5 5"></path>
   </svg>
+  <svg v-else-if="name === 'terminal'" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
   <svg v-else-if="name === 'edit'" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icon-tabler-edit">
     <path d="M0 0h24v24H0z" stroke="none"></path>
     <path d="M9 7H6a2 2 0 00-2 2v9a2 2 0 002 2h9a2 2 0 002-2v-3"></path>
     <path d="M9 15h3l8.5-8.5a1.5 1.5 0 00-3-3L9 12v3M16 5l3 3"></path>
   </svg>
+  <svg v-else-if="name === 'hot'" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z" clip-rule="evenodd" /></svg>
   <svg v-else-if="name === 'location-marker'" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path></svg>
   <svg v-else-if="name === 'phone'" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
   <svg v-else-if="name === 'support'" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
@@ -143,6 +145,7 @@
     <path d="M19 18a3.5 3.5 0 000-7h-1A5 4.5 0 007 9a4.6 4.4 0 00-2.1 8.4M12 13v9M9 19l3 3 3-3"></path>
   </svg>
   <svg v-else-if="name === 'upload'" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" /></svg>
+  <svg v-else-if="name === 'bookmark'" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 4v12l-4-2-4 2V4M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
   <svg v-else-if="name === 'cart'" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icon-tabler-shopping-cart">
     <path d="M0 0h24v24H0z" stroke="none"></path>
     <circle cx="9" cy="19" r="2"></circle>
@@ -156,7 +159,8 @@
     <path d="M21 21l-6-6"></path>
   </svg>
   <svg v-else-if="name === 'bolt'" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd" /></svg>
-  <svg v-else-if="name === 'news'" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M2 5a2 2 0 012-2h8a2 2 0 012 2v10a2 2 0 002 2H4a2 2 0 01-2-2V5zm3 1h6v4H5V6zm6 6H5v2h6v-2z" clip-rule="evenodd" /><path d="M15 7h1a2 2 0 012 2v5.5a1.5 1.5 0 01-3 0V7z" /></svg>
+  <svg v-else-if="name === 'news' && solid" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M2 5a2 2 0 012-2h8a2 2 0 012 2v10a2 2 0 002 2H4a2 2 0 01-2-2V5zm3 1h6v4H5V6zm6 6H5v2h6v-2z" clip-rule="evenodd" /><path d="M15 7h1a2 2 0 012 2v5.5a1.5 1.5 0 01-3 0V7z" /></svg>
+  <svg v-else-if="name === 'news'" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" /></svg>
   <svg v-else-if="name === 'microsoft'" viewBox="0 0 512 512" fill="currentColor"><path d="M496 0H272v240h240V16c0-8.832-7.168-16-16-16zM16 0C7.168 0 0 7.168 0 16v224h240V0H16zM0 272v224c0 8.832 7.168 16 16 16h224V272H0zM272 272v240h224c8.832 0 16-7.168 16-16V272H272z" /></svg>
   <svg v-else-if="name === 'apple'" fill="currentColor" viewBox="0 0 40 40"><path d="M32.295 26.202c-.096.271-.189.562-.296.848-.886 2.399-2.231 4.529-3.863 6.481-.315.38-.682.724-1.061 1.043-.749.634-1.611 1.017-2.608 1.052a5.229 5.229 0 01-2.161-.394c-.502-.205-.996-.434-1.505-.619-1.652-.6-3.295-.521-4.92.121-.586.232-1.164.488-1.761.689-.692.232-1.41.326-2.141.188-.638-.119-1.196-.416-1.714-.799-.643-.476-1.183-1.056-1.688-1.67-2.391-2.916-3.996-6.213-4.771-9.906-.334-1.588-.494-3.189-.396-4.812.115-1.946.567-3.799 1.607-5.469 1.305-2.099 3.146-3.474 5.568-4.041 1.457-.343 2.874-.203 4.263.332.731.28 1.464.557 2.198.832a2.763 2.763 0 002.026-.005c.749-.286 1.499-.571 2.251-.85.771-.281 1.555-.511 2.373-.576a8.913 8.913 0 013.58.449c1.647.551 2.987 1.526 3.999 2.946l.077.113c-2.552 1.779-4.005 4.129-3.794 7.311.213 3.184 1.927 5.338 4.737 6.736zM17.98 8.253a5.448 5.448 0 002.174-.402c3.179-1.262 4.841-4.625 4.791-7.197-.004-.207-.018-.414-.027-.654-.327.049-.625.072-.911.144-2.321.569-4.107 1.864-5.281 3.961-.687 1.228-1.069 2.532-.952 3.957.008.151.063.189.206.191z" /></svg>
   <svg v-else-if="name === 'sun'" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
