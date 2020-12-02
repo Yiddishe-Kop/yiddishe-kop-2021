@@ -16,7 +16,7 @@
     </div>
 
     <section class="relative mt-32">
-      <ul class="">
+      <ul>
         <li v-for="item in items" :key="item.path" class="flex">
           <div class="flex flex-col items-center">
             <div class="p-2 my-1 rounded-full" :class="getIconColor(item)">
@@ -25,10 +25,10 @@
             <i class="flex-1 w-px bg-gray-300 dark:bg-gray-600"></i>
           </div>
 
-          <div class="flex-1 mb-10 ml-6">
+          <div class="flex-1 pt-1 mb-10 ml-6">
             <header class="text-sm">
               <h4 class="font-bold">{{ getHeader(item) }}</h4>
-              <p class="text-gray-500">{{ item.createdAt | date }}</p>
+              <p class="text-xs text-gray-500">{{ item.createdAt | date }}</p>
             </header>
             <div class="relative mt-3">
               <feature-item v-if="item.type == 'feature'" :feature="item" />
@@ -36,8 +36,21 @@
                 v-else-if="item.type == 'open-source'"
                 :item="item"
               />
-              <blog-item v-else :item="item" />
+              <blog-item v-else :item="item" class="wow"/>
             </div>
+          </div>
+        </li>
+        <li class="flex">
+          <div class="flex flex-col items-center">
+            <div class="p-2 my-0.5 text-purple-800 bg-purple-100 rounded-full">
+              <octicon name="shield-lock"/>
+            </div>
+          </div>
+          <div class="flex-1 pt-1 mb-10 ml-6">
+            <header class="text-sm">
+              <h4 class="font-bold">That's it for now</h4>
+              <p class="text-xs text-gray-500">Work in progress...</p>
+            </header>
           </div>
         </li>
       </ul>
@@ -105,7 +118,7 @@ export default {
     getHeader(item) {
       switch (item.type) {
         case "feature":
-          return "Coded a new feature";
+          return "Coded new feature";
           break;
         case "open-source":
           return "Open source work";

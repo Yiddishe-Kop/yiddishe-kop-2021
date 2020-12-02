@@ -19,6 +19,10 @@
       >
         {{ article.title }}
       </h1>
+      <p class="mt-4 text-sm font-bold text-center text-gray-500">
+        <octicon name="book" />
+        <span class="ml-1">{{ article.readingTime }}</span>
+      </p>
 
       <nuxt-content :document="article" class="my-16 prose dark:prose-dark" />
 
