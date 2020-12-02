@@ -4,6 +4,7 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 module.exports = {
   purge: {
     enabled: process.env.NODE_ENV === 'production',
+    layers: ['utilities'],
     content: [
       'components/**/*.vue',
       'layouts/**/*.vue',
@@ -23,10 +24,10 @@ module.exports = {
       amber: colors.amber,
       lime: colors.lime,
       green: colors.emerald,
-      green: colors.emerald,
       blue: colors.cyan,
       purple: colors.fuchsia,
       red: colors.rose,
+      pink: colors.pink,
     },
     fontFamily: {
       sans: ['Inter var', ...defaultTheme.fontFamily.sans],
@@ -34,6 +35,10 @@ module.exports = {
       siddur: ['siddur', ...defaultTheme.fontFamily.sans],
     },
     extend: {
+      borderRadius: {
+        '2xl': '1rem',
+        '3xl': '1.5rem',
+      },
       typography: theme => ({
         DEFAULT: {
           css: {
@@ -99,7 +104,8 @@ module.exports = {
   variants: {
     extend: {
       backgroundOpacity: ['dark'],
-      typography: ["responsive", "dark"]
+      typography: ["responsive", "dark"],
+      translate: ["hover", "group-hover"]
     }
   },
   plugins: [

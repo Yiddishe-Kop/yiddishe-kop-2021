@@ -17,8 +17,8 @@
         target="_blank"
         rel="nofollow noopener noreferrer"
         >
-        <icon v-if="action.icon" :name="action.icon" class="w-4 text-gray-500"/>
-        <octicon v-if="action.octicon" :name="action.octicon" class="w-4 text-gray-500"/>
+        <icon v-if="action.icon" :name="action.icon" class="w-4 text-gray-500 dark:text-gray-400"/>
+        <octicon v-if="action.octicon" :name="action.octicon" class="w-4 text-gray-500 dark:text-gray-400"/>
         <span>{{ action.label }}</span>
       </a>
     </div>

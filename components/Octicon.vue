@@ -16,20 +16,18 @@ export default {
   },
   render(h, { props, data }) {
     let icon = Octicons[props.name];
-    icon = props.large && icon.heights[24] ? icon.heights[24] : icon.heights[16];
-    return h(
-      "svg",
-      {
-        class: ["octicon", data.staticClass || 'w-5 h-5'],
-        attrs: {
-          'viewBox': icon.options.viewBox,
-          id: 'foo'
-        },
-        domProps: {
-          innerHTML: icon.path,
-        },
-      }
-    );
+    icon =
+      props.large && icon.heights[24] ? icon.heights[24] : icon.heights[16];
+    return h("svg", {
+      class: ["octicon", data.staticClass || "w-5 h-5"],
+      attrs: {
+        viewBox: icon.options.viewBox,
+        id: "foo",
+      },
+      domProps: {
+        innerHTML: icon.path,
+      },
+    });
   },
 };
 </script>
@@ -39,5 +37,8 @@ export default {
   display: inline-block;
   vertical-align: text-top;
   fill: currentColor;
+}
+.text-size {
+  height: 1em;
 }
 </style>

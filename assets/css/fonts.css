@@ -13,6 +13,7 @@
 }
 
 .font-siddur {
+  display: inline-block;
   margin-top: -0.4em;
   font-weight: 700;
   font-variation-settings: "wght" var(--siddur-weight), "wdth" var(--siddur-width);

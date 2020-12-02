@@ -12,7 +12,7 @@
           v-for="item in navItems"
           :key="item.to"
           :to="item.to"
-          active-class="active-nav-item"
+          exact-active-class="active-nav-item"
           class="px-8 py-4 text-sm font-bold transition rounded-md hover:bg-opacity-50 blur-bg hover:bg-amber-100"
         >
           {{ item.label }}
@@ -31,12 +31,20 @@ export default {
   data: () => ({
     navItems: [
       {
+        label: "Home",
+        to: "/",
+      },
+      {
         label: "Writing",
         to: "/articles",
       },
       {
         label: "Projects",
         to: "/projects",
+      },
+      {
+        label: "About",
+        to: "/about",
       },
     ],
     darkMode: false,
