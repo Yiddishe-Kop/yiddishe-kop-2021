@@ -106,6 +106,8 @@ export default {
             return "New project";
           } else if (item.dir == "/articles") {
             return "Published new post";
+          } else if (item.path == "/designs") {
+            return "Graphic Design";
           }
           break;
       }

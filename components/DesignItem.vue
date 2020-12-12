@@ -9,8 +9,8 @@
       {{ design.description }}
     </p>
     <ul v-if="design.images" class="mt-3 space-y-4">
-      <li v-for="image in design.images" :key="image.href">
-        <nuxt-image :src="image.href" responsive placeholder class="object-cover rounded-md shadow" :class="image.position || 'object-center'" />
+      <li v-for="img in design.images" :key="img.href">
+        <nuxt-image :src="img.href" responsive placeholder class="object-cover rounded-md shadow" :class="img.position || 'object-center'" />
       </li>
     </ul>
   </div>

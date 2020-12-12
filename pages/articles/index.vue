@@ -10,7 +10,7 @@
       </h4>
     </div>
 
-    <ul>
+    <ul class="my-24">
       <transition-group name="slideIn" appear class="relative grid grid-cols-1 gap-4 lg:gap-6 md:grid-cols-2 lg:grid-cols-3">
         <li
           v-for="article in articles"
