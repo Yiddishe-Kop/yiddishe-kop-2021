@@ -1,7 +1,10 @@
 <template>
   <li class="flex">
     <div class="flex flex-col items-center">
-      <div class="p-2 my-1 rounded-full" :class="iconColors || getIconColor(item)">
+      <div
+        class="p-2 my-1 rounded-full"
+        :class="iconColors || getIconColor(item)"
+      >
         <slot name="icon">
           <icon :name="getIcon(item)" class="w-6" />
         </slot>
@@ -13,7 +16,13 @@
       <header class="text-sm leading-6">
         <slot name="header">
           <h4 class="font-bold">{{ getHeader(item) }}</h4>
-          <p v-if="item.createdAt" class="text-xs text-gray-500" :title="new Date(item.createdAt).toUTCString()">{{ item.createdAt | timeAgo }}</p>
+          <p
+            v-if="item.createdAt"
+            class="text-xs text-gray-500"
+            :title="new Date(item.createdAt).toUTCString()"
+          >
+            {{ item.createdAt | timeAgo }}
+          </p>
         </slot>
       </header>
       <div class="relative mt-3">
@@ -23,6 +32,7 @@
             v-else-if="item.type == 'open-source'"
             :item="item"
           />
+          <design-item v-else-if="item.path == '/designs'" :design="item" />
           <blog-item v-else :item="item" class="wow" />
         </slot>
       </div>
@@ -38,7 +48,7 @@ export default {
   props: {
     item: Object,
     iconColors: String,
-    last: Boolean
+    last: Boolean,
   },
   filters: { timeAgo },
   methods: {
@@ -56,6 +66,8 @@ export default {
             return "bookmark";
           } else if (item.dir == "/articles") {
             return "news";
+          } else if (item.path == "/designs") {
+            return "bulb";
           }
           break;
       }
@@ -74,6 +86,8 @@ export default {
             return "text-red-500 bg-red-100 dark:text-red-200 dark:bg-red-700";
           } else if (item.dir == "/articles") {
             return "text-gray-500 bg-gray-200 dark:text-gray-200 dark:bg-gray-700";
+          } else if (item.path == "/designs") {
+            return "text-amber-500 bg-amber-100 dark:text-amber-200 dark:bg-amber-700";
           }
           break;
       }
