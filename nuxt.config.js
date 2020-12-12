@@ -76,7 +76,7 @@ export default {
   },
 
   image: {
-
+    sizes: [320, 420, 768, 1024, 1200],
   },
 
   /*
