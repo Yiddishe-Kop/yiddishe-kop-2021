@@ -62,7 +62,6 @@ export default {
     })
       .sortBy("createdAt", "desc")
       .fetch();
-      console.log(items);
 
     return {
       items,

@@ -4,6 +4,7 @@ const shiki = require('shiki')
 export default {
   components: true,
   target: 'static',
+
   /*
   ** Headers of the page
   */
@@ -18,10 +19,12 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
+
   /*
   ** Customize the progress-bar color
   */
   loading: { color: colors.amber[400] },
+
   /*
   ** Global CSS
   */
@@ -30,20 +33,22 @@ export default {
     '~/assets/css/global.css',
     '~/assets/css/transitions.css',
   ],
+
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
     '~/plugins/lib.js'
   ],
+
   /*
   ** Nuxt.js dev-modules
   */
   buildModules: [
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
     '@nuxtjs/tailwindcss',
-    '@aceforth/nuxt-optimized-images',
   ],
+
   /*
   ** Nuxt.js modules
   */
@@ -52,6 +57,7 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     '@nuxt/content',
+    '@nuxt/image',
   ],
 
   content: {
@@ -68,12 +74,18 @@ export default {
       }
     }
   },
+
+  image: {
+
+  },
+
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
   },
+
   hooks: {
     'content:file:beforeInsert': (document) => {
       if (document.extension === '.md') {
@@ -82,9 +94,7 @@ export default {
       }
     }
   },
-  optimizedImages: {
-    optimizeImages: true
-  },
+
   /*
   ** Build configuration
   */

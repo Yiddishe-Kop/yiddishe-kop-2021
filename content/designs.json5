@@ -3,7 +3,9 @@
     title: 'Silverspoon Channukah ad',
     description: 'description',
     images: [{
-      href: 'bulk-actions.png'
+      href: '/img/silverspoon-chanukah-ad-process.png'
+    }, {
+      href: '/img/silverspoon-chanukah-ad.png'
     }],
     createdAt: '2020-12-8',
     slug: 'silverspoon-channuka-ad'
