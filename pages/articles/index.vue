@@ -23,7 +23,7 @@
           />
           <div class="flex-1 p-4">
             <h2
-              class="text-xl font-bold text-blue-900 transition-colors dark:text-blue-100 group-hover:text-brand"
+              class="text-xl font-bold text-blue-900 transition-colors dark:text-gray-200 group-hover:text-brand"
             >
               {{ article.title }}
             </h2>

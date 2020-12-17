@@ -1,7 +1,7 @@
 <template>
   <div class="p-4 transition-shadow bg-white rounded-lg shadow dark:bg-gray-900 dark:bg-opacity-60 hover:shadow-xl bg-opacity-60 group">
     <h2
-      class="text-xl font-bold text-blue-900 transition-colors dark:text-blue-100 group-hover:text-brand"
+      class="text-xl font-bold text-blue-900 transition-colors dark:text-gray-200 group-hover:text-brand"
     >
       {{ item.title }}
     </h2>

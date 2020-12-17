@@ -5,7 +5,7 @@ createdAt: 2020-10-11
 image: J9NDmBVhN04
 ---
 
-The nice thing about creating your own software from scratch is that you can make it work just like your wildest imaginations. When writing the developer exposed API for the [Laravel Commerce](https://laravel-commerce.yiddishe-kop.com/) PHP package, I started by creating the high level methods, in a way that I would want them to look. I wanted the API to be as simple and expressive as possible, so it's a pleasure to work with. Inspired by Laravel of course 😎.
+The nice thing about creating your own software from scratch is that you can make it work just like your rosiest imaginations. When writing the developer exposed API for the [Laravel Commerce](https://laravel-commerce.yiddishe-kop.com/) PHP package, I started by creating the high level methods, in a way that I would want them to look. I wanted the API to be as simple and expressive as possible, so it's a pleasure to work with. Inspired by Laravel of course 😎.
 
 ## Laravel Commerce Package
 

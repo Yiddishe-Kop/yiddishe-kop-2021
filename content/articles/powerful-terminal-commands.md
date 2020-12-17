@@ -17,19 +17,19 @@ If you want to copy a file from your server to your computer, you can't just dra
 
 Here are some examples:
 
-# copy a file from a server to your local machine
+### copy a file from a server to your local machine
 
 ```bat
 scp user@your.server.example.com:/path/to/foo.txt ~/Desktop/foo.txt
 ```
 
-# copy an entire folder (recursively) to your local machines' Desktop folder
+### copy an entire folder (recursively) to your local machines' Desktop folder
 
 ```bat
 scp -r user@your.server.example.com:/path/to/foo ~/Desktop/
 ```
 
-# copy a file from server-1 to server-2 (AMAZING!)
+### copy a file from server-1 to server-2 (AMAZING!)
 
 ```bat
 scp -3 user@server1:/path/to/file.txt user@server2:/path/to/file﻿.txt

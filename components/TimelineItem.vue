@@ -33,6 +33,7 @@
             :item="item"
           />
           <design-item v-else-if="item.path == '/designs'" :design="item" />
+          <photography-item v-else-if="item.path == '/photography'" :item="item" />
           <blog-item v-else :item="item" class="wow" />
         </slot>
       </div>
@@ -68,6 +69,8 @@ export default {
             return "news";
           } else if (item.path == "/designs") {
             return "bulb";
+          } else if (item.path == "/photography") {
+            return "camera";
           }
           break;
       }
@@ -88,6 +91,8 @@ export default {
             return "text-gray-500 bg-gray-200 dark:text-gray-200 dark:bg-gray-700";
           } else if (item.path == "/designs") {
             return "text-amber-500 bg-amber-100 dark:text-amber-200 dark:bg-amber-700";
+          } else if (item.path == "/photography") {
+            return "text-pink-500 bg-pink-100 dark:text-pink-200 dark:bg-pink-700";
           }
           break;
       }
@@ -108,6 +113,8 @@ export default {
             return "Published new post";
           } else if (item.path == "/designs") {
             return "Graphic Design";
+          } else if (item.path == "/photography") {
+            return "Photography";
           }
           break;
       }
