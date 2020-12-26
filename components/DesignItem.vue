@@ -10,7 +10,7 @@
     </p>
     <ul v-if="design.images" class="mt-3 space-y-3">
       <li v-for="img in design.images" :key="img.href">
-        <nuxt-image :src="img.href" responsive placeholder class="object-cover rounded-md shadow" :class="img.position || 'object-center'" />
+        <lightbox-image :src="img.href"  class="object-cover rounded-md shadow" :class="img.position || 'object-center'" />
       </li>
     </ul>
   </div>

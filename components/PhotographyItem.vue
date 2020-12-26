@@ -17,13 +17,11 @@
       v-if="item.images && item.images.length == 3"
       class="grid grid-cols-2 gap-3 mt-3"
     >
-      <nuxt-image
+      <lightbox-image
         v-for="(img, i) in item.images"
         :key="img"
         :class="{ 'row-span-2': i == 0 }"
         :src="img"
-        responsive
-        placeholder
         class="object-cover object-center rounded-md shadow"
       />
     </div>
