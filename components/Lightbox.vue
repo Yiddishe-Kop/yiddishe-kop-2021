@@ -93,7 +93,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style>
 .transition-image-in-out {
   transition: all 0.25s ease-in-out;
 }
