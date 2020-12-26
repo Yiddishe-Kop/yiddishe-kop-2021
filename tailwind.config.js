@@ -44,9 +44,12 @@ module.exports = {
           css: {
             color: theme('colors.gray.900'),
             a: {
-              color: theme('colors.amber.500'),
+              textDecoration: 'none',
+              borderRadius: 'none',
+              borderBottom: `.125em dashed ${theme('colors.amber.500')}`,
               '&:hover': {
-                color: theme('colors.gray.500'),
+                borderBottom: `.125em dashed ${theme('colors.gray.500')}`,
+                color: theme('colors.amber.500'),
               },
             },
             pre: {
@@ -87,9 +90,13 @@ module.exports = {
               color: theme('colors.gray.200'),
             },
             a: {
-              color: theme('colors.amber.200'),
+              color: theme('colors.gray.100'),
+              textDecoration: 'none',
+              borderRadius: 'none',
+              borderBottom: `.125em dashed ${theme('colors.amber.500')}`,
               '&:hover': {
-                color: theme('colors.gray.100'),
+                borderBottom: `.125em dashed ${theme('colors.gray.500')}`,
+                color: theme('colors.amber.500'),
               },
             },
             code: {

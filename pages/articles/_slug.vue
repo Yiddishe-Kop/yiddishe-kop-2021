@@ -15,7 +15,7 @@
         {{ article.createdAt | date }}
       </p>
       <h1
-        class="max-w-xl mx-auto mt-2 text-3xl font-extrabold text-center sm:text-4xl lg:text-5xl text-brand"
+        class="max-w-xl mx-auto mt-2 text-3xl font-extrabold text-center text-gray-900 sm:text-4xl lg:text-5xl dark:text-gray-200"
       >
         {{ article.title }}
       </h1>
@@ -26,7 +26,7 @@
 
       <nuxt-content :document="article" class="my-16 prose dark:prose-dark" />
 
-      <nav class="flex items-stretch justify-between mb-24 space-x-3 text-sm font-semibold text-gray-500">
+      <nav class="flex items-stretch justify-between space-x-3 text-sm font-semibold text-gray-500">
         <nuxt-link v-if="prev" :to="prev.path" class="flex items-center justify-start flex-1 p-2 space-x-2 rounded bg-gray-50 dark:bg-gray-900 hover:bg-amber-100 hover:text-amber-800 dark:hover:text-amber-400">
           <icon name="arrow-circle-left" class="w-6" />
           <span>{{ prev.title }}</span>

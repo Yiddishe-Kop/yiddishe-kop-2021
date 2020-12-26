@@ -6,5 +6,6 @@
       <nuxt />
     </main>
 
+    <the-footer />
   </div>
 </template>
