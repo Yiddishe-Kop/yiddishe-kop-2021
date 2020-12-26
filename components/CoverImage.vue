@@ -3,7 +3,7 @@
     <div v-if="chosenImage" class="top-0 left-0 right-0 z-0 w-full" :class="fixed ? 'fixed' : 'absolute'">
       <img
         :src="`https://source.unsplash.com/${chosenImage}`"
-        class="object-cover w-full"
+        class="object-cover w-full max-h-screen"
       />
       <div
         class="absolute inset-0 bg-gray-200 dark:bg-gray-700 dark:bg-opacity-80 bg-opacity-80 bg-gradient-to-t dark:from-gray-800 from-gray-100"
