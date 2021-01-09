@@ -7,14 +7,20 @@
   >
     <transition name="overlay">
       <div
+        v-if="$lightbox.open"
         class="fixed inset-0 bg-gray-200 dark:bg-gray-800 bg-opacity-80 dark:bg-opacity-80"
       ></div>
     </transition>
-    <img
-      :src="$lightbox.imageSrc"
-      class="w-full h-full rounded-md transition-image-in-out"
-      :style="style"
-    />
+    <div :style="style" class="relative w-full h-full transition-image-in-out">
+      <img
+        :src="$lightbox.lowResSrc"
+        class="absolute inset-0 w-full m-auto rounded-md"
+      />
+      <img
+        :src="$lightbox.imageSrc"
+        class="absolute inset-0 w-full m-auto rounded-md"
+      />
+    </div>
     <div class="absolute left-0 right-0 flex justify-center bottom-12">
       <div class="px-3 py-2 text-gray-500 bg-gray-200 rounded-full shadow-xl">
         <octicon name="x-circle-fill" large />

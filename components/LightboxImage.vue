@@ -27,8 +27,10 @@ export default {
       const el = this.$refs.image.$el;
       const { top, left, width, height } = el.getBoundingClientRect();
 
+      const loadedSrc = el.children[1].currentSrc
       this.$lightbox.open = true;
       this.$lightbox.imageSrc = this.src;
+      this.$lightbox.lowResSrc = loadedSrc;
       this.$lightbox.originalPosition = {
         top,
         left,
