@@ -1,7 +1,7 @@
 ---
 title: Generating a Maze with JS
 description: Using computed properties on Eloquent models like Vue computed properties
-createdAt: 2021-01-09
+createdAt: 2021-01-09 22:00:00
 image: _qXjdWm8YEo
 ---
 
