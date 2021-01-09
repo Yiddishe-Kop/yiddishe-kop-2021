@@ -62,6 +62,7 @@ export default {
   ],
 
   content: {
+    liveEdit: false,
     markdown: {
       async highlighter() {
         const theme = await shiki.loadTheme('./assets/OneDark-Pro.json')

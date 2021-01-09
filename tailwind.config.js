@@ -45,7 +45,7 @@ module.exports = {
             color: theme('colors.gray.900'),
             a: {
               textDecoration: 'none',
-              borderRadius: 'none',
+              borderRadius: '0',
               borderBottom: `.125em dashed ${theme('colors.amber.500')}`,
               '&:hover': {
                 borderBottom: `.125em dashed ${theme('colors.gray.500')}`,
@@ -64,7 +64,7 @@ module.exports = {
               padding: '0.2em 0.5em',
               borderRadius: theme('borderRadius.md'),
               color: theme('colors.gray.900'),
-              backgroundColor: theme('colors.white'),
+              backgroundColor: theme('colors.gray.200'),
             },
             'code::before': {
               content: ''
@@ -92,7 +92,7 @@ module.exports = {
             a: {
               color: theme('colors.gray.100'),
               textDecoration: 'none',
-              borderRadius: 'none',
+              borderRadius: '0',
               borderBottom: `.125em dashed ${theme('colors.amber.500')}`,
               '&:hover': {
                 borderBottom: `.125em dashed ${theme('colors.gray.500')}`,
@@ -101,8 +101,13 @@ module.exports = {
             },
             code: {
               color: theme('colors.gray.100'),
-              backgroundColor: theme('colors.gray.800'),
+              backgroundColor: theme('colors.gray.700'),
             },
+            pre: {
+              code: {
+                backgroundColor: 'transparent',
+              }
+            }
           },
         },
       })
