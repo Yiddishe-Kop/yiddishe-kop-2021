@@ -6,6 +6,7 @@ image: p8w7krXVY1k
 ---
 
 I discovered Laravel around a year ago, and it has opened up the possibilities for me to create powerful applications. By now I have built quite a few applications with Laravel and feel quite comfortable writing apps with PHP & Laravel. The thing is, I miss that excitement and motivation that I feel when learning new things... so I've decided to start learning Ruby on Rails. This means learning a new programming language - **Ruby**, and the framework **Ruby on Rails** 👨‍🎓.
+
 For some time now I've been wanting to get into Ruby on Rails, some great apps are built with Rails - take GitHub - which [Microsoft purchased for $7B](https://news.microsoft.com/announcement/microsoft-acquires-github/), and which I use every day, is built with Rails. Rails seems to have lots of similarities to Laravel - it's an MVC framework, but seems to have a shorter and more terse syntax. That's because it's written in **Ruby**, which is a very conversational and nearly punctuationless language.
 
 > Using Ruby, we are constantly amazed at how much code we can write in one sitting, code that works the first time. There are very few syntax errors, no type violations, and far fewer bugs than usual. This makes sense: there's less to get wrong. No bothersome semicolons to type mechanically at the end of each line. No troublesome type declarations to keep in sync (especially in separate files). No unnecessary words just to keep the compiler happy. No error-prone framework code. ([source](http://docs.ruby-doc.com/docs/ProgrammingRuby/))
@@ -49,8 +50,11 @@ Rails has a command line tool (just like Artisan in Laravel) that we can use to 
 bin/rails generate model Aveida title:string body:text
 ```
 Unlike Laravel, you can pass the column names & data types to the command!
+
 This generates a migration `db/migrate/20210116205557_create_aveidas.rb` and a model `app/models/aveida.rb` (and tests).
+
 Now I run `bin/rails db:migrate RAILS_ENV=development`, and it just works. I didn't need to setup any database, or edit a config file. This is because by default Rails comes with a `db/development.sqlite3` file that is used as the database in development. Neat! I'm already starting to feel the development speed they say about Rails.
+
 This is the generated migration:
 ```rb
 class CreateAveidas < ActiveRecord::Migration[6.1]
@@ -93,11 +97,13 @@ And lastly the view:
 Controller variables. (like `@aveida`) are available in the view.
 `<% ... %>` are like `<?php ... ?>` in PHP. And `<%=` is like `<?=` .
 Notice how little code is needed...
+
 We can simplify the routes file even more by using the conventional resource routes:
 ```rb
 # get "/aveidos/:id", to: "aveidos#show"
 resources :aveidos
 ```
+
 This will generate the following routes according to the convention:
 ```bash
     aveidos GET    /aveidos(.:format)                aveidos#index
