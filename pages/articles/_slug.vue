@@ -56,7 +56,7 @@ export default {
     const article = await $content(`articles/${params.slug}`)
       .fetch();
 
-    const [prev, next] = await $content("articles")
+    const [next, prev] = await $content("articles")
       .only(["title", "path"])
       .sortBy("createdAt", "desc")
       .surround(params.slug)
