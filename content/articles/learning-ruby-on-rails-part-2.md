@@ -1,7 +1,7 @@
 ---
 title: Learning Ruby on Rails - Part 2
 description: Attaching a Vue frontend to a Rails backend with Inertia.js
-createdAt: 2021-01-17 00:44:00
+createdAt: 2021-01-24 00:44:00
 image: ellaVGqPgww
 ---
 
@@ -14,7 +14,7 @@ Last week I went by the traditional way of building web apps - using server side
 gem 'inertia_rails'
 ```
 
-Add the above to the `Gemfile`, which is like `composer.json` or `package.json`, the run `bundle install` to install the dependencies.
+Add the above to the `Gemfile`, which is like `composer.json` or `package.json`, then run `bundle install` to install the dependencies.
 
 ### Root layout
 We also have to update the root view (`application.html.erb`) to load the js assets that boot up the Vue frontend, and insert `<%= yield %>` in the body - that Inertia will populate with the Vue app.
@@ -79,6 +79,36 @@ Once the app is loaded and you click on a link to another page, Inertia intercep
 Now that I wrote it out, I think Inertia is really simple to understand!
 
 As I'm completely new to Rails ans its ecosystem, I got stuck at loading Vue SFCs with Webpack. [This article](https://dev.to/vannsl/vue3-on-rails-l9d) saved me. See [this commit](https://github.com/Yiddishe-Kop/matzati/tree/e9b58610096f400b5c8a28281b1c24fad72498ed) for the code at this point in time.
+
+So now we create the `Aveidas/Index.vue` component:
+```html
+<template>
+  <div>
+    <h1>Aveidas</h1>
+    <ul>
+      <li v-for="aveida in aveidas" :key="aveida.id">
+        <h4>{{ aveida.title }}</h4>
+        <p>{{ aveida.body }}</p>
+        <inertia-link :href="`/aveidas/${aveida.id}`">
+          Show
+        </inertia-link>
+      </li>
+    </ul>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'AveidasIndex',
+  props: {
+    aveidas: Array
+  },
+}
+</script>
+```
+
+We get `aveidas` as a prop from the Inertia response, and use it like a regular Vue prop. Also Notice the usage of `<inertia-link>` to link to the `show` page for each aveida. That ensures that Inertia will handle the page visit.
+
 ### Some Gotchas
 
 When redirecting in Rails, we use `redirect_back` or  `redirect_to ...`. I expected a redirect to an Inertia route to render the Vue page, instead I got a `Turbolinks.visit(...)` response. I had to disable the default Turbolinks, as we want to handle navigation with Inertia and not the default Turbolinks. So just removing `gem 'turbolinks', '~> 5'*` from the `Gemfile` did the trick.
@@ -113,5 +143,6 @@ To get the dev-server with HMR running, run this command from project root:
 ```
 
 ### Wrap
+
 That's it for now. Setting up Inertia and Vue with Rails was fairly straightforward for the most part, I just stumbled upon configuring the Vue SFC loader, and the dev server. But this looks promising!
-Next up we'll add [TailwindCSS](https://tailwindcss.com/) (v2) to this app to make styling fast and fun💡.
+Next up I want to add [TailwindCSS](https://tailwindcss.com/) (v2) to this app to make styling fast and fun💡.
