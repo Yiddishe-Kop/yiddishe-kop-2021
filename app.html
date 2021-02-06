@@ -4,6 +4,13 @@
 <head {{ HEAD_ATTRS }}>
   {{ HEAD }}
 
+  <meta property="og:title" content="Yiddishe Kop">
+  <meta name="description" content="Software development">
+  <meta property="og:description" content="Software development">
+  <meta property="og:image" content="https://yiddishe-kop.com/img/preview.jpg">
+  <meta property="og:url" content="https://yiddishe-kop.com/">
+  <meta name="twitter:card" content="summary_large_image">
+
   <script>
     // On page load or when changing themes, best to add inline in `head` to avoid FOUC
     if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {

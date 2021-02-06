@@ -1,6 +1,6 @@
 <template>
   <div>
-    <cover-image fixed />
+    <cover-image fixed unsplash />
 
     <div class="relative mt-24 text-center">
       <h1 class="text-4xl font-extrabold">Hey, I'm Yehuda</h1>

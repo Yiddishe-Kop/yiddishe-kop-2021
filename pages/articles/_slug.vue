@@ -1,6 +1,6 @@
 <template>
   <div>
-    <cover-image :image="article.image" />
+    <cover-image :image="article.image" unsplash />
 
     <div class="relative px-2 md:px-4">
       <nuxt-link

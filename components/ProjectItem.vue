@@ -5,7 +5,7 @@
     <div class="w-32">
       <nuxt-picture
         placeholder
-        :src="`https://source.unsplash.com/${item.image}`"
+        :src="item.image"
         class="rounded-l-lg"
       />
     </div>
@@ -25,7 +25,7 @@
 
 <script>
 export default {
-  name: "BlogItem",
+  name: "ProjectItem",
   props: {
     item: Object,
   },

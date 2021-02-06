@@ -1,8 +1,13 @@
 <template>
   <transition name="fadeIn" appear>
-    <div v-if="chosenImage" class="top-0 left-0 right-0 z-0 w-full" :class="fixed ? 'fixed' : 'absolute'">
-      <img
-        :src="`https://source.unsplash.com/${chosenImage}`"
+    <div
+      v-if="chosenImage"
+      class="top-0 left-0 right-0 z-0 w-full"
+      :class="fixed ? 'fixed' : 'absolute'"
+    >
+      <nuxt-picture
+        placeholder
+        :src="imgSrc"
         class="object-cover w-full max-h-screen"
       />
       <div
@@ -17,10 +22,14 @@ export default {
   name: "CoverImage",
   props: {
     image: String,
+    unsplash: {
+      type: Boolean,
+      default: false,
+    },
     fixed: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   data() {
     return {
@@ -32,6 +41,13 @@ export default {
       ],
       chosenImage: null,
     };
+  },
+  computed: {
+    imgSrc() {
+      return this.unsplash
+        ? `https://source.unsplash.com/${this.chosenImage}`
+        : this.chosenImage;
+    },
   },
   mounted() {
     if (this.image) {

@@ -22,7 +22,7 @@
 
       <nuxt-content :document="project" class="my-16 prose dark:prose-dark" />
 
-      <nav class="flex items-stretch justify-between mb-24 space-x-3 text-sm font-semibold text-gray-500">
+      <nav class="flex items-stretch justify-between space-x-3 text-sm font-semibold text-gray-500">
         <nuxt-link v-if="prev" :to="prev.path" class="flex items-center justify-start flex-1 p-2 space-x-2 rounded bg-gray-50 dark:bg-gray-900 hover:bg-amber-100 hover:text-amber-800 dark:hover:text-amber-400">
           <icon name="arrow-circle-left" class="w-6" />
           <span>{{ prev.title }}</span>
@@ -52,7 +52,7 @@ export default {
     const project = await $content(`projects/${params.slug}`)
       .fetch();
 
-    const [prev, next] = await $content("projects")
+     const [next, prev] = await $content("projects")
       .only(["title", "path"])
       .sortBy("createdAt", "desc")
       .surround(params.slug)

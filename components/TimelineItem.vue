@@ -34,6 +34,7 @@
           />
           <design-item v-else-if="item.path == '/designs'" :design="item" />
           <photography-item v-else-if="item.path == '/photography'" :item="item" />
+          <project-item v-else-if="item.dir == '/projects'" :item="item" />
           <blog-item v-else :item="item" class="wow" />
         </slot>
       </div>
