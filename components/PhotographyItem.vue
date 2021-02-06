@@ -16,13 +16,14 @@
     <div
       v-if="item.images && item.images.length == 3"
       class="grid grid-cols-2 gap-3 mt-3"
+      style="height: 475px"
     >
       <lightbox-image
         v-for="(img, i) in item.images"
         :key="img"
         :class="{ 'row-span-2': i == 0 }"
         :src="img"
-        class="object-cover object-center rounded-md shadow"
+        class="rounded-md shadow"
       />
     </div>
   </div>

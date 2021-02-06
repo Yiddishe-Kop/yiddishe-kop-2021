@@ -1,12 +1,11 @@
 <template>
-  <nuxt-img
+  <nuxt-picture
     :src="src"
     responsive
     placeholder
     @click.native="showLightbox"
     ref="image"
     style="cursor: zoom-in"
-    class="w-full h-full"
   />
 </template>
 
@@ -28,7 +27,7 @@ export default {
       const el = this.$refs.image.$el;
       const { top, left, width, height } = el.getBoundingClientRect();
 
-      const loadedSrc = el.currentSrc
+      const loadedSrc = el.querySelector('img').currentSrc
       this.$lightbox.open = true;
       this.$lightbox.imageSrc = this.src;
       this.$lightbox.lowResSrc = loadedSrc;
