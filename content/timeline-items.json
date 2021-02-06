@@ -6,11 +6,15 @@
     "images": [
       {
         "href": "/img/bulk-actions.png",
-        "position": "object-right-top"
+        "position": "object-right-top",
+        "width": 300,
+        "height": 200
       },
       {
         "href": "/img/bulk-actions-expanded.png",
-        "position": "object-right-top"
+        "position": "object-right-top",
+        "width": 300,
+        "height": 200
       }
     ],
     "createdAt": "2020-10-01",

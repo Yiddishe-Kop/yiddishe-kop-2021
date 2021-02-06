@@ -10,7 +10,13 @@
     </p>
     <ul v-if="feature.images" class="grid grid-cols-2 gap-2 mt-3">
       <li v-for="img in feature.images" :key="img.href">
-        <nuxt-img :src="img.href" responsive placeholder class="object-cover rounded-md shadow" :class="img.position || 'object-center'" />
+        <lightbox-image
+          :src="img.href"
+          :width="img.width"
+          :height="img.height"
+          class="rounded-md shadow"
+          :class="img.position || 'object-center'"
+        />
       </li>
     </ul>
   </div>

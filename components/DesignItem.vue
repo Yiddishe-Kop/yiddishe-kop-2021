@@ -10,7 +10,7 @@
     </p>
     <ul v-if="design.images" class="mt-3 space-y-3">
       <li v-for="img in design.images" :key="img.href">
-        <lightbox-image :src="img.href" class="rounded-md shadow" :class="img.position || 'object-center'" />
+        <lightbox-image :src="img.href" :width="img.width" :height="img.height" class="rounded-md shadow contents" :class="img.position || 'object-center'" />
       </li>
     </ul>
   </div>

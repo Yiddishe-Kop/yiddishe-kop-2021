@@ -5,6 +5,8 @@
     placeholder
     @click.native="showLightbox"
     ref="image"
+    :height="height"
+    :width="width"
     style="cursor: zoom-in"
   />
 </template>
@@ -14,6 +16,8 @@ export default {
   name: "LightboxImage",
   props: {
     src: String,
+    width: Number,
+    height: Number,
   },
   data() {
     return {
@@ -28,6 +32,7 @@ export default {
       const { top, left, width, height } = el.getBoundingClientRect();
 
       const loadedSrc = el.querySelector('img').currentSrc
+      console.log({loadedSrc});
       this.$lightbox.open = true;
       this.$lightbox.imageSrc = this.src;
       this.$lightbox.lowResSrc = loadedSrc;
