@@ -9,7 +9,7 @@
         <logo class="h-11" />
       </nuxt-link>
 
-      <nav class="hidden space-x-1 sm:block">
+      <nav class="hidden space-x-1.5 sm:block">
         <nuxt-link
           v-for="item in navItems"
           :key="item.to"
@@ -62,6 +62,10 @@ export default {
       {
         label: "Home",
         to: "/",
+      },
+      {
+        label: "Timeline",
+        to: "/timeline",
       },
       {
         label: "Writing",

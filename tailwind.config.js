@@ -18,6 +18,7 @@ module.exports = {
   darkMode: 'class',
   theme: {
     colors: {
+      black: colors.black,
       white: colors.white,
       brand: colors.amber[400],
       gray: colors.blueGray,
