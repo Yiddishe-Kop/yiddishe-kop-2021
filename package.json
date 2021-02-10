@@ -22,13 +22,11 @@
     "@tailwindcss/typography": "^0.3.1",
     "autoprefixer": "^9.8.6",
     "date-fns": "^2.11.0",
+    "node-sass": "^4.14.1",
     "nuxt": "^2.14.6",
     "postcss": "^7.0.35",
     "reading-time": "^1.2.0",
     "shiki": "^0.2.7",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.1"
-  },
-  "dependencies": {
-    "sass-loader": "^8.0.2"
   }
 }
