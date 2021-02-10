@@ -1,15 +1,7 @@
 <template>
   <transition name="fadeIn" appear>
-    <div
-      v-if="chosenImage"
-      class="top-0 left-0 right-0 z-0 w-full"
-      :class="fixed ? 'fixed' : 'absolute'"
-    >
-      <nuxt-picture
-        placeholder
-        :src="imgSrc"
-        class="object-cover w-full max-h-screen"
-      />
+    <div v-if="chosenImage" class="top-0 left-0 right-0 z-0 w-full" :class="fixed ? 'fixed' : 'absolute'">
+      <nuxt-picture placeholder :src="imgSrc" class="object-cover w-full max-h-screen" />
       <div
         class="absolute inset-0 bg-gray-200 dark:bg-gray-700 dark:bg-opacity-80 bg-opacity-80 bg-gradient-to-t dark:from-gray-800 from-gray-100"
       ></div>
@@ -19,7 +11,7 @@
 
 <script>
 export default {
-  name: "CoverImage",
+  name: 'CoverImage',
   props: {
     image: String,
     unsplash: {
@@ -33,32 +25,23 @@ export default {
   },
   data() {
     return {
-      unsplashImages: [
-        "4rx3NLmWaZk",
-        "sdqIx9JQiTw",
-        "AeqGXkYWIHM",
-        "kbYD_aSAeg8",
-      ],
+      unsplashImages: ['4rx3NLmWaZk', 'sdqIx9JQiTw', 'AeqGXkYWIHM', 'kbYD_aSAeg8'],
       chosenImage: null,
-    };
+    }
   },
   computed: {
     imgSrc() {
-      return this.unsplash
-        ? `https://source.unsplash.com/${this.chosenImage}`
-        : this.chosenImage;
+      return this.unsplash ? `https://source.unsplash.com/${this.chosenImage}` : this.chosenImage
     },
   },
   mounted() {
     if (this.image) {
-      this.chosenImage = this.image;
-      return;
+      this.chosenImage = this.image
+      return
     }
-    this.chosenImage = this.unsplashImages[
-      Math.randomBetween(0, this.unsplashImages.length - 1)
-    ];
+    this.chosenImage = this.unsplashImages[Math.randomBetween(0, this.unsplashImages.length - 1)]
   },
-};
+}
 </script>
 
 <style>

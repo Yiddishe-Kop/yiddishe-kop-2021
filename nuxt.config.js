@@ -24,6 +24,13 @@ export default {
   */
   loading: { color: colors.amber[400] },
 
+  /**
+   * ENV vars
+   */
+  publicRuntimeConfig: {
+    contactFormSubmissionUrl: process.env.NODE_ENV == 'production' ? 'https://indesign.yiddishe-kop.com/api/contact' : 'http://indesign.test/api/contact'
+  },
+
   /*
   ** Global CSS
   */

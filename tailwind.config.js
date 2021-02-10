@@ -125,6 +125,7 @@ module.exports = {
     require('@tailwindcss/typography')({
       modifiers: [],
     }),
+    require('@tailwindcss/forms'),
     require('@tailwindcss/aspect-ratio'),
   ]
 }
