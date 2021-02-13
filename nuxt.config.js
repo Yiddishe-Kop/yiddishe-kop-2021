@@ -94,6 +94,23 @@ export default {
   axios: {
   },
 
+  /**
+   * PWA config
+   */
+  pwa: {
+    meta: {
+      name: 'Yiddishe Kop',
+      description: 'Cutting edge software development',
+      author: 'Yehuda Neufeld',
+    },
+    manifest: {
+      name: 'Yiddishe Kop',
+      short_name: 'Yiddishe Kop',
+      description: 'Cutting edge software development',
+      background_color: colors.amber[400],
+    }
+  },
+
   hooks: {
     'content:file:beforeInsert': (document) => {
       if (document.extension === '.md') {
