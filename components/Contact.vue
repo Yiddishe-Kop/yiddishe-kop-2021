@@ -221,11 +221,10 @@
 
 <script>
 import Loader from './Loader.vue'
-import Quote from './Quote.vue'
 
 export default {
   name: 'Contact',
-  components: { Quote, Loader },
+  components: { Loader },
   data() {
     return {
       form: {},

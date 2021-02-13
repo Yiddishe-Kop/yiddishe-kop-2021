@@ -17,9 +17,13 @@ Turns out that they don't. So how do they know that the number is invalid? They 
 
 From [Wikipedia](https://en.wikipedia.org/wiki/Luhn_algorithm):
 
-> The Luhn algorithm, named after its creator, IBM scientist Hans Peter Luhn (in 1954), is a simple checksum formula used to validate a variety of identification numbers, such as credit card numbers, IMEI numbers, National Provider Identifier numbers in the United States, Canadian Social Insurance Numbers, Israeli ID Numbers, South African ID Numbers, Greek Social Security Numbers (ΑΜΚΑ), and more.
+<quote>
 
-> It is not intended to be a cryptographically secure hash function; it was designed to protect against accidental errors, not malicious attacks. Most credit cards and many government identification numbers use the algorithm as a simple method of distinguishing valid numbers from mistyped or otherwise incorrect numbers.
+The Luhn algorithm, named after its creator, IBM scientist Hans Peter Luhn (in 1954), is a simple checksum formula used to validate a variety of identification numbers, such as credit card numbers, IMEI numbers, National Provider Identifier numbers in the United States, Canadian Social Insurance Numbers, Israeli ID Numbers, South African ID Numbers, Greek Social Security Numbers (ΑΜΚΑ), and more.
+
+It is not intended to be a cryptographically secure hash function; it was designed to protect against accidental errors, not malicious attacks. Most credit cards and many government identification numbers use the algorithm as a simple method of distinguishing valid numbers from mistyped or otherwise incorrect numbers.
+
+</quote>
 
 To put it simply - the last number of every credit card and ID number is computed from the previous numbers with some mathematical algorithm. So we can just test if the last number is the result of that algorithm, and if it doesn’t we know the number is invalid.
 

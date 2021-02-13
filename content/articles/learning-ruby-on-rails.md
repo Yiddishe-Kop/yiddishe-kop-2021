@@ -9,7 +9,11 @@ I discovered Laravel around a year ago, and it has opened up the possibilities f
 
 For some time now I've been wanting to get into Ruby on Rails, some great apps are built with Rails - take GitHub - which [Microsoft purchased for $7B](https://news.microsoft.com/announcement/microsoft-acquires-github/), and which I use every day, is built with Rails. Rails seems to have lots of similarities to Laravel - it's an MVC framework, but seems to have a shorter and more terse syntax. That's because it's written in **Ruby**, which is a very conversational and nearly punctuationless language.
 
-> Using Ruby, we are constantly amazed at how much code we can write in one sitting, code that works the first time. There are very few syntax errors, no type violations, and far fewer bugs than usual. This makes sense: there's less to get wrong. No bothersome semicolons to type mechanically at the end of each line. No troublesome type declarations to keep in sync (especially in separate files). No unnecessary words just to keep the compiler happy. No error-prone framework code. ([source](http://docs.ruby-doc.com/docs/ProgrammingRuby/))
+<quote>
+
+Using Ruby, we are constantly amazed at how much code we can write in one sitting, code that works the first time. There are very few syntax errors, no type violations, and far fewer bugs than usual. This makes sense: there's less to get wrong. No bothersome semicolons to type mechanically at the end of each line. No troublesome type declarations to keep in sync (especially in separate files). No unnecessary words just to keep the compiler happy. No error-prone framework code. ([source](http://docs.ruby-doc.com/docs/ProgrammingRuby/))
+
+</quote>
 
 I'll be building a simple lost'n'found app called **Matzati** ("I found" in Hebrew) to learn on.
 
