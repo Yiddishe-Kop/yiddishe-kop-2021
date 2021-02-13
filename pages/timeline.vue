@@ -1,12 +1,10 @@
 <template>
   <div>
-    <cover-image fixed unsplash />
+    <cover-image fixed />
 
     <div class="relative mt-24 text-center">
       <h1 class="text-4xl font-extrabold">Hey, I'm Yehuda</h1>
-      <h4 class="mt-4 text-xl">
-        I'm a designer and software developer, currently living in Jerusalem.
-      </h4>
+      <h4 class="mt-4 text-xl">I'm a designer and software developer, currently living in Jerusalem.</h4>
       <div class="flex justify-center mt-6 space-x-4">
         <nuxt-link to="/about" class="btn btn-lg">
           <octicon name="smiley" />
@@ -15,8 +13,7 @@
         <nuxt-link to="/articles" class="btn btn-lg btn-brand">
           <octicon name="book" />
           <span class="ml-2">Writing</span>
-        </nuxt-link
-        >
+        </nuxt-link>
       </div>
     </div>
 
@@ -35,10 +32,7 @@
             <template v-slot:header>
               <h4 class="font-bold">
                 That's it for now
-                <octicon
-                  name="light-bulb"
-                  class="ml-0.5 text-size text-brand"
-                />
+                <octicon name="light-bulb" class="ml-0.5 text-size text-brand" />
               </h4>
               <p class="text-xs text-gray-500">Work in progress...</p>
             </template>
@@ -52,20 +46,20 @@
 
 <script>
 export default {
-  name: "Timeline",
+  name: 'Timeline',
   head: {
-    title: "Timeline | Yiddishe Kop",
+    title: 'Timeline | Yiddishe Kop',
   },
   async asyncData({ $content }) {
-    const items = await $content("/", {
+    const items = await $content('/', {
       deep: true,
     })
-      .sortBy("createdAt", "desc")
-      .fetch();
+      .sortBy('createdAt', 'desc')
+      .fetch()
 
     return {
       items,
-    };
+    }
   },
-};
+}
 </script>

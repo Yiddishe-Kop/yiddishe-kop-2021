@@ -3,16 +3,10 @@
     class="flex items-stretch transition-shadow bg-white rounded-lg shadow dark:bg-gray-900 dark:bg-opacity-60 hover:shadow-xl bg-opacity-60 group"
   >
     <div class="w-32">
-      <nuxt-picture
-        placeholder
-        :src="`https://source.unsplash.com/${item.image}`"
-        class="rounded-l-lg"
-      />
+      <nuxt-picture placeholder :src="getImgSrc(item.image)" class="rounded-l-lg" />
     </div>
     <div class="flex-1 p-4 ml-4">
-      <h2
-        class="text-xl font-bold text-blue-900 transition-colors dark:text-gray-200 group-hover:text-brand"
-      >
+      <h2 class="text-xl font-bold text-blue-900 transition-colors dark:text-gray-200 group-hover:text-brand">
         {{ item.title }}
       </h2>
       <p class="mt-2 text-sm text-gray-800 dark:text-gray-400">
@@ -24,12 +18,15 @@
 </template>
 
 <script>
+import imgMixin from '~/mixins/img'
+
 export default {
-  name: "BlogItem",
+  name: 'BlogItem',
   props: {
     item: Object,
   },
-};
+  mixins: [imgMixin],
+}
 </script>
 
 <style>

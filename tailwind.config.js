@@ -105,6 +105,7 @@ module.exports = {
               backgroundColor: theme('colors.gray.700'),
             },
             pre: {
+              backgroundColor: '#101a2b !important',
               code: {
                 backgroundColor: 'transparent',
               }

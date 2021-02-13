@@ -1,6 +1,6 @@
 <template>
   <div>
-    <cover-image :image="article.image" unsplash />
+    <cover-image :image="article.image" />
 
     <div class="relative px-2 md:px-4">
       <nuxt-link
@@ -11,62 +11,69 @@
         <span class="">Articles</span>
       </nuxt-link>
 
-      <p class="mt-12 text-sm text-center text-gray-500">
+      <p class="mt-12 text-sm text-center text-gray-500 dark:text-gray-400">
         {{ article.createdAt | date }}
       </p>
       <h1
-        class="max-w-xl mx-auto mt-2 text-3xl font-extrabold text-center text-gray-900 sm:text-4xl lg:text-5xl dark:text-gray-200"
+        class="max-w-xl mx-auto mt-2 text-3xl font-extrabold text-center text-gray-900 sm:text-4xl lg:text-5xl dark:text-white"
       >
         {{ article.title }}
       </h1>
-      <p class="mt-4 text-sm font-bold text-center text-gray-500">
+      <p class="mt-4 text-sm font-bold text-center text-gray-500 dark:text-gray-400">
         <octicon name="book" />
         <span class="ml-1">{{ article.readingTime }}</span>
       </p>
 
-      <nuxt-content :document="article" class="my-16 prose dark:prose-dark" />
+      <div class="px-12 py-8 my-16 bg-gray-100 rounded-xl dark:bg-gray-800 bg-opacity-20 dark:bg-opacity-20 blur-bg">
+        <nuxt-content :document="article" class="prose dark:prose-dark" />
+      </div>
 
       <nav class="flex items-stretch justify-between space-x-3 text-sm font-semibold text-gray-500">
-        <nuxt-link v-if="prev" :to="prev.path" class="flex items-center justify-start flex-1 p-2 space-x-2 rounded bg-gray-50 dark:bg-gray-900 hover:bg-amber-100 hover:text-amber-800 dark:hover:text-amber-400">
+        <nuxt-link
+          v-if="prev"
+          :to="prev.path"
+          class="flex items-center justify-start flex-1 p-2 space-x-2 rounded bg-gray-50 dark:bg-gray-900 hover:bg-amber-100 hover:text-amber-800 dark:hover:text-amber-400"
+        >
           <icon name="arrow-circle-left" class="w-6" />
           <span>{{ prev.title }}</span>
         </nuxt-link>
-        <nuxt-link v-if="next" :to="next.path" class="flex items-center justify-end flex-1 p-2 space-x-2 text-right rounded bg-gray-50 dark:bg-gray-900 hover:bg-amber-100 hover:text-amber-800 dark:hover:text-amber-400">
+        <nuxt-link
+          v-if="next"
+          :to="next.path"
+          class="flex items-center justify-end flex-1 p-2 space-x-2 text-right rounded bg-gray-50 dark:bg-gray-900 hover:bg-amber-100 hover:text-amber-800 dark:hover:text-amber-400"
+        >
           <span>{{ next.title }}</span>
           <icon name="arrow-circle-left" class="w-6 transform rotate-180" />
         </nuxt-link>
       </nav>
-
     </div>
   </div>
 </template>
 
 <script>
-import { date } from "~/plugins/filters";
+import { date } from '~/plugins/filters'
 
 export default {
-  name: "ShowArticle",
+  name: 'ShowArticle',
   head() {
     return {
       title: this.article.title,
-    };
+    }
   },
   async asyncData({ $content, params }) {
+    const article = await $content(`articles/${params.slug}`).fetch()
 
-    const article = await $content(`articles/${params.slug}`)
-      .fetch();
-
-    const [next, prev] = await $content("articles")
-      .only(["title", "path"])
-      .sortBy("createdAt", "desc")
+    const [next, prev] = await $content('articles')
+      .only(['title', 'path'])
+      .sortBy('createdAt', 'desc')
       .surround(params.slug)
-      .fetch();
+      .fetch()
 
     return {
       article,
       prev,
-      next
-    };
+      next,
+    }
   },
   filters: {
     date,
@@ -76,8 +83,8 @@ export default {
       const start = list.getAttribute('start')
       list.style.counterIncrement = `list-counter ${start}`
     })
-  }
-};
+  },
+}
 </script>
 
 <style>

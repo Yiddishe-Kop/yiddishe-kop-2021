@@ -283,7 +283,6 @@ export default {
       .where({ slug: { $in: ['pr-denied-by-iranian-law', 'learning-ruby-on-rails', 'the-luhn-algorithm'] } })
       .limit(3)
       .fetch()
-    console.log(articles)
     return {
       articles,
     }

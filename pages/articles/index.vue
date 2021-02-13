@@ -1,6 +1,6 @@
 <template>
   <div>
-    <cover-image unsplash />
+    <cover-image />
 
     <div class="relative my-16 text-center">
       <h1 class="text-4xl font-extrabold">Overthought</h1>

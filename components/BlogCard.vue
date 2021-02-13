@@ -2,7 +2,7 @@
   <li
     class="relative flex flex-col overflow-hidden transition-shadow bg-white rounded-lg shadow dark:bg-gray-900 dark:bg-opacity-60 hover:shadow-xl bg-opacity-60 group"
   >
-    <nuxt-picture placeholder :src="`https://source.unsplash.com/${article.image}`" class="w-full h-52" />
+    <nuxt-picture placeholder :src="getImgSrc(article.image)" class="w-full h-52" />
     <div class="flex-1 p-4">
       <h2 class="text-xl font-bold text-blue-900 transition-colors dark:text-gray-200 group-hover:text-brand">
         {{ article.title }}
@@ -24,6 +24,7 @@
 </template>
 
 <script>
+import imgMixin from '~/mixins/img'
 import { timeAgo } from '~/plugins/filters'
 
 export default {
@@ -31,6 +32,7 @@ export default {
   props: {
     article: Object,
   },
+  mixins: [imgMixin],
   filters: {
     timeAgo,
   },
