@@ -77,7 +77,7 @@ Once you have a basic grasp over JS, you want to be able to build something you 
 Then there are frameworks which make building large applications much easier. There are a few popular ones today:
 
 - [React](https://reactjs.org/)
-- [Angular](https://angularjs.org/)
+- [Angular](https://angular.io/)
 - [Vue](https://vuejs.org/)
 - [Svelte](https://svelte.dev/)
 
@@ -115,7 +115,7 @@ Is short: start by learning a programming language properly. So this could be a 
 3. **CSS** (Layout, styling, animations).
 4. **Vue**.
 
-By now you should be able to get a job as a programmer.
+By now you should be able to get a job as a front-end developer.
 
 To become a fullstack developer add these:
 

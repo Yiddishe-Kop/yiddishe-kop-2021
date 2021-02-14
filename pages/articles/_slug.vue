@@ -24,7 +24,7 @@
         <span class="ml-1">{{ article.readingTime }}</span>
       </p>
 
-      <div class="px-12 py-8 my-16 bg-gray-100 rounded-xl dark:bg-gray-800 bg-opacity-20 dark:bg-opacity-20 blur-bg">
+      <div class="py-8 my-16 bg-gray-100 sm:px-12 rounded-xl dark:bg-gray-800 bg-opacity-20 dark:bg-opacity-20 blur-bg">
         <nuxt-content :document="article" class="prose dark:prose-dark" />
       </div>
 

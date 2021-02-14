@@ -22,6 +22,22 @@
   position: relative;
   box-sizing: border-box;
   margin: 0;
+  .sizer__responsive {
+    display: block;
+    box-sizing: border-box;
+  }
+  .placeholder {
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    filter: blur(10px);
+    transition-delay: 500ms;
+  }
   .img {
     position: absolute;
     top: 0;
@@ -43,21 +59,5 @@
     transition: opacity 500ms ease 0s;
     object-fit: cover;
     object-position: center center;
-  }
-  .placeholder {
-    position: absolute;
-    left: 0;
-    top: 0;
-    margin: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center center;
-    filter: blur(10px);
-    transition-delay: 500ms;
-  }
-  .sizer__responsive {
-    display: block;
-    box-sizing: border-box;
   }
 }
