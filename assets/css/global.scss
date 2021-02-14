@@ -1,0 +1,63 @@
+@layer components {
+  button,
+  a {
+    @apply rounded focus:outline-none focus:ring-2 ring-amber-400;
+  }
+
+  .btn {
+    @apply px-4 py-2 text-sm font-semibold text-gray-900 transition rounded shadow hover:shadow-md bg-gray-50 dark:bg-gray-900 dark:text-gray-200;
+    &.btn-lg {
+      @apply px-6 py-3;
+    }
+    &.btn-brand {
+      @apply bg-amber-400 text-amber-900 hover:bg-amber-300;
+    }
+  }
+}
+
+/* Bug Fix for NuxtImg */
+.wrapper__responsive {
+  display: block;
+  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
+  margin: 0;
+  .img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 0px;
+    height: 0px;
+    box-sizing: border-box;
+    border: none;
+    margin: auto;
+    inset: 0px;
+    display: block;
+    padding: 0;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 100%;
+    max-height: 100%;
+    transition: opacity 500ms ease 0s;
+    object-fit: cover;
+    object-position: center center;
+  }
+  .placeholder {
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    filter: blur(10px);
+    transition-delay: 500ms;
+  }
+  .sizer__responsive {
+    display: block;
+    box-sizing: border-box;
+  }
+}

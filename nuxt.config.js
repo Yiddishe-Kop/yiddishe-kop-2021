@@ -35,9 +35,9 @@ export default {
   ** Global CSS
   */
   css: [
-    '~/assets/css/fonts.css',
-    '~/assets/css/global.css',
-    '~/assets/css/transitions.css',
+    '~/assets/css/fonts.scss',
+    '~/assets/css/global.scss',
+    '~/assets/css/transitions.scss',
   ],
 
   /*
