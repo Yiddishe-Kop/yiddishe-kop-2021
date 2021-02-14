@@ -52,9 +52,13 @@
 
 <script>
 import { date } from '~/plugins/filters'
+// Try fix for css insertion at build
+import NuxtPicture from '@nuxt/image/dist/runtime/components/nuxt-picture'
+import NuxtImg from '@nuxt/image/dist/runtime/components/nuxt-img.vue'
 
 export default {
   name: 'ShowArticle',
+  props: { NuxtPicture, NuxtImg },
   head() {
     return {
       title: this.article.title,
