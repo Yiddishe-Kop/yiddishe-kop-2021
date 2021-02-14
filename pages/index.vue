@@ -280,7 +280,7 @@ export default {
   async asyncData({ $content }) {
     const articles = await $content('articles')
       .sortBy('createdAt', 'desc')
-      .where({ slug: { $in: ['pr-denied-by-iranian-law', 'learning-ruby-on-rails', 'the-luhn-algorithm'] } })
+      .where({ slug: { $in: ['pr-denied-by-iranian-law', 'teach-yourself-programming', 'the-luhn-algorithm'] } })
       .limit(3)
       .fetch()
     return {

@@ -1,6 +1,6 @@
 ---
 title: Teach Yourself Programming
-description: How to teach yourself software development
+description: If you enjoy problem-solving, challenges and learning new things - you should give coding a try!
 createdAt: 2021-02-13 23:15:00
 image: /img/framer-code.jpg
 ---
@@ -42,11 +42,11 @@ for (let i = 0; i < 101; i++) {
 }
 ```
 
-Here we're creating a **loop**, from `1` till `101`, and running a command `console.log(i)` **100** times. This will output all numbers from `1` till `100`, as `i` will hold the number of the current iteration of the loop.
+Here we're creating a **loop**, from `1` till `101`, and running a command `console.log(i)` **100** times. This will output all numbers from `1` till `100`, as `i` will hold the number of the current iteration of the loop. If you tried changing the `101` to a higher number - you are the adventurous type 🤓 ...
 
 ### Getting the price of Bitcoin
 
-How about getting the current price of Bitcoin. We can do that with the following line of code:
+Where is the price of Bitcoin up to? We can do that with a single line of code:
 
 ```js
 await (await fetch('https://blockchain.info/ticker')).json()
@@ -97,9 +97,9 @@ You can use literally any programming language for backend development, but ther
  - Ruby
  - C#
 
-Each one has their own framework(s) (which is an openly maintained library that makes building applications easier, faster & more secure). I use PHP and a fantastic framework called [Laravel](https://laravel.com/).
+Each one has their own framework(s) (which is an openly maintained library that makes building applications easier, faster & more secure). I use PHP and a fantastic framework called [Laravel](https://laravel.com/). Their [docs](https://laravel.com/docs/master) are a fantastic place to start learning it.
 
-Knowing how to design a database schema, and how to query the database with `SQL` helps a lot.
+Knowing how to design a database schema, and how to query the database with `SQL` helps a lot. [w3schools](https://www.w3schools.com/sql/) has this covered as well.
 
 ### Getting Stuck
 
