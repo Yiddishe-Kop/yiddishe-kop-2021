@@ -12,18 +12,14 @@
       ></div>
     </transition>
     <div :style="style" class="relative w-full h-full transition-image-in-out">
-      <img
-        :src="$lightbox.lowResSrc"
-        class="absolute inset-0 object-contain w-full h-full m-auto rounded-md"
-      />
-      <img
-        :src="$lightbox.imageSrc"
-        class="absolute inset-0 object-contain w-full h-full m-auto rounded-md"
-      />
+      <img :src="$lightbox.lowResSrc" class="absolute inset-0 object-contain w-full h-full m-auto rounded-md" />
+      <img :src="$lightbox.imageSrc" class="absolute inset-0 object-contain w-full h-full m-auto rounded-md" />
     </div>
     <div class="absolute left-0 right-0 flex justify-center bottom-12">
-      <div class="px-3 py-2 text-gray-500 bg-gray-200 rounded-full shadow-xl">
-        <octicon name="x-circle-fill" large />
+      <div
+        class="flex items-center py-2 pl-2 pr-3 text-red-400 bg-white border-2 border-red-400 rounded-full shadow-xl"
+      >
+        <octicon name="x-circle-fill" large class="w-6 mr-1 text-red-500" />
         <span class="ml-1 text-sm">Click anywhere to close</span>
       </div>
     </div>
@@ -32,7 +28,7 @@
 
 <script>
 export default {
-  name: "Lightbox",
+  name: 'Lightbox',
   data() {
     return {
       animationStates: {
@@ -41,11 +37,11 @@ export default {
       },
       animationState: 0,
       style: null,
-    };
+    }
   },
   methods: {
     close() {
-      const { top, left, width, height } = this.$lightbox.originalPosition;
+      const { top, left, width, height } = this.$lightbox.originalPosition
       this.style = `
         position: fixed;
         top: ${top}px;
@@ -54,18 +50,18 @@ export default {
         height: ${height}px;
         object-fit: contain;
         padding: 0px;
-      `;
+      `
       setTimeout(() => {
-        this.$lightbox.open = false;
+        this.$lightbox.open = false
         this.style = `
           object-fit: cover;
-        `;
-        document.body.classList.remove("stop-scrolling");
-      }, 300);
+        `
+        document.body.classList.remove('stop-scrolling')
+      }, 300)
     },
     setOpenStyle() {
-      const documentWidth = document.body.offsetWidth;
-      const windowHeight = window.innerHeight;
+      const documentWidth = document.body.offsetWidth
+      const windowHeight = window.innerHeight
       this.style = `
           position: fixed;
           top: 100px;
@@ -74,13 +70,13 @@ export default {
           height: ${windowHeight - 150}px;
           object-fit: contain;
           padding: 0px;
-        `;
+        `
     },
   },
   watch: {
-    "$lightbox.open": function (isOpen) {
-      if (!isOpen) return;
-      const { top, left, width, height } = this.$lightbox.originalPosition;
+    '$lightbox.open': function (isOpen) {
+      if (!isOpen) return
+      const { top, left, width, height } = this.$lightbox.originalPosition
       this.style = `
         position: fixed;
         top: ${top}px;
@@ -89,14 +85,14 @@ export default {
         height: ${height}px;
         object-fit: cover;
         padding: 0px;
-      `;
+      `
       setTimeout(() => {
-        this.setOpenStyle();
-        document.body.classList.add("stop-scrolling");
-      }, 10);
+        this.setOpenStyle()
+        document.body.classList.add('stop-scrolling')
+      }, 10)
     },
   },
-};
+}
 </script>
 
 <style>

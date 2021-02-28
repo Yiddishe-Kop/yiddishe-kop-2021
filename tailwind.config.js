@@ -33,7 +33,7 @@ module.exports = {
     fontFamily: {
       sans: ['Inter var', ...defaultTheme.fontFamily.sans],
       mono: ['Cascadia', ...defaultTheme.fontFamily.mono],
-      siddur: ['siddur', ...defaultTheme.fontFamily.sans],
+      siddur: ['siddur', 'Inter var', ...defaultTheme.fontFamily.sans],
     },
     extend: {
       borderRadius: {
