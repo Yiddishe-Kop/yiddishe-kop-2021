@@ -12,7 +12,7 @@
   },
   "devDependencies": {
     "@nuxt/content": "^1.13.1",
-    "@nuxt/image": "^0.3.0",
+    "@nuxt/image": "^0.4.1",
     "@nuxtjs/axios": "^5.12.3",
     "@nuxtjs/google-analytics": "^2.4.0",
     "@nuxtjs/pwa": "^3.3.2",

@@ -17,7 +17,7 @@
         :key="img"
         :class="{ 'row-span-2': i == 0 }"
         :src="img"
-        class="rounded-md shadow"
+        class="rounded rounded-lg shadow"
       />
     </div>
   </div>

@@ -12,8 +12,12 @@
       ></div>
     </transition>
     <div :style="style" class="relative w-full h-full transition-image-in-out">
-      <img :src="$lightbox.lowResSrc" class="absolute inset-0 object-contain w-full h-full m-auto rounded-md" />
-      <img :src="$lightbox.imageSrc" class="absolute inset-0 object-contain w-full h-full m-auto rounded-md" />
+      <!-- <img :src="$lightbox.lowResSrc" class="absolute inset-0 object-contain w-full h-full m-auto rounded-md" /> -->
+      <nuxt-img
+        :src="$lightbox.imageSrc"
+        sizes="sm:95vw md:75vw lg:1200px"
+        class="absolute inset-0 object-contain max-h-full m-auto rounded-md"
+      />
     </div>
     <div class="absolute left-0 right-0 flex justify-center bottom-12">
       <div
