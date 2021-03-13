@@ -31,3 +31,9 @@ picture {
     @apply shadow-md;
   }
 }
+
+.prose {
+  p > img {
+    @apply rounded-md;
+  }
+}
