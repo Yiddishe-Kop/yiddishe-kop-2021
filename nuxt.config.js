@@ -64,9 +64,14 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
-    '@nuxt/content',
     '@nuxt/image',
+    '@nuxt/content',
+    '@nuxtjs/feed',
   ],
+
+  image: {
+    sizes: [320, 420, 768, 1024, 1200],
+  },
 
   content: {
     liveEdit: false,
@@ -84,9 +89,47 @@ export default {
     }
   },
 
-  image: {
-    sizes: [320, 420, 768, 1024, 1200],
-  },
+  feed: [
+    {
+      path: '/feed.xml',
+      async create(feed) {
+
+        const hostname = process.NODE_ENV === 'production' ? 'https://yiddishe-kop.com' : 'http://localhost:3000';
+
+        feed.options = {
+          title: "Yiddishe-Kop tech blog",
+          description: "Deep dives into programming topics",
+          link: `${hostname}/feed.xml`
+        };
+
+        const { $content } = require('@nuxt/content');
+
+        const posts = await $content('articles')
+          .sortBy('createdAt', 'desc')
+          .fetch();
+
+        posts.forEach((post) => {
+          const url = `${hostname}/articles/${post.slug}`;
+          feed.addItem({
+            title: post.title,
+            id: url,
+            link: url,
+            date: new Date(post.createdAt),
+            description: post.description,
+            content: post.bodyPlainText.slice(0, 50),
+          });
+        });
+
+        feed.addContributor({
+          name: 'Yehuda Neufeld',
+          email: 'dont@email.me',
+          link: 'https://yiddishe-kop.com/'
+        })
+
+      }, cacheTime: 1000 * 60 * 15,
+      type: 'rss2',
+    },
+  ],
 
   googleAnalytics: {
     id: 'UA-143315552-2',
@@ -121,6 +164,7 @@ export default {
       if (document.extension === '.md') {
         const { text } = require('reading-time')(document.text)
         document.readingTime = text
+        document.bodyPlainText = document.text
       }
     }
   },

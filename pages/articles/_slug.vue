@@ -69,6 +69,7 @@ export default {
       .surround(params.slug)
       .fetch()
 
+    console.log(article)
     return {
       article,
       prev,
