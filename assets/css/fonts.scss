@@ -1,7 +1,9 @@
 @font-face {
   font-family: "Cascadia";
-  src: url("/fonts/Cascadia.ttf");
+  src: url("/fonts/CascadiaCode.woff2") format("woff2");
+  font-style: normal;
   font-display: swap;
+  font-weight: 100 900;
 }
 
 @font-face {
