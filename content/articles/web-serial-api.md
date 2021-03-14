@@ -1,5 +1,5 @@
 ---
-title: The Web Serai API
+title: The Web Serial API
 description: Communicating with hardware devices using the Web Serial API
 createdAt: 2021-03-13 21:30:00
 image: yh0UtueiZ-I
