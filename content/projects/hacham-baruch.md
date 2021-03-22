@@ -1,7 +1,10 @@
 ---
 title: Hacham Baruch
 description: Hacham Baruch Memorial Foundation
-url: https://hachambaruch.com/
+theme: '#1F2938'
+color: '#f7fafc'
+link: https://hachambaruch.com/
+logo: /logos/halpern.svg
 image: https://hachambaruch.com/img/preview.png
 startedAt: 2020-10-22
 completedAt: 2021-01-10

@@ -1,7 +1,10 @@
 ---
 title: jKaraoke
 description: Sing along with your favourite Jewish music
-url: https://jkaraoke.com/
+theme: '#D8DF25'
+color: '#44337A'
+link: https://jkaraoke.com/
+logo: /logos/jkaraoke.svg
 image: https://jkaraoke.com/img/preview.jpg
 startedAt: 2020-06-08
 completedAt: 2020-10-01

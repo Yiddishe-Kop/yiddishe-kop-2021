@@ -1,28 +1,36 @@
 <template>
-  <div>
-    <cover-image />
-
+  <div class="pt-12">
     <div class="relative my-16 text-center">
       <h1 class="text-4xl font-extrabold">Projects</h1>
       <h4 class="mt-4 text-xl">A list of recent projects I've been working on</h4>
     </div>
 
-    <ul class="relative space-y-3">
-      <li
-        v-for="project in projects"
+    <div>
+      <section
+        v-for="(project, i) in projects"
         :key="project.path"
-        class="relative p-4 transition-shadow bg-white rounded-lg shadow dark:bg-gray-800 dark:bg-opacity-60 hover:shadow-xl bg-opacity-60 group"
+        class="relative p-4 group"
+        :class="i % 2 == 0 ? 'bg-gray-800 text-gray-100' : 'text-gray-800 bg-gray-100'"
       >
-        <h2 class="text-xl font-bold text-blue-900 transition-colors dark:text-gray-200 group-hover:text-brand">
-          {{ project.title }}
-        </h2>
-        <p class="mt-2 text-sm text-gray-800 dark:text-gray-400">{{ project.description }}</p>
-        <p class="mt-3">
-          <badge color="gray">{{ project.createdAt | date }}</badge>
-        </p>
-        <nuxt-link :to="project.path" class="absolute inset-0 rounded-lg" />
-      </li>
-    </ul>
+        <container>
+          <img class="block h-16" :src="project.logo" :alt="project.title" />
+          <p class="mt-12 text-sm">{{ project.description }}</p>
+          <div class="mt-4">
+            <a
+              :href="project.link"
+              target="_blank"
+              :class="i % 2 == 0 ? 'bg-gray-200  text-gray-800' : 'bg-gray-800 text-gray-100'"
+              class="relative z-10 inline-flex items-center px-4 py-1 space-x-1 text-sm font-semibold rounded-full"
+            >
+              <span>Open</span>
+              <octicon name="arrow-right" class="w-4" />
+            </a>
+          </div>
+          <p class="mt-4 text-sm opacity-75">Started: {{ project.createdAt | date }}</p>
+          <nuxt-link :to="project.path" class="absolute inset-0 z-0 rounded-lg" />
+        </container>
+      </section>
+    </div>
   </div>
 </template>
 
@@ -34,6 +42,7 @@ export default {
   head: {
     title: 'Writings',
   },
+  layout: 'landing',
   async asyncData({ $content }) {
     const projects = await $content('projects').sortBy('createdAt', 'desc').fetch()
     return {
