@@ -1,5 +1,27 @@
 [
   {
+    title: 'Israel',
+    description: 'קבר שמואל הנביא',
+    images: [
+      '/img/israel-1.jpg',
+      '/img/israel-2.jpg',
+      '/img/israel-3.jpg',
+    ],
+    horizontal: true,
+    createdAt: '2021-04-16 22:00',
+    slug: 'israel'
+  },
+  {
+    title: 'London',
+    description: 'Visiting London as a foreigner!',
+    images: [
+      '/img/london-1.jpg',
+      '/img/london-2.jpg',
+    ],
+    createdAt: '2021-04-01 22:00',
+    slug: 'london'
+  },
+  {
     title: 'Purim',
     description: 'והשתיה כדת אין אונס',
     images: [

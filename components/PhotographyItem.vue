@@ -15,10 +15,13 @@
       <lightbox-image
         v-for="(img, i) in item.images"
         :key="img"
-        :class="{ 'row-span-2': i == 0 }"
+        :class="{ [horizontal ? 'col-span-2' : 'row-span-2']: i == 0 }"
         :src="img"
         class="rounded rounded-lg shadow"
       />
+    </div>
+    <div v-else-if="item.images && item.images.length == 2" class="grid gap-3 mt-3">
+      <lightbox-image v-for="(img, i) in item.images" :key="img" :src="img" class="h-56 rounded rounded-lg shadow" />
     </div>
   </div>
 </template>
@@ -28,6 +31,10 @@ export default {
   name: 'PhotographyItem',
   props: {
     item: Object,
+    horizontal: {
+      type: Boolean,
+      default: false,
+    },
   },
 }
 </script>

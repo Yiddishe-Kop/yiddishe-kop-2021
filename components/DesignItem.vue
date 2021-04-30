@@ -6,7 +6,7 @@
     <p class="mt-2 text-sm text-gray-800 dark:text-gray-400">
       {{ design.description }}
     </p>
-    <ul v-if="design.images" class="mt-3 space-y-3">
+    <ul v-if="design.images" class="grid gap-3 mt-3">
       <li v-for="img in design.images" :key="img.href">
         <lightbox-image
           :src="img.href"

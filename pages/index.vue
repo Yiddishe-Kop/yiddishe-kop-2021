@@ -41,8 +41,8 @@
           Trusted by great businesses
         </p>
         <div class="flex flex-wrap items-center justify-center mt-6 md:justify-between">
-          <a href="https://halpern.yiddishe-kop.com/" target="_blank" class="p-6 b-w">
-            <img class="h-12" src="/logos/halpern.svg" alt="Halpern Insurance" />
+          <a href="https://5dakkot.com/" target="_blank" class="p-6 b-w">
+            <img class="h-12" src="/logos/5dakkot.svg" alt="5Dakkot" />
           </a>
 
           <a href="https://fonts.beitalef.com/" target="_blank" class="p-6 b-w">
@@ -52,9 +52,11 @@
           <a href="https://jkaraoke.com/" target="_blank" class="p-6 b-w">
             <img class="h-12" src="/logos/jkaraoke.svg" alt="jKaraoke" />
           </a>
-          <a href="https://5dakkot.com/" target="_blank" class="p-6 b-w">
-            <img class="h-12" src="/logos/5dakkot.svg" alt="5Dakkot" />
+
+          <a href="https://hachambaruch.com/" target="_blank" class="p-2 b-w">
+            <img class="h-20" src="/logos/hachambaruch.png" alt="Hacham Baruch Memorial Foundation" />
           </a>
+
           <a href="https://silverspoonil.com/" target="_blank" class="p-6 b-w">
             <img class="h-12" src="/logos/silverspoon.svg" alt="Silverspoon" />
           </a>

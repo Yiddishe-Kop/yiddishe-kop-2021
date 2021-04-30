@@ -23,7 +23,7 @@
           <feature-item v-if="item.type == 'feature'" :feature="item" />
           <open-source-item v-else-if="item.type == 'open-source'" :item="item" />
           <design-item v-else-if="item.path == '/designs'" :design="item" />
-          <photography-item v-else-if="item.dir == '/photography'" :item="item" />
+          <photography-item v-else-if="item.dir == '/photography'" :item="item" :horizontal="item.horizontal" />
           <project-item v-else-if="item.dir == '/projects'" :item="item" />
           <blog-item v-else-if="item.dir == '/articles'" :item="item" class="wow" />
         </slot>
