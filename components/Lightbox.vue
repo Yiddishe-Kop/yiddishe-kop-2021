@@ -14,6 +14,12 @@
     <div :style="style" class="relative w-full h-full transition-image-in-out">
       <!-- <img :src="$lightbox.lowResSrc" class="absolute inset-0 object-contain w-full h-full m-auto rounded-md" /> -->
       <nuxt-img
+        :src="$lightbox.lowResSrc"
+        sizes="sm:95vw md:75vw lg:1200px"
+        class="absolute inset-0 object-contain max-h-full m-auto rounded-md"
+      />
+      <!-- Show high-res version above low-res version -->
+      <nuxt-img
         :src="$lightbox.imageSrc"
         sizes="sm:95vw md:75vw lg:1200px"
         class="absolute inset-0 object-contain max-h-full m-auto rounded-md"
@@ -35,11 +41,6 @@ export default {
   name: 'Lightbox',
   data() {
     return {
-      animationStates: {
-        NOT_STARTED: 0,
-        FINISHED: 3,
-      },
-      animationState: 0,
       style: null,
     }
   },
