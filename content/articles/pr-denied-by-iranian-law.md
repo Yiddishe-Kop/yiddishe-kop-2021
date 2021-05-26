@@ -1,5 +1,5 @@
 ---
-title: My PR was denied by Iranian Law 😥
+title: My PR was denied by Iranian Law
 description: My surprise when my pull-request was denied by Iranian law
 createdAt: 2020-09-03
 image: P_Ne56WEe5s
@@ -49,4 +49,4 @@ Another interesting development - [Behdad Esfahbod](https://github.com/behdad), 
 
 I'll probably just have to continue working on my fork of the repo for my own needs, but without being able to collaborate together, it is a loss for the open source community.
 
-Let's hope that the Iranian people will be freed from their ayatollahs, and be able to collaborate with whoever they want.
+We all hope that the Iranian people will be freed from their ayatollahs, and be able to collaborate with whoever they want.
