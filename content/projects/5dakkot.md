@@ -5,7 +5,7 @@ theme: '#E3163B'
 color: '#97C01E'
 link: https://5dakkot.com/
 logo: /logos/5dakkot.svg
-image: https://5dakkot.com/img/hero.jpg
+image: https://5dakot.com/img/hero.jpg
 startedAt: 2020-12-17
 completedAt: 2021-02-02
 createdAt: 2020-12-17
