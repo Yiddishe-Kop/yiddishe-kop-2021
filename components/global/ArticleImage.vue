@@ -1,6 +1,6 @@
 <template>
   <figure>
-    <nuxt-picture placeholder :src="src" class="article-img" />
+    <lightbox-image :src="src" class="h-56 rounded-lg shadow" />
     <figcaption v-if="caption" class="text-center">{{ caption }}</figcaption>
   </figure>
 </template>
