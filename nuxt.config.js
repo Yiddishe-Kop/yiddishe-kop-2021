@@ -28,7 +28,7 @@ export default {
    * ENV vars
    */
   publicRuntimeConfig: {
-    contactFormSubmissionUrl: process.env.NODE_ENV == 'production' ? 'https://indesign.yiddishe-kop.com/api/contact' : 'http://indesign.test/api/contact'
+    contactFormSubmissionUrl: process.env.NODE_ENV == 'production' ? 'https://portal.yiddishe-kop.com/api/contact' : 'http://yk-portal.test/api/contact'
   },
 
   /*

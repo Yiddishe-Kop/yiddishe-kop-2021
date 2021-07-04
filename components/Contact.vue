@@ -122,7 +122,7 @@
                 ></textarea>
               </div>
             </div>
-            <fieldset class="sm:col-span-2">
+            <!-- <fieldset class="sm:col-span-2">
               <legend class="block text-sm font-medium text-gray-700 dark:text-gray-200">Expected budget</legend>
               <div class="grid grid-cols-1 mt-4 gap-y-4">
                 <div class="flex items-center">
@@ -179,7 +179,7 @@
                   </label>
                 </div>
               </div>
-            </fieldset>
+            </fieldset> -->
             <div class="sm:col-span-2">
               <div class="flex justify-between">
                 <label
@@ -207,7 +207,7 @@
             <div v-else class="text-right sm:col-span-2">
               <button
                 type="submit"
-                class="inline-flex justify-center px-4 py-2 text-sm font-medium text-white rounded-md shadow-sm dark:text-gray-900 bg-brand hover:bg-amber-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-500"
+                class="inline-flex justify-center px-4 py-2 text-sm font-medium text-white rounded-md shadow-sm  dark:text-gray-900 bg-brand hover:bg-amber-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-500"
               >
                 Submit
               </button>
@@ -235,13 +235,7 @@ export default {
   },
   methods: {
     async submit() {
-      if (
-        !this.form.first_name ||
-        !this.form.last_name ||
-        !this.form.email ||
-        !this.form.message ||
-        !this.form.budget
-      ) {
+      if (!this.form.first_name || !this.form.last_name || !this.form.email || !this.form.message) {
         this.error = 'Please fill out the required fields'
         return
       }

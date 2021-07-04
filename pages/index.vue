@@ -45,7 +45,7 @@
             <img class="h-12" src="/logos/5dakkot.svg" alt="5Dakkot" />
           </a>
 
-          <a href="https://fonts.beitalef.com/" target="_blank" class="p-6 b-w">
+          <a href="https://beitalef.com/" target="_blank" class="p-6 b-w">
             <img class="h-12" src="/logos/beitalef.svg" alt="Beit Alef" />
           </a>
 
@@ -76,7 +76,7 @@
             <div>
               <div>
                 <span
-                  class="flex items-center justify-center w-12 h-12 rounded-md bg-gradient-to-r from-amber-300 to-amber-500"
+                  class="flex items-center justify-center w-12 h-12 rounded-md  bg-gradient-to-r from-amber-300 to-amber-500"
                 >
                   <icon name="dashboard" class="text-white dark:text-gray-900 w-7" />
                 </span>
@@ -92,7 +92,7 @@
                 <div class="mt-6">
                   <a
                     href="#"
-                    class="inline-flex px-4 py-2 text-base font-medium text-white rounded-md shadow-sm dark:text-gray-900 bg-gradient-to-r from-amber-300 to-amber-500 hover:from-amber-400 hover:to-amber-600"
+                    class="inline-flex px-4 py-2 text-base font-medium text-white rounded-md shadow-sm  dark:text-gray-900 bg-gradient-to-r from-amber-300 to-amber-500 hover:from-amber-400 hover:to-amber-600"
                   >
                     View more
                   </a>
@@ -125,7 +125,7 @@
               <nuxt-img
                 src="/img/5dakkot-admin.jpg"
                 placeholder
-                class="w-full shadow-xl rounded-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:left-0 lg:h-full lg:w-auto lg:max-w-none"
+                class="w-full shadow-xl  rounded-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:left-0 lg:h-full lg:w-auto lg:max-w-none"
               />
             </div>
           </div>
@@ -137,7 +137,7 @@
             <div>
               <div>
                 <span
-                  class="flex items-center justify-center w-12 h-12 rounded-md bg-gradient-to-r from-amber-300 to-amber-500"
+                  class="flex items-center justify-center w-12 h-12 rounded-md  bg-gradient-to-r from-amber-300 to-amber-500"
                 >
                   <icon name="color-swatch" class="text-white dark:text-gray-900 w-7" />
                 </span>
@@ -153,7 +153,7 @@
                 <div class="mt-6">
                   <a
                     href="#"
-                    class="inline-flex px-4 py-2 text-base font-medium text-white rounded-md shadow-sm dark:text-gray-900 bg-gradient-to-r from-amber-300 to-amber-500 hover:from-amber-700 hover:to-amber-700"
+                    class="inline-flex px-4 py-2 text-base font-medium text-white rounded-md shadow-sm  dark:text-gray-900 bg-gradient-to-r from-amber-300 to-amber-500 hover:from-amber-700 hover:to-amber-700"
                   >
                     Read more
                   </a>
@@ -164,7 +164,7 @@
           <div class="mt-12 sm:mt-16 lg:mt-0 lg:col-start-1">
             <div class="pr-4 -ml-48 sm:pr-6 md:-ml-16 lg:px-0 lg:m-0 lg:relative lg:h-full">
               <img
-                class="w-full shadow-xl rounded-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:right-0 lg:h-full lg:w-auto lg:max-w-none"
+                class="w-full shadow-xl  rounded-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:right-0 lg:h-full lg:w-auto lg:max-w-none"
                 src="/img/beit-alef-gallery.jpg"
                 alt="Customer profile user interface"
               />
@@ -178,7 +178,7 @@
             <div class="py-12">
               <div>
                 <span
-                  class="flex items-center justify-center w-12 h-12 rounded-md bg-gradient-to-r from-amber-300 to-amber-500"
+                  class="flex items-center justify-center w-12 h-12 rounded-md  bg-gradient-to-r from-amber-300 to-amber-500"
                 >
                   <icon name="terminal" class="text-white dark:text-gray-900 w-7" />
                 </span>
@@ -195,7 +195,7 @@
                 <div class="mt-6">
                   <a
                     href="#"
-                    class="inline-flex px-4 py-2 text-base font-medium text-white rounded-md shadow-sm dark:text-gray-900 bg-gradient-to-r from-amber-300 to-amber-500 hover:from-amber-400 hover:to-amber-600"
+                    class="inline-flex px-4 py-2 text-base font-medium text-white rounded-md shadow-sm  dark:text-gray-900 bg-gradient-to-r from-amber-300 to-amber-500 hover:from-amber-400 hover:to-amber-600"
                   >
                     Read more
                   </a>
@@ -208,7 +208,7 @@
               <nuxt-img
                 src="/img/code.jpg"
                 placeholder
-                class="w-full shadow-xl rounded-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:left-0 lg:h-full lg:w-auto lg:max-w-none"
+                class="w-full shadow-xl  rounded-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:left-0 lg:h-full lg:w-auto lg:max-w-none"
               />
             </div>
           </div>
@@ -243,7 +243,7 @@
       </div>
     </div>
 
-    <!-- Blos Posts -->
+    <!-- Blog Posts -->
     <div class="relative px-4 pt-16 pb-32 mx-auto max-w-7xl sm:px-6 lg:px-8">
       <div class="text-center">
         <h2 class="text-3xl font-extrabold tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl">
@@ -259,7 +259,7 @@
           v-for="article in articles"
           :key="article.path"
           :article="article"
-          class="relative flex flex-col overflow-hidden transition-shadow bg-white rounded-lg shadow dark:bg-gray-900 dark:bg-opacity-60 hover:shadow-xl bg-opacity-60 group"
+          class="relative flex flex-col overflow-hidden transition-shadow bg-white rounded-lg shadow  dark:bg-gray-900 dark:bg-opacity-60 hover:shadow-xl bg-opacity-60 group"
         />
       </transition-group>
     </div>

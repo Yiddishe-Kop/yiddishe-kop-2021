@@ -2,7 +2,7 @@
 title: jKaraoke
 description: Sing along with your favourite Jewish music
 theme: '#D8DF25'
-color: '#44337A'
+color: '#553C9A'
 link: https://jkaraoke.com/
 logo: /logos/jkaraoke.svg
 image: https://jkaraoke.com/img/preview.jpg

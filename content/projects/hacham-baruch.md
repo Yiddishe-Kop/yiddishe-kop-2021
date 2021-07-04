@@ -4,7 +4,7 @@ description: Hacham Baruch Memorial Foundation
 theme: '#1F2938'
 color: '#f7fafc'
 link: https://hachambaruch.com/
-logo: /logos/halpern.svg
+logo: /logos/hachambaruch.png
 image: https://hachambaruch.com/img/preview.png
 startedAt: 2020-10-22
 completedAt: 2021-01-10

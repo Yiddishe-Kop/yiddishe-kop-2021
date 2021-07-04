@@ -1,8 +1,8 @@
 ---
-title: 5 Dakkot
+title: 5 Dakot
 description: Offering Israelis a delightful online shopping experience
 theme: '#E3163B'
-color: '#97C01E'
+color: '#fff'
 link: https://5dakkot.com/
 logo: /logos/5dakkot.svg
 image: https://5dakot.com/img/hero.jpg

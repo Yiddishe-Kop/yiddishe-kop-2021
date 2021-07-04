@@ -1,8 +1,8 @@
 ---
 title: TaShma
 description: Learning resources
-theme: '#E3163B'
-color: '#97C01E'
+theme: '#f59e0b'
+color: '#0f172a'
 link: https://tashma.jewishoffice.co.il/
 logo: /logos/tashma.svg
 image: '/img/gemara.jpg'
