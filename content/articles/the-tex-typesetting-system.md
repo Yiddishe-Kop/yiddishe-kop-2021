@@ -29,16 +29,17 @@ Hello World!
 This will output a page with "Hello world" in the top left. Commands start with a backslash. `\documentclass{...}` defines the formatting for the document. In this case we want the formatting called "article". `\begin{document}` tells LaTeX that from here starts the content [kinda like `<body>` in HTML], and that everything up until here was the 'preamble' [like `<head>` in HTML]. Then comes a line of actual content to write on the page. Then the self explanatory `\end{document}`.
 
 ### Output to PDF
-To generate a PDF, you run the following command:
+To generate a PDF, run the following command:
 
 ```bash
 latex hello.tex
 ```
 
-This will generate a `hello.dvi` file [DVI = Device Independant]. Next you can generate a PDF with this command:
+This will generate a `hello.dvi` file [DVI = Device Independant]. Now a PDF can be generated with this command:
 
 ```bash
 dvipdf hello.dvi hello.pdf
 ```
 
-To be continued...
+### Hebrew Typesetting
+Everything seemed amazing, until I tried to typeset Hebrew. Looks like Tex doesn't support RTL & Hebrew out of the box. Googling for solutions didn't bring up any usable results, at least for me. So if you have any knowledge how to get Tex to behave nicely with Hebrew typesetting, please reach out!

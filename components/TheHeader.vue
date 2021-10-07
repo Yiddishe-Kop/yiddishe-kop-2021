@@ -1,10 +1,8 @@
 <template>
   <div
-    class="fixed top-0 z-50 w-screen px-4 bg-white bg-opacity-50 dark:bg-opacity-50 dark:text-white dark:bg-gray-900 blur-bg"
+    class="fixed top-0 z-50 w-screen px-4 bg-white bg-opacity-50  dark:bg-opacity-50 dark:text-white dark:bg-gray-900 blur-bg"
   >
-    <header
-      class="flex items-center justify-between max-w-screen-lg py-2 mx-auto"
-    >
+    <header class="flex items-center justify-between max-w-screen-lg py-2 mx-auto">
       <nuxt-link to="/" class="mr-8 focus:ring-0">
         <logo class="h-11" />
       </nuxt-link>
@@ -15,7 +13,7 @@
           :key="item.to"
           :to="item.to"
           exact-active-class="active-nav-item"
-          class="px-8 py-4 text-sm font-bold transition rounded-md hover:bg-opacity-50 blur-bg hover:bg-amber-100 dark:hover:bg-amber-900"
+          class="px-8 py-4 text-sm font-bold transition rounded-md  hover:bg-opacity-50 blur-bg hover:bg-amber-100 dark:hover:bg-amber-900"
         >
           {{ item.label }}
         </nuxt-link>
@@ -31,6 +29,10 @@
           <icon :name="darkMode ? 'sun' : 'moon'" class="w-6" />
         </button>
 
+        <a href="https://portal.yiddishe-kop.com/dashboard" class="p-1 rounded-full">
+          <icon name="dashboard" class="w-6" />
+        </a>
+
         <div class="sm:hidden">
           <button @click="open = !open" class="px-1.5 py-1">
             <octicon :name="open ? 'x' : 'three-bars'" />
@@ -45,7 +47,7 @@
         :to="item.to"
         @click.native="open = false"
         exact-active-class="active-nav-item"
-        class="px-8 py-4 text-sm font-bold transition rounded-md hover:bg-opacity-50 blur-bg hover:bg-amber-100 dark:hover:bg-gray-900"
+        class="px-8 py-4 text-sm font-bold transition rounded-md  hover:bg-opacity-50 blur-bg hover:bg-amber-100 dark:hover:bg-gray-900"
       >
         {{ item.label }}
       </nuxt-link>
@@ -55,40 +57,40 @@
 
 <script>
 export default {
-  name: "TheHeader",
+  name: 'TheHeader',
   data: () => ({
     open: false,
     navItems: [
       {
-        label: "Home",
-        to: "/",
+        label: 'Home',
+        to: '/',
       },
       {
-        label: "Timeline",
-        to: "/timeline",
+        label: 'Timeline',
+        to: '/timeline',
       },
       {
-        label: "Writing",
-        to: "/articles",
+        label: 'Writing',
+        to: '/articles',
       },
       {
-        label: "Projects",
-        to: "/projects",
+        label: 'Projects',
+        to: '/projects',
       },
       {
-        label: "About",
-        to: "/about",
+        label: 'About',
+        to: '/about',
       },
     ],
     darkMode: false,
   }),
   watch: {
     darkMode(isDark) {
-      localStorage.theme = isDark ? "dark" : "light";
+      localStorage.theme = isDark ? 'dark' : 'light'
       if (isDark) {
-        document.querySelector("html").classList.add("dark");
+        document.querySelector('html').classList.add('dark')
       } else {
-        document.querySelector("html").classList.remove("dark");
+        document.querySelector('html').classList.remove('dark')
       }
       // Whenever the user explicitly chooses to respect the OS preference
       // localStorage.removeItem('theme')
@@ -96,14 +98,13 @@ export default {
   },
   mounted() {
     if (
-      localStorage.theme === "dark" ||
-      (!("theme" in localStorage) &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches)
+      localStorage.theme === 'dark' ||
+      (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
     ) {
-      this.darkMode = true;
+      this.darkMode = true
     }
   },
-};
+}
 </script>
 
 <style>
