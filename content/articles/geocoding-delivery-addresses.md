@@ -10,6 +10,7 @@ In one of the projects I'm working on ([5Dakot](https://5dakot.com)), I was buil
 ```yaml
 Order:
   attributes:
+    # ...
     address_id
   relations:
     address
@@ -20,6 +21,7 @@ Address:
     address,
     address_2,
     floor,
+    # ...
     apt,
     town_id
   relations:
@@ -33,26 +35,26 @@ Town:
     areas # array of areas in this town
 ```
 
-This worked quite well.
-
-The admin would define the `Town`s they want to offer delivery, and users could save multiple addresses.
+The admin could add the `Town`s they want to offer delivery to, and users could save multiple addresses.
 
 When saving an address, the user would have to select a `Town` & `area` from a dropdown that was dynamically populated from the available towns & areas.
 
 ### Shortcomings
 
-The user could still enter an address outside the supported towns, and we just had to rely on the user to understand that we don't deliver outside the listed towns.
+This worked quite well. But the user could still enter an address outside the supported towns, and we just had to rely on the user to understand that we don't deliver outside the listed towns.
 
 ### Additional Requirements
 
 Sales were booming 🚀🚀🚀.
 
-Grouping deliveries by `Town` was not sufficient anymore. They wanted to be able to split a `Town` into **Delivery Areas**, then be able to send out separate deliveries by the area.
+Grouping deliveries by `Town` was not sufficient anymore. They wanted to be able to split a `Town` into **Delivery Areas**, then be able to set separate delivery slots for each area.
 
 I knew I had 2 options how to build this:
 
-1. Getting a list of all streets in Israel, assigning each to an area, then in the `Address` form require the user to select from this list of streets. But this would be very tedious... and what do we do if we want to split a long street into multiple areas?
-2. Let the admin draw areas on a map, and then automatically attach `Address`es to their corresponding area based on their location. This would be way better!
+1. Getting a list of all streets in Israel, maually assigning each to an area, then in the `Address` form require the user to select from this list of streets. But this would be very tedious... and what do we do if we want to split a long street into multiple areas?
+2. Let the admin literally draw areas on a map, and then automatically attach `Address`es to their corresponding area based on their location. This would be way better!
+
+But this seemed way too complicated... Where do I even start?
 
 Luckily this turned out to be easier than it seemed!
 
