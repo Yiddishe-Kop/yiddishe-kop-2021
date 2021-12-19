@@ -1,6 +1,6 @@
 <template>
   <figure>
-    <lightbox-image :src="src" class="h-56 rounded-lg shadow" />
+    <lightbox-image :src="src" class="h-56 rounded-lg shadow article-img" />
     <figcaption v-if="caption" class="text-center">{{ caption }}</figcaption>
   </figure>
 </template>
