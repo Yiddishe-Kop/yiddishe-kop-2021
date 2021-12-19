@@ -287,9 +287,9 @@ class UpdateAddressRequest extends FormRequest
 
 Note how we automatically set the `area_id` by finding the Area that contains this Address. If we don't find an Area that contains this address, we return a descriptive validation error message to the user - 'Sorry, we don't deliver to this area yet.' 👌
 
-### Extras
+We can now have multiple Areas in a Town, Addresses automatically get attached to their Area, and we can have delivery slots per area.
 
-We can now multiple Areas in a Town, Addresses automatically get attached to their Area, and we can have delivery slots per area.
+### Extras
 
 I also created an Artisan Command to add coordinates to all existing Addresses (~1700 addresses!) by using the [Google Places Geocoding API](https://developers.google.com/maps/documentation/places/web-service/search-find-place):
 
@@ -297,8 +297,8 @@ I also created an Artisan Command to add coordinates to all existing Addresses (
  // get lng lat for address
 public function geocode()
 {
-  $result = Http::timeout(3)->get("https://maps.googleapis.com/maps/api/place/findplacefromtext/json?", [
-    'fields' => 'geometry',
+  $result = Http::timeout(3)->get("https://maps.googleapis.com/maps/api/place/findplacefromtext/json", [
+        'fields' => 'geometry',
         'input' => $this->address,
         'inputtype' => 'textquery',
         'key' => config('services.google.api_key'),
@@ -307,7 +307,7 @@ public function geocode()
 }
 ```
 
-Another thing I need to handle is when the admin updates an Areas bounds `polygon`, all addresses `area_id` need to be updated.
+Another thing I need to handle is when the admin updates an Area bounds `polygon`, all addresses `area_id` need to be updated.
 
 ## Conclusion
 
