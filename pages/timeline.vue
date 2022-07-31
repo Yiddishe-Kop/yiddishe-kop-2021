@@ -49,5 +49,4 @@
 
 <script setup>
 const { data: items } = await useAsyncData('timeline', () => queryContent('/').sort({ createdAt: -1 }).find())
-console.log({ items })
 </script>

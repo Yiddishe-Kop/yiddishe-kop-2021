@@ -5,7 +5,6 @@ createdAt: 2021-02-13 23:15:00
 image: /img/framer-code.jpg
 ---
 
-
 **Tim Cook** (CEO of Apple) famously said:
 
 <quote>
@@ -21,8 +20,13 @@ Follow these steps for the fastest way to write your first line of code. It will
 1. Right-click on this webpage.
 2. Select **Inspect** (or **Inspect Element**).
 3. The **DevTools** opens up.
-4. Find and open the **Console**. <nuxt-img src="/img/console.png" class="rounded-md"></nuxt-img>
-5. Type `1 + 1`, then hit `Enter`. <nuxt-img src="/img/console2.png" class="rounded-md"></nuxt-img>
+4. Find and open the **Console**.
+
+:article-image{src="/img/console.png"}
+
+1. Type `1 + 1`, then hit `Enter`.
+
+:article-image{src="/img/console2.png"}
 
 Congratulations! You've just written your first line of code. 🎉
 
@@ -87,15 +91,15 @@ You can stop here, and be a great frontend developer. But you might want to cont
 
 #### Backend
 
- Today you can do more and more just on the frontend (the JAMstack), but most large applications need a backend. That's where you have the database and secure parts of the application.
+Today you can do more and more just on the frontend (the JAMstack), but most large applications need a backend. That's where you have the database and secure parts of the application.
 
 You can use literally any programming language for backend development, but there are a few popular ones:
 
- - PHP
- - Python
- - Javascript
- - Ruby
- - C#
+- PHP
+- Python
+- Javascript
+- Ruby
+- C#
 
 Each one has their own framework(s) (which is an openly maintained library that makes building applications easier, faster & more secure). I use PHP and a fantastic framework called [Laravel](https://laravel.com/). Their [docs](https://laravel.com/docs/master) are a fantastic place to start learning it.
 
@@ -110,6 +114,7 @@ Whenever you get stuck, [StackOverflow](https://stackoverflow.com/) will be ther
 Learning to code is not easy. It takes lots of effort. The hardest stage will be going from not knowing any programming to grasping what programming is and how it works. It takes some time untill things will start to click in your head, but once it does, things will be much easier. The main thing: don't give up. It's worth it!
 
 Is short: start by learning a programming language properly. So this could be a good path:
+
 1. **Javascript** (The language, OOP, Browser APIs).
 2. **HTML**.
 3. **CSS** (Layout, styling, animations).
