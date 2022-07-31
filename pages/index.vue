@@ -86,12 +86,12 @@
                   keeps up with your fast pace.
                 </p>
                 <div class="mt-6">
-                  <a
-                    href="#"
-                    class="inline-flex px-4 py-2 text-base font-medium text-white rounded-md shadow-sm dark:text-gray-900 bg-gradient-to-r from-amber-300 to-amber-500 hover:from-amber-400 hover:to-amber-600"
+                  <NuxtLink
+                    to="/projects"
+                    class="inline-flex px-6 py-1 text-base font-medium text-white transition-transform rounded-full shadow-sm dark:text-gray-900 bg-gradient-to-r from-amber-300 to-amber-500 hover:scale-105"
                   >
                     View more
-                  </a>
+                  </NuxtLink>
                 </div>
               </div>
             </div>
@@ -147,12 +147,12 @@
                   modern and clean look, that stays delightful over passage of time & makes your users come back.
                 </p>
                 <div class="mt-6">
-                  <a
-                    href="#"
+                  <NuxtLink
+                    to="/timeline"
                     class="inline-flex px-6 py-1 text-base font-medium text-white transition-transform rounded-full shadow-sm dark:text-gray-900 bg-gradient-to-r from-amber-300 to-amber-500 hover:scale-105"
                   >
                     Read more
-                  </a>
+                  </NuxtLink>
                 </div>
               </div>
             </div>
@@ -189,12 +189,12 @@
                   applications, we can setup a separate staging environment for testing before deployment to production.
                 </p>
                 <div class="mt-6">
-                  <a
-                    href="#"
-                    class="inline-flex px-4 py-2 text-base font-medium text-white rounded-md shadow-sm dark:text-gray-900 bg-gradient-to-r from-amber-300 to-amber-500 hover:from-amber-400 hover:to-amber-600"
+                  <NuxtLink
+                    to="/articles"
+                    class="inline-flex px-6 py-1 text-base font-medium text-white transition-transform rounded-full shadow-sm dark:text-gray-900 bg-gradient-to-r from-amber-300 to-amber-500 hover:scale-105"
                   >
                     Read more
-                  </a>
+                  </NuxtLink>
                 </div>
               </div>
             </div>
@@ -274,15 +274,13 @@ export default {
   name: 'Home',
   components: { Contact, BlogCard },
   async setup() {
-    const { data: articles } = await useAsyncData('home', () =>
-      queryContent('articles')
-        .sort({ createdAt: -1 })
-        .where({
-          title: { $in: ['My PR was denied by Iranian Law', 'Teach Yourself Programming', 'The Luhn Algorithm'] },
-        })
-        .limit(3)
-        .find()
-    )
+    const articles = await queryContent('articles')
+      .sort({ createdAt: -1 })
+      .where({
+        title: { $in: ['My PR was denied by Iranian Law', 'Teach Yourself Programming', 'The Luhn Algorithm'] },
+      })
+      .limit(3)
+      .find()
 
     return { articles }
   },

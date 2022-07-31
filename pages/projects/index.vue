@@ -36,21 +36,10 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import { date } from '~/lib/filters'
 
 definePageMeta({ layout: 'landing' })
 
-export default {
-  name: 'ProjectsIndex',
-  async setup() {
-    const { data: projects } = await useAsyncData('projects', () =>
-      queryContent('/projects').sort({ createdAt: -1 }).find()
-    )
-    return { projects }
-  },
-  methods: {
-    date,
-  },
-}
+const projects = await queryContent('/projects').sort({ createdAt: -1 }).find()
 </script>

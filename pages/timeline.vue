@@ -48,5 +48,5 @@
 </template>
 
 <script setup>
-const { data: items } = await useAsyncData('timeline', () => queryContent('/').sort({ createdAt: -1 }).find())
+const items = await queryContent('/').sort({ createdAt: -1 }).find()
 </script>

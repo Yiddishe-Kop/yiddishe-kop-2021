@@ -21,22 +21,8 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import BlogCard from '~/components/BlogCard.vue'
 
-export default {
-  name: 'Articles',
-  components: {
-    BlogCard,
-  },
-  async setup() {
-    const { data: articles } = await useAsyncData('articles', () =>
-      queryContent('articles').sort({ createdAt: -1 }).find()
-    )
-
-    return {
-      articles,
-    }
-  },
-}
+const articles = await queryContent('articles').sort({ createdAt: -1 }).find()
 </script>
