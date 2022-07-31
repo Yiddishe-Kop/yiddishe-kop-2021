@@ -1,5 +1,8 @@
 <template>
   <div>
+    <Head>
+      <Title>Writings | Yiddishe Kop</Title>
+    </Head>
     <cover-image />
 
     <div class="relative my-16 text-center">
@@ -7,19 +10,13 @@
       <h4 class="mt-4 text-xl">Thinking out loud about design, development, and building excellent software</h4>
     </div>
 
-    <ul class="my-24">
-      <transition-group
-        name="slideIn"
-        appear
-        class="relative grid grid-cols-1 gap-4 lg:gap-6 sm:grid-cols-2 md:grid-cols-3"
-      >
-        <blog-card
-          v-for="article in articles"
-          :key="article.path"
-          :article="article"
-          class="relative flex flex-col overflow-hidden transition-shadow bg-white rounded-lg shadow dark:bg-gray-900 dark:bg-opacity-60 hover:shadow-xl bg-opacity-60 group"
-        />
-      </transition-group>
+    <ul class="relative grid grid-cols-1 gap-4 my-24 lg:gap-6 sm:grid-cols-2 md:grid-cols-3">
+      <blog-card
+        v-for="article in articles"
+        :key="article._path"
+        :article="article"
+        class="relative flex flex-col overflow-hidden transition-shadow bg-white rounded-lg shadow dark:bg-gray-900 dark:bg-opacity-60 hover:shadow-xl bg-opacity-60 group"
+      />
     </ul>
   </div>
 </template>
@@ -28,19 +25,18 @@
 import BlogCard from '~/components/BlogCard.vue'
 
 export default {
-  components: { BlogCard },
-  name: 'ArticlesIndex',
-  head: {
-    title: 'Writings',
+  name: 'Articles',
+  components: {
+    BlogCard,
   },
-  async asyncData({ $content }) {
-    const articles = await $content('articles').sortBy('createdAt', 'desc').fetch()
+  async setup() {
+    const { data: articles } = await useAsyncData('articles', () =>
+      queryContent('articles').sort({ createdAt: -1 }).find()
+    )
+
     return {
       articles,
     }
   },
 }
 </script>
-
-<style>
-</style>

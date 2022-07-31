@@ -1,5 +1,8 @@
 <template>
   <div>
+    <Head>
+      <Title>Timeline | Yiddishe Kop</Title>
+    </Head>
     <cover-image fixed />
 
     <div class="relative mt-24 text-center">
@@ -20,7 +23,7 @@
     <section class="relative mt-32">
       <transition name="slideIn" appear>
         <ul class="max-w-2xl mx-auto">
-          <timeline-item v-for="item in items" :key="item.path" :item="item" />
+          <timeline-item v-for="item in items" :key="item._path" :item="item" />
           <timeline-item
             :item="{}"
             icon-colors="bg-purple-100 dark:bg-purple-800 text-purple-700 dark:text-purple-100"
@@ -44,22 +47,6 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'Timeline',
-  head: {
-    title: 'Timeline | Yiddishe Kop',
-  },
-  async asyncData({ $content }) {
-    const items = await $content('/', {
-      deep: true,
-    })
-      .sortBy('createdAt', 'desc')
-      .fetch()
-
-    return {
-      items,
-    }
-  },
-}
+<script setup>
+const { data: items } = await useAsyncData('timeline', () => queryContent('/').sort({ createdAt: -1 }).find())
 </script>

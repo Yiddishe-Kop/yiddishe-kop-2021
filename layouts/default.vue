@@ -4,7 +4,7 @@
 
     <div class="flex-1 w-full max-w-full px-3 pt-2 pb-6 mx-auto sm:max-w-screen-lg">
       <main>
-        <nuxt />
+        <slot />
       </main>
     </div>
     <the-footer />

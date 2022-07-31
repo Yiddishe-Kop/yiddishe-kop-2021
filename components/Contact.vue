@@ -207,7 +207,7 @@
             <div v-else class="text-right sm:col-span-2">
               <button
                 type="submit"
-                class="inline-flex justify-center px-4 py-2 text-sm font-medium text-white rounded-md shadow-sm  dark:text-gray-900 bg-brand hover:bg-amber-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-500"
+                class="inline-flex justify-center px-4 py-2 text-sm font-medium text-white rounded-md shadow-sm dark:text-gray-900 bg-brand hover:bg-amber-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-500"
               >
                 Submit
               </button>
@@ -241,7 +241,10 @@ export default {
       }
       this.loading = true
       const URL = this.$config.contactFormSubmissionUrl
-      const { data } = await this.$axios.post(URL, this.form)
+      const data = await $fetch(URL, {
+        method: 'POST',
+        body: this.form,
+      })
       if (data == 'success') {
         this.loading = false
         this.error = ''

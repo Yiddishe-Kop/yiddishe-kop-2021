@@ -1,26 +1,26 @@
 <template>
   <div
-    v-if="$lightbox.open"
+    v-if="lightbox.open"
     @click="close"
     class="fixed inset-0 flex items-center justify-center"
     style="cursor: zoom-out"
   >
     <transition name="overlay">
       <div
-        v-if="$lightbox.open"
+        v-if="lightbox.open"
         class="fixed inset-0 bg-gray-200 dark:bg-gray-800 bg-opacity-80 dark:bg-opacity-80"
       ></div>
     </transition>
     <div :style="style" class="relative w-full h-full transition-image-in-out">
-      <!-- <img :src="$lightbox.lowResSrc" class="absolute inset-0 object-contain w-full h-full m-auto rounded-md" /> -->
+      <!-- <img :src="lightbox.lowResSrc" class="absolute inset-0 object-contain w-full h-full m-auto rounded-md" /> -->
       <nuxt-img
-        :src="$lightbox.lowResSrc"
+        :src="lightbox.lowResSrc"
         sizes="sm:95vw md:75vw lg:1200px"
         class="absolute inset-0 object-contain max-h-full m-auto rounded-md"
       />
       <!-- Show high-res version above low-res version -->
       <nuxt-img
-        :src="$lightbox.imageSrc"
+        :src="lightbox.imageSrc"
         sizes="sm:95vw md:75vw lg:1200px"
         class="absolute inset-0 object-contain max-h-full m-auto rounded-md"
       />
@@ -39,6 +39,13 @@
 <script>
 export default {
   name: 'Lightbox',
+  setup() {
+    const lightbox = useLightbox()
+
+    return {
+      lightbox,
+    }
+  },
   data() {
     return {
       style: null,
@@ -46,7 +53,7 @@ export default {
   },
   methods: {
     close() {
-      const { top, left, width, height } = this.$lightbox.originalPosition
+      const { top, left, width, height } = this.lightbox.originalPosition
       this.style = `
         position: fixed;
         top: ${top}px;
@@ -57,7 +64,7 @@ export default {
         padding: 0px;
       `
       setTimeout(() => {
-        this.$lightbox.open = false
+        this.lightbox.open = false
         this.style = `
           object-fit: cover;
         `
@@ -79,9 +86,9 @@ export default {
     },
   },
   watch: {
-    '$lightbox.open': function (isOpen) {
+    'lightbox.open': function (isOpen) {
       if (!isOpen) return
-      const { top, left, width, height } = this.$lightbox.originalPosition
+      const { top, left, width, height } = this.lightbox.originalPosition
       this.style = `
         position: fixed;
         top: ${top}px;

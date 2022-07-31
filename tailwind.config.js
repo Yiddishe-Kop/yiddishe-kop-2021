@@ -2,26 +2,23 @@ const colors = require('tailwindcss/colors')
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
-  purge: {
-    enabled: process.env.NODE_ENV === 'production',
-    layers: ['utilities'],
-    content: [
-      'components/**/*.vue',
-      'layouts/**/*.vue',
-      'pages/**/*.vue',
-      'plugins/**/*.js',
-      'content/**/*.md',
-      'content/**/*.json',
-      'nuxt.config.js',
-    ]
-  },
+  content: [
+    'components/**/*.vue',
+    'layouts/**/*.vue',
+    'pages/**/*.vue',
+    'plugins/**/*.js',
+    'content/**/*.md',
+    'content/**/*.json',
+  ],
+
   darkMode: 'class',
+
   theme: {
     colors: {
       black: colors.black,
       white: colors.white,
       brand: colors.amber[400],
-      gray: colors.blueGray,
+      gray: colors.slate,
       amber: colors.amber,
       lime: colors.lime,
       green: colors.emerald,
@@ -58,7 +55,7 @@ module.exports = {
               backgroundColor: theme('colors.gray.800'),
             },
             'pre code': {
-              fontFamily: 'Cascadia'
+              fontFamily: 'Cascadia',
             },
             code: {
               fontFamily: 'Cascadia',
@@ -68,12 +65,12 @@ module.exports = {
               backgroundColor: theme('colors.gray.200'),
             },
             'code::before': {
-              content: ''
+              content: '',
             },
             'code::after': {
-              content: ''
+              content: '',
             },
-          }
+          },
         },
         dark: {
           css: {
@@ -111,19 +108,12 @@ module.exports = {
               backgroundColor: '#101a2b !important',
               code: {
                 backgroundColor: 'transparent',
-              }
-            }
+              },
+            },
           },
         },
-      })
-    }
-  },
-  variants: {
-    extend: {
-      backgroundOpacity: ['dark'],
-      typography: ["responsive", "dark"],
-      translate: ["hover", "group-hover"]
-    }
+      }),
+    },
   },
   plugins: [
     require('@tailwindcss/typography')({
@@ -131,5 +121,5 @@ module.exports = {
     }),
     require('@tailwindcss/forms'),
     require('@tailwindcss/aspect-ratio'),
-  ]
+  ],
 }
