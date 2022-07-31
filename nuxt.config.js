@@ -1,123 +1,80 @@
-const colors = require('tailwindcss/colors')
-const shiki = require('shiki')
+import colors from 'tailwindcss/colors'
+import { defineNuxtConfig } from 'nuxt'
 
-export default {
-  components: true,
-  target: 'static',
-
+export default defineNuxtConfig({
   /*
-  ** Headers of the page
-  */
-  head: {
+   ** Headers of the page
+   */
+  meta: {
     title: process.env.npm_package_name || '',
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-    ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+    meta: [{ charset: 'utf-8' }, { name: 'viewport', content: 'width=device-width, initial-scale=1' }],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
 
   /*
-  ** Customize the progress-bar color
-  */
+   ** Customize the progress-bar color
+   */
   loading: { color: colors.amber[400] },
 
   /**
    * ENV vars
    */
   publicRuntimeConfig: {
-    contactFormSubmissionUrl: process.env.NODE_ENV == 'production' ? 'https://portal.yiddishe-kop.com/api/contact' : 'http://yk-portal.test/api/contact'
+    contactFormSubmissionUrl:
+      process.env.NODE_ENV == 'production'
+        ? 'https://portal.yiddishe-kop.com/api/contact'
+        : 'http://yk-portal.test/api/contact',
   },
 
   /*
-  ** Global CSS
-  */
-  css: [
-    '~/assets/css/fonts.scss',
-    '~/assets/css/global.scss',
-    '~/assets/css/transitions.scss',
-  ],
+   ** Global CSS
+   */
+  css: ['~/assets/css/fonts.scss', '~/assets/css/global.scss', '~/assets/css/transitions.scss'],
 
   /*
-  ** Plugins to load before mounting the App
-  */
-  plugins: [
-    '~/plugins/lib.js',
-    '~/plugins/lightbox.js',
-  ],
-
-  /*
-  ** Nuxt.js dev-modules
-  */
-  buildModules: [
-    // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
-    '@nuxtjs/tailwindcss',
-    '@nuxtjs/google-analytics',
-  ],
-
-  /*
-  ** Nuxt.js modules
-  */
+   ** Nuxt.js modules
+   */
   modules: [
-    // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios',
     '@nuxtjs/pwa',
-    '@nuxt/image',
+    '@nuxt/image-edge',
     '@nuxt/content',
     '@nuxtjs/feed',
+    // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
+    '@nuxtjs/tailwindcss',
   ],
 
   image: {
     provider: 'auto',
     sizes: [320, 420, 768, 1024, 1200],
-    domains: [
-      'source.unsplash.com',
-      'images.unsplash.com',
-      'jkaraoke.com',
-      '5dakot.com',
-      'hachambaruch.com',
-    ],
+    domains: ['source.unsplash.com', 'images.unsplash.com', 'jkaraoke.com', '5dakot.com', 'hachambaruch.com'],
   },
 
   content: {
     liveEdit: false,
-    markdown: {
-      async highlighter() {
-        const theme = await shiki.loadTheme('./assets/OneDark-Pro.json')
-        const highlighter = await shiki.getHighlighter({
-          // Complete themes: https://github.com/shikijs/shiki/tree/master/packages/themes
-          theme,
-        })
-        return (rawCode, lang) => {
-          return highlighter.codeToHtml(rawCode, lang)
-        }
-      }
-    }
+    highlight: {
+      theme: 'one-dark-pro',
+      preload: ['js', 'php', 'html', 'vue', 'batch', 'css', 'json', 'ruby'],
+    },
   },
 
   feed: [
     {
       path: '/feed.xml',
       async create(feed) {
-
-        const hostname = process.NODE_ENV === 'production' ? 'https://yiddishe-kop.com' : 'http://localhost:3000';
+        const hostname = process.NODE_ENV === 'production' ? 'https://yiddishe-kop.com' : 'http://localhost:3000'
 
         feed.options = {
-          title: "Yiddishe-Kop tech blog",
-          description: "Deep dives into programming topics",
-          link: `${hostname}/feed.xml`
-        };
+          title: 'Yiddishe-Kop tech blog',
+          description: 'Deep dives into programming topics',
+          link: `${hostname}/feed.xml`,
+        }
 
-        const { $content } = require('@nuxt/content');
+        const { $content } = require('@nuxt/content')
 
-        const posts = await $content('articles')
-          .sortBy('createdAt', 'desc')
-          .fetch();
+        const posts = await $content('articles').sort({ createdAt: -1 }).sort({ createdAt: -1 }).fetch()
 
-        posts.forEach((post) => {
-          const url = `${hostname}/articles/${post.slug}`;
+        posts.forEach(post => {
+          const url = `${hostname}/articles/${post.slug}`
           feed.addItem({
             title: post.title,
             id: url,
@@ -125,29 +82,22 @@ export default {
             date: new Date(post.createdAt),
             description: post.description,
             content: post.bodyPlainText.slice(0, 50),
-          });
-        });
+          })
+        })
 
         feed.addContributor({
           name: 'Yehuda Neufeld',
           email: 'dont@email.me',
-          link: 'https://yiddishe-kop.com/'
+          link: 'https://yiddishe-kop.com/',
         })
-
-      }, cacheTime: 1000 * 60 * 15,
+      },
+      cacheTime: 1000 * 60 * 15,
       type: 'rss2',
     },
   ],
 
   googleAnalytics: {
     id: 'UA-143315552-2',
-  },
-
-  /*
-  ** Axios module configuration
-  ** See https://axios.nuxtjs.org/options
-  */
-  axios: {
   },
 
   /**
@@ -164,27 +114,15 @@ export default {
       short_name: 'Yiddishe Kop',
       description: 'Cutting edge software development',
       background_color: colors.amber[400],
-    }
+    },
   },
 
-  hooks: {
-    'content:file:beforeInsert': (document) => {
-      if (document.extension === '.md') {
-        const { text } = require('reading-time')(document.text)
-        document.readingTime = text
-        document.bodyPlainText = document.text
-      }
-    }
+  nitro: {
+    plugins: ['~/server/plugins/content.ts'],
   },
 
   /*
-  ** Build configuration
-  */
-  build: {
-    /*
-    ** You can extend webpack config here
-    */
-    extend(config, ctx) {
-    }
-  }
-}
+   ** Build configuration
+   */
+  build: {},
+})

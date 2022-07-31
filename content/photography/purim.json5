@@ -1,0 +1,7 @@
+{
+  title: 'Purim',
+  description: 'והשתיה כדת אין אונס',
+  images: ['/img/purim-1.jpg', '/img/purim-3.jpg', '/img/purim-2.jpg'],
+  createdAt: '2021-02-28 22:00',
+  slug: 'purim',
+}

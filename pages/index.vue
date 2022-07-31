@@ -1,5 +1,8 @@
 <template>
   <div class="pt-32 bg-white dark:bg-gray-700">
+    <Head>
+      <Title>Home | Yiddishe Kop</Title>
+    </Head>
     <!-- Hero section -->
     <div class="relative">
       <div class="absolute inset-x-0 bottom-0 bg-gray-100 dark:bg-gray-900 h-1/2"></div>
@@ -24,13 +27,6 @@
             </p>
           </div>
         </div>
-        <!-- <div class="relative flex justify-center -mt-52">
-          <img
-            class="object-contain w-3/4 h-full"
-            src="/img/vscode.png"
-            alt="Code open in a code editor"
-          />
-        </div> -->
       </div>
     </div>
 
@@ -57,8 +53,8 @@
             <img class="h-20" src="/logos/hachambaruch.png" alt="Hacham Baruch Memorial Foundation" />
           </a>
 
-          <a href="https://silverspoonil.com/" target="_blank" class="p-6 b-w">
-            <img class="h-12" src="/logos/silverspoon.svg" alt="Silverspoon" />
+          <a href="https://hybiz.co.il/" target="_blank" class="p-6 b-w">
+            <img class="h-12" src="/logos/hybiz.svg" alt="Hybiz" />
           </a>
         </div>
       </div>
@@ -76,9 +72,9 @@
             <div>
               <div>
                 <span
-                  class="flex items-center justify-center w-12 h-12 rounded-md  bg-gradient-to-r from-amber-300 to-amber-500"
+                  class="flex items-center justify-center w-12 h-12 bg-gray-100 rounded-full dark:bg-gray-900 ring-brand ring-2"
                 >
-                  <icon name="dashboard" class="text-white dark:text-gray-900 w-7" />
+                  <icon name="dashboard" class="text-amber-600 dark:text-amber-400 w-7" />
                 </span>
               </div>
               <div class="mt-6">
@@ -92,7 +88,7 @@
                 <div class="mt-6">
                   <a
                     href="#"
-                    class="inline-flex px-4 py-2 text-base font-medium text-white rounded-md shadow-sm  dark:text-gray-900 bg-gradient-to-r from-amber-300 to-amber-500 hover:from-amber-400 hover:to-amber-600"
+                    class="inline-flex px-4 py-2 text-base font-medium text-white rounded-md shadow-sm dark:text-gray-900 bg-gradient-to-r from-amber-300 to-amber-500 hover:from-amber-400 hover:to-amber-600"
                   >
                     View more
                   </a>
@@ -125,7 +121,7 @@
               <nuxt-img
                 src="/img/5dakkot-admin.jpg"
                 placeholder
-                class="w-full shadow-xl  rounded-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:left-0 lg:h-full lg:w-auto lg:max-w-none"
+                class="w-full shadow-xl rounded-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:left-0 lg:h-full lg:w-auto lg:max-w-none"
               />
             </div>
           </div>
@@ -137,9 +133,9 @@
             <div>
               <div>
                 <span
-                  class="flex items-center justify-center w-12 h-12 rounded-md  bg-gradient-to-r from-amber-300 to-amber-500"
+                  class="flex items-center justify-center w-12 h-12 bg-gray-100 rounded-full dark:bg-gray-900 ring-brand ring-2"
                 >
-                  <icon name="color-swatch" class="text-white dark:text-gray-900 w-7" />
+                  <icon name="color-swatch" class="text-amber-600 dark:text-amber-400 w-7" />
                 </span>
               </div>
               <div class="mt-6">
@@ -153,7 +149,7 @@
                 <div class="mt-6">
                   <a
                     href="#"
-                    class="inline-flex px-4 py-2 text-base font-medium text-white rounded-md shadow-sm  dark:text-gray-900 bg-gradient-to-r from-amber-300 to-amber-500 hover:from-amber-700 hover:to-amber-700"
+                    class="inline-flex px-6 py-1 text-base font-medium text-white transition-transform rounded-full shadow-sm dark:text-gray-900 bg-gradient-to-r from-amber-300 to-amber-500 hover:scale-105"
                   >
                     Read more
                   </a>
@@ -164,7 +160,7 @@
           <div class="mt-12 sm:mt-16 lg:mt-0 lg:col-start-1">
             <div class="pr-4 -ml-48 sm:pr-6 md:-ml-16 lg:px-0 lg:m-0 lg:relative lg:h-full">
               <img
-                class="w-full shadow-xl  rounded-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:right-0 lg:h-full lg:w-auto lg:max-w-none"
+                class="w-full shadow-xl rounded-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:right-0 lg:h-full lg:w-auto lg:max-w-none"
                 src="/img/beit-alef-gallery.jpg"
                 alt="Customer profile user interface"
               />
@@ -178,9 +174,9 @@
             <div class="py-12">
               <div>
                 <span
-                  class="flex items-center justify-center w-12 h-12 rounded-md  bg-gradient-to-r from-amber-300 to-amber-500"
+                  class="flex items-center justify-center w-12 h-12 bg-gray-100 rounded-full dark:bg-gray-900 ring-brand ring-2"
                 >
-                  <icon name="terminal" class="text-white dark:text-gray-900 w-7" />
+                  <icon name="terminal" class="text-amber-600 dark:text-amber-400 w-7" />
                 </span>
               </div>
               <div class="mt-6">
@@ -195,7 +191,7 @@
                 <div class="mt-6">
                   <a
                     href="#"
-                    class="inline-flex px-4 py-2 text-base font-medium text-white rounded-md shadow-sm  dark:text-gray-900 bg-gradient-to-r from-amber-300 to-amber-500 hover:from-amber-400 hover:to-amber-600"
+                    class="inline-flex px-4 py-2 text-base font-medium text-white rounded-md shadow-sm dark:text-gray-900 bg-gradient-to-r from-amber-300 to-amber-500 hover:from-amber-400 hover:to-amber-600"
                   >
                     Read more
                   </a>
@@ -208,7 +204,7 @@
               <nuxt-img
                 src="/img/code.jpg"
                 placeholder
-                class="w-full shadow-xl  rounded-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:left-0 lg:h-full lg:w-auto lg:max-w-none"
+                class="w-full shadow-xl rounded-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:left-0 lg:h-full lg:w-auto lg:max-w-none"
               />
             </div>
           </div>
@@ -224,7 +220,7 @@
       ></div>
       <div class="relative px-4 py-16 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <p class="text-sm font-semibold tracking-wide text-center text-gray-500 uppercase dark:text-gray-300">
-          our prefered technologies
+          prefered technologies
         </p>
         <div class="flex flex-wrap items-center justify-center mt-6 md:space-x-12">
           <a href="https://laravel.com/" target="_blank" class="p-6 b-w">
@@ -254,14 +250,14 @@
         </p>
       </div>
 
-      <transition-group name="slideIn" appear class="grid gap-8 mt-10 sm:grid-cols-3">
+      <ul class="grid gap-8 mt-10 sm:grid-cols-3">
         <blog-card
           v-for="article in articles"
-          :key="article.path"
+          :key="article._path"
           :article="article"
-          class="relative flex flex-col overflow-hidden transition-shadow bg-white rounded-lg shadow  dark:bg-gray-900 dark:bg-opacity-60 hover:shadow-xl bg-opacity-60 group"
+          class="relative flex flex-col overflow-hidden transition-shadow bg-white rounded-lg shadow dark:bg-gray-900 dark:bg-opacity-60 hover:shadow-xl bg-opacity-60 group"
         />
-      </transition-group>
+      </ul>
     </div>
 
     <contact />
@@ -272,22 +268,23 @@
 import Contact from '~/components/Contact.vue'
 import BlogCard from '~/components/BlogCard.vue'
 
+definePageMeta({ layout: 'landing' })
+
 export default {
-  components: { Contact, BlogCard },
   name: 'Home',
-  head: {
-    title: 'Home | Yiddishe Kop',
-  },
-  layout: 'landing',
-  async asyncData({ $content }) {
-    const articles = await $content('articles')
-      .sortBy('createdAt', 'desc')
-      .where({ slug: { $in: ['pr-denied-by-iranian-law', 'teach-yourself-programming', 'the-luhn-algorithm'] } })
-      .limit(3)
-      .fetch()
-    return {
-      articles,
-    }
+  components: { Contact, BlogCard },
+  async setup() {
+    const { data: articles } = await useAsyncData('home', () =>
+      queryContent('articles')
+        .sort({ createdAt: -1 })
+        .where({
+          title: { $in: ['My PR was denied by Iranian Law', 'Teach Yourself Programming', 'The Luhn Algorithm'] },
+        })
+        .limit(3)
+        .find()
+    )
+
+    return { articles }
   },
 }
 </script>

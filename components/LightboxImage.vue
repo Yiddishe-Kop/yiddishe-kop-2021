@@ -13,38 +13,45 @@
 
 <script>
 export default {
-  name: "LightboxImage",
+  name: 'LightboxImage',
   props: {
     src: String,
     width: Number,
     height: Number,
+  },
+  setup() {
+    const lightbox = useLightbox()
+
+    return {
+      lightbox,
+    }
   },
   data() {
     return {
       open: false,
       coordinates: null,
       style: null,
-    };
+    }
   },
   methods: {
     showLightbox() {
-      const el = this.$refs.image.$el;
-      const { top, left, width, height } = el.getBoundingClientRect();
+      const el = this.$refs.image.$el
+      const { top, left, width, height } = el.getBoundingClientRect()
 
       const loadedSrc = el.querySelector('img').currentSrc
-      console.log({loadedSrc});
-      this.$lightbox.open = true;
-      this.$lightbox.imageSrc = this.src;
-      this.$lightbox.lowResSrc = loadedSrc;
-      this.$lightbox.originalPosition = {
+      console.log({ loadedSrc })
+      this.lightbox.open = true
+      this.lightbox.imageSrc = this.src
+      this.lightbox.lowResSrc = loadedSrc
+      this.lightbox.originalPosition = {
         top,
         left,
         width,
         height,
-      };
+      }
     },
   },
-};
+}
 </script>
 
 <style>

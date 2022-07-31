@@ -1,0 +1,7 @@
+{
+  title: 'Chanukkah',
+  description: "I'm really proud of the top right one!",
+  images: ['/img/menorah-1.jpg', '/img/menorah-3.jpg', '/img/menorah-2.jpg'],
+  createdAt: '2020-12-17 20:00',
+  slug: 'chanukkah-menorah',
+}

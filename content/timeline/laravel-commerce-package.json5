@@ -1,0 +1,19 @@
+{
+  type: 'open-source',
+  title: 'Released v1 of the Laravel Commerce package',
+  actions: [
+    {
+      octicon: 'rocket',
+      label: 'View Release',
+      url: 'https://github.com/Yiddishe-Kop/laravel-commerce/releases/tag/v1.0.0',
+    },
+    {
+      octicon: 'mortar-board',
+      label: 'Documentation',
+      url: 'https://laravel-commerce.yiddishe-kop.com/',
+    },
+  ],
+  description: "I'm super excited to release v1.0.0 (alpha) of LaravelCommerce",
+  createdAt: '2020-12-01',
+  slug: 'laravel-commerce-v1-alpha-released',
+}

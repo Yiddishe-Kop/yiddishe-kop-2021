@@ -1,0 +1,8 @@
+{
+  title: 'Israel',
+  description: 'קבר שמואל הנביא',
+  images: ['/img/israel-1.jpg', '/img/israel-2.jpg', '/img/israel-3.jpg'],
+  horizontal: true,
+  createdAt: '2021-04-16 22:00',
+  slug: 'israel',
+}

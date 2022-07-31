@@ -1,0 +1,18 @@
+{
+  title: 'Silverspoon Channukah ad',
+  description: 'Look at the before & after!',
+  images: [
+    {
+      href: '/img/silverspoon-chanukah-ad-process.png',
+      width: 600,
+      height: 200,
+    },
+    {
+      href: '/img/silverspoon-chanukah-ad.png',
+      width: 600,
+      height: 400,
+    },
+  ],
+  createdAt: '2020-12-8',
+  slug: 'silverspoon-channuka-ad',
+}

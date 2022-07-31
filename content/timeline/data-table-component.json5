@@ -1,0 +1,21 @@
+{
+  title: 'Data table bulk actions & filters',
+  description: 'Added advanced bulk select, filters and search to the DataTable component',
+  images: [
+    {
+      href: '/img/bulk-actions.png',
+      position: 'object-right-top',
+      width: 300,
+      height: 200,
+    },
+    {
+      href: '/img/bulk-actions-expanded.png',
+      position: 'object-right-top',
+      width: 300,
+      height: 200,
+    },
+  ],
+  createdAt: '2020-10-01',
+  slug: 'data-tables',
+  type: 'feature',
+}

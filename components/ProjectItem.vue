@@ -13,7 +13,7 @@
         {{ item.description }}
       </p>
     </div>
-    <nuxt-link :to="item.path" class="absolute inset-0 rounded-lg" />
+    <nuxt-link :to="item._path" class="absolute inset-0 rounded-lg" />
   </div>
 </template>
 
@@ -25,6 +25,3 @@ export default {
   },
 }
 </script>
-
-<style>
-</style>

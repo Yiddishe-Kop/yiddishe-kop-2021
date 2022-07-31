@@ -1,0 +1,19 @@
+{
+  type: 'open-source',
+  title: 'Published Vue Auto Resize NPM package',
+  actions: [
+    {
+      octicon: 'package',
+      label: 'View PAckage',
+      url: 'https://www.npmjs.com/package/vue-auto-resize',
+    },
+    {
+      octicon: 'mortar-board',
+      label: 'Documentation',
+      url: 'https://laravel-commerce.yiddishe-kop.com/',
+    },
+  ],
+  description: 'To be honest, this is a simple few lines of code, but good for a first!',
+  createdAt: '2020-07-19',
+  slug: 'vue-auto-resize-npm-package',
+}

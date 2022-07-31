@@ -16,16 +16,16 @@
     >
       <span> <octicon name="book" class="w-4 mr-2 text-gray-400 dark:text-gray-500" />{{ article.readingTime }} </span>
       <span
-        >{{ article.createdAt | timeAgo }}<octicon name="calendar" class="w-4 ml-2 text-gray-400 dark:text-gray-500"
+        >{{ timeAgo(article.createdAt) }}<octicon name="calendar" class="w-4 ml-2 text-gray-400 dark:text-gray-500"
       /></span>
     </p>
-    <nuxt-link :to="article.path" class="absolute inset-0 rounded-lg" />
+    <nuxt-link :to="article._path" class="absolute inset-0 rounded-lg" />
   </li>
 </template>
 
 <script>
 import imgMixin from '~/mixins/img'
-import { timeAgo } from '~/plugins/filters'
+import { timeAgo } from '~/lib/filters'
 
 export default {
   name: 'BlogCard',
@@ -33,11 +33,8 @@ export default {
     article: Object,
   },
   mixins: [imgMixin],
-  filters: {
+  methods: {
     timeAgo,
   },
 }
 </script>
-
-<style>
-</style>
