@@ -48,5 +48,8 @@
 </template>
 
 <script setup>
-const items = await queryContent('/').sort({ createdAt: -1 }).find()
+const items = await queryContent('/')
+  .where({ draft: { $ne: true } })
+  .sort({ createdAt: -1 })
+  .find()
 </script>
