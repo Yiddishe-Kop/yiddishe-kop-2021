@@ -37,6 +37,10 @@ module.exports = {
         '2xl': '1rem',
         '3xl': '1.5rem',
       },
+      boxShadow: {
+        soft: '0 8px 30px 0 #071f4430, 0 4px 8px 0 #0a1e3c17, 0 0 1px 0 #09152f4d',
+        'soft-lg': '0 8px 88px 0 #071f4430, 0 4px 8px 0 #0a1e3c17, 0 0 1px 0 #09152f4d',
+      },
       typography: theme => ({
         DEFAULT: {
           css: {

@@ -7,7 +7,7 @@
 
     <div class="relative mt-24 text-center">
       <h1 class="text-4xl font-extrabold">Hey, I'm Yehuda</h1>
-      <h4 class="mt-4 text-xl">I'm a designer and software developer, currently living in Jerusalem.</h4>
+      <h4 class="mt-4 text-xl">I'm a designer and software developer, living in Bet Shemesh.</h4>
       <div class="flex justify-center mt-6 space-x-4">
         <nuxt-link to="/about" class="btn btn-lg">
           <octicon name="smiley" />

@@ -33,23 +33,25 @@
         <ContentRenderer :value="article" class="mx-auto prose dark:prose-dark" />
       </div>
 
-      <nav class="flex items-stretch justify-between space-x-3 text-sm font-semibold text-gray-500">
+      <nav class="grid grid-cols-2 gap-4 text-sm font-semibold text-gray-500">
         <NuxtLink
           v-if="prev"
           :to="prev._path"
-          class="flex items-center justify-start flex-1 p-2 space-x-2 rounded bg-gray-50 dark:bg-gray-900 hover:bg-amber-100 hover:text-amber-800 dark:hover:text-amber-400"
+          class="flex items-center p-4 space-x-2 rounded bg-gray-50/25 hover:ring-brand ring-2 ring-white dark:bg-gray-900 hover:bg-amber-100 hover:text-amber-800 dark:hover:text-amber-400"
         >
           <icon name="arrow-circle-left" class="w-6" />
           <span>{{ prev.title }}</span>
         </NuxtLink>
+        <i v-else />
         <NuxtLink
           v-if="next"
           :to="next._path"
-          class="flex items-center justify-end flex-1 p-2 space-x-2 text-right rounded bg-gray-50 dark:bg-gray-900 hover:bg-amber-100 hover:text-amber-800 dark:hover:text-amber-400"
+          class="flex items-center justify-end p-4 space-x-2 text-right rounded bg-gray-50/25 hover:ring-brand ring-2 ring-white dark:bg-gray-900 hover:bg-amber-100 hover:text-amber-800 dark:hover:text-amber-400"
         >
           <span>{{ next.title }}</span>
           <icon name="arrow-circle-left" class="w-6 transform rotate-180" />
         </NuxtLink>
+        <i v-else />
       </nav>
     </div>
   </div>
@@ -61,7 +63,11 @@ import { date } from '~/lib/filters'
 const { params, path } = useRoute()
 const article = await queryContent().where({ _path: path }).findOne()
 
-const [prev, next] = await queryContent('articles').only(['_path', 'title']).sort({ createdAt: -1 }).findSurround(path)
+const [prev, next] = await queryContent('articles')
+  .only(['_path', 'title'])
+  .where({ draft: { $ne: true } })
+  .sort({ createdAt: -1 })
+  .findSurround(path)
 
 onMounted(() => {
   document.querySelectorAll('ol[start]').forEach(list => {

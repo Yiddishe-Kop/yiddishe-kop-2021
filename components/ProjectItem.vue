@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex items-stretch transition-shadow bg-white rounded-lg shadow dark:bg-gray-900 dark:bg-opacity-60 hover:shadow-xl bg-opacity-60 group"
+    class="flex items-stretch transition-shadow bg-white rounded-lg shadow-soft dark:bg-gray-900 dark:bg-opacity-60 hover:shadow-xl bg-opacity-60 group"
   >
     <div class="w-32">
       <nuxt-picture placeholder :src="item.image" class="rounded-l" />

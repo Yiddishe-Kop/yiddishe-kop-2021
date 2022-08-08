@@ -1,6 +1,6 @@
 <template>
   <div
-    class="fixed top-0 z-50 w-screen px-4 bg-white bg-opacity-50  dark:bg-opacity-50 dark:text-white dark:bg-gray-900 blur-bg"
+    class="fixed top-0 z-50 w-screen px-4 bg-white bg-opacity-50 shadow dark:bg-opacity-50 dark:text-white dark:bg-gray-900 blur-bg"
   >
     <header class="flex items-center justify-between max-w-screen-lg py-2 mx-auto">
       <nuxt-link to="/" class="mr-8 focus:ring-0">
@@ -13,7 +13,7 @@
           :key="item.to"
           :to="item.to"
           exact-active-class="active-nav-item"
-          class="px-8 py-4 text-sm font-bold transition rounded-md  hover:bg-opacity-50 blur-bg hover:bg-amber-100 dark:hover:bg-amber-900"
+          class="px-8 py-4 text-sm font-bold transition rounded-md hover:bg-opacity-50 blur-bg hover:bg-amber-100 dark:hover:bg-amber-900"
         >
           {{ item.label }}
         </nuxt-link>
@@ -47,7 +47,7 @@
         :to="item.to"
         @click.native="open = false"
         exact-active-class="active-nav-item"
-        class="px-8 py-4 text-sm font-bold transition rounded-md  hover:bg-opacity-50 blur-bg hover:bg-amber-100 dark:hover:bg-gray-900"
+        class="px-8 py-4 text-sm font-bold transition rounded-md hover:bg-opacity-50 blur-bg hover:bg-amber-100 dark:hover:bg-gray-900"
       >
         {{ item.label }}
       </nuxt-link>

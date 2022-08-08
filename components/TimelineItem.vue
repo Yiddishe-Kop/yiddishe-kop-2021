@@ -1,7 +1,7 @@
 <template>
   <li class="flex">
     <div class="flex flex-col items-center">
-      <div class="p-2 my-1 rounded-full" :class="iconColors || iconColor">
+      <div class="p-2 my-1 rounded-full shadow-soft dark:shadow" :class="iconColors || iconColor">
         <slot name="icon">
           <icon :name="icon" class="w-6" />
         </slot>
