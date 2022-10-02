@@ -2,8 +2,6 @@ import colors from 'tailwindcss/colors'
 import { defineNuxtConfig } from 'nuxt'
 
 export default defineNuxtConfig({
-  target: 'static',
-
   /*
    ** Headers of the page
    */
