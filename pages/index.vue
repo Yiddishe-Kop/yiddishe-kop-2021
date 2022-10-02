@@ -15,14 +15,13 @@
             <h1 class="text-4xl font-extrabold tracking-tight text-center sm:text-5xl lg:text-6xl">
               <span
                 class="block text-xl font-semibold tracking-widest text-center text-white uppercase dark:text-gray-900"
-                >We build</span
+                >you need</span
               >
               <span class="block text-brand">cutting edge</span>
               <span class="block text-white dark:text-gray-900">software</span>
             </h1>
             <p class="max-w-lg mx-auto mt-6 text-xl text-center text-white dark:text-gray-900 sm:max-w-3xl">
-              We're not the typical site builder. We don't take shortcuts.<br />We build bespoke software from the
-              ground up to exactly solve your challenges.<br />
+              We build bespoke software from the ground up to exactly solve your challenges.<br />
               We code your ideas into sophisticated machinery.
             </p>
           </div>
