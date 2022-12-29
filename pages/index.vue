@@ -36,7 +36,7 @@
           Trusted by great businesses
         </p>
         <div class="flex flex-wrap items-center justify-center mt-6 md:justify-between">
-          <a href="https://5dakkot.com/" target="_blank" class="p-6 b-w">
+          <a href="https://5dakot.com/" target="_blank" class="p-6 b-w">
             <img class="h-12" src="/logos/5dakkot.svg" alt="5Dakkot" />
           </a>
 
