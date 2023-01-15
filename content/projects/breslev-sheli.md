@@ -2,7 +2,7 @@
 title: Breslev Sheli
 description: Daily chizzuk from Breslev in Yavniel
 theme: '#79729D'
-color: '#BFBEEB'
+color: '#fff'
 link: https://breslevsheli.co.il/
 logo: /logos/breslevsheli.svg
 image: https://breslevsheli.co.il/img/hero.jpg

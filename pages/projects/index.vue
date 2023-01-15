@@ -8,31 +8,46 @@
       <h4 class="mt-4 text-xl">Some recent projects I've been working on</h4>
     </div>
 
-    <section
-      v-for="project in projects"
-      :key="project._path"
-      class="relative p-4 border-b-4 group"
-      :style="`background-color: ${project.theme}30; border-color: ${project.theme}`"
-    >
-      <container>
-        <img class="block h-16" :src="project.logo" :alt="project.title" />
-        <h1 class="mt-4 text-2xl font-black">{{ project.title }}</h1>
-        <p class="text-sm">{{ project.description }}</p>
-        <div class="mt-10">
-          <a
-            :href="project.link"
-            target="_blank"
-            class="relative z-10 inline-flex items-center px-4 py-1 space-x-1 text-sm font-semibold rounded-full"
-            :style="`background-color: ${project.theme}; color: ${project.color}`"
+    <Container>
+      <ul class="grid gap-6 md:grid-cols-2">
+        <li
+          v-for="project in projects"
+          :key="project._path"
+          class="relative flex flex-col items-center bg-white rounded-2xl"
+          :style="{
+            backgroundColor: `${project.theme}30`,
+          }"
+        >
+          <img class="block h-16 m-4" :src="project.logo" :alt="project.title" />
+          <div
+            class="self-stretch flex-1 p-3 mt-4 border-t-2 bg-white/40"
+            :style="{
+              borderColor: project.theme,
+            }"
           >
-            <span>Open app</span>
-            <octicon name="arrow-right" class="w-4" />
-          </a>
-        </div>
-        <p class="mt-4 text-sm opacity-75">Started: {{ date(project.startedAt) }}</p>
-        <nuxt-link :to="project._path" class="absolute inset-0 z-0 rounded-lg" />
-      </container>
-    </section>
+            <h3 class="font-bold text-gray-800">
+              {{ project.title }}
+            </h3>
+            <p class="text-sm text-gray-600">
+              {{ project.description }}
+            </p>
+            <div class="flex justify-end pt-2">
+              <icon-button
+                arrow
+                tag="a"
+                :href="project.link"
+                target="_blank"
+                class="relative z-10"
+                :style="`background-color: ${project.theme}; color: ${project.color}`"
+              >
+                Open app
+              </icon-button>
+            </div>
+            <nuxt-link :to="project._path" class="absolute inset-0 z-0 rounded-2xl" />
+          </div>
+        </li>
+      </ul>
+    </Container>
   </div>
 </template>
 

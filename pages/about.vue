@@ -6,12 +6,12 @@
     <div class="relative mt-24 text-center">
       <h1 class="text-4xl font-extrabold">Hey, I'm Yehuda</h1>
       <h4 class="mt-4 text-xl">I'm a designer and software developer, living in Beit Shemesh, Israel.</h4>
-      <h5 class="inline-block px-6 py-3 my-12 text-xl bg-white dark:bg-gray-900 md:px-10 shadow-soft rounded-xl">
+      <!-- <h5 class="inline-block px-6 py-3 my-12 text-xl bg-white dark:bg-gray-900 md:px-10 shadow-soft rounded-xl">
         I'm currently fullstack developer at
         <a href="https://hybiz.co.il/" target="_blank" class="text-blue-700"
           ><img class="inline-block h-12" src="/logos/hybiz.svg" alt="Hybiz"
         /></a>
-      </h5>
+      </h5> -->
       <div class="flex justify-center mt-6 space-x-4">
         <a
           href="https://github.com/Yiddishe-Kop"
