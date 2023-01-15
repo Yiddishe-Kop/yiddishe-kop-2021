@@ -48,8 +48,8 @@
             <img class="h-12" src="/logos/jkaraoke.svg" alt="jKaraoke" />
           </a>
 
-          <a href="https://hachambaruch.com/" target="_blank" class="p-2 b-w">
-            <img class="h-20" src="/logos/hachambaruch.png" alt="Hacham Baruch Memorial Foundation" />
+          <a href="https://breslevsheli.co.il/" target="_blank" class="p-6 b-w">
+            <img class="relative h-12 bottom-3" src="/logos/breslevsheli.svg" alt="Breslev Sheli" />
           </a>
 
           <a href="https://hybiz.co.il/" target="_blank" class="p-6 b-w">
