@@ -13,22 +13,22 @@
         <li
           v-for="project in projects"
           :key="project._path"
-          class="relative flex flex-col items-center bg-white rounded-2xl"
+          class="relative flex flex-col items-center overflow-hidden bg-white rounded-2xl"
           :style="{
             backgroundColor: `${project.theme}30`,
           }"
         >
           <img class="block h-16 m-4" :src="project.logo" :alt="project.title" />
           <div
-            class="self-stretch flex-1 p-3 mt-4 border-t-2 bg-white/40"
+            class="flex flex-col self-stretch flex-1 p-3 mt-4 border-t-2 bg-white/40 dark:bg-gray-700/40"
             :style="{
               borderColor: project.theme,
             }"
           >
-            <h3 class="font-bold text-gray-800">
+            <h3 class="font-bold text-gray-800 dark:text-gray-100">
               {{ project.title }}
             </h3>
-            <p class="text-sm text-gray-600">
+            <p class="flex-1 text-sm text-gray-600 dark:text-gray-300">
               {{ project.description }}
             </p>
             <div class="flex justify-end pt-2">

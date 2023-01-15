@@ -15,6 +15,7 @@ module.exports = {
 
   theme: {
     colors: {
+      current: 'currentColor',
       black: colors.black,
       white: colors.white,
       brand: colors.amber[400],

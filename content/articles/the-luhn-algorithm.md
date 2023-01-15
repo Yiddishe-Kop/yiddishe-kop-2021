@@ -11,8 +11,6 @@ Do they have a list of all valid credit card numbers in the world?! Or the natio
 
 Turns out that they don't. So how do they know that the number is invalid? They use the [Luhn algorithm](https://en.wikipedia.org/wiki/Luhn_algorithm).
 
-
-
 ### Introduction
 
 From [Wikipedia](https://en.wikipedia.org/wiki/Luhn_algorithm):
@@ -27,7 +25,6 @@ It is not intended to be a cryptographically secure hash function; it was design
 
 To put it simply - the last number of every credit card and ID number is computed from the previous numbers with some mathematical algorithm. So we can just test if the last number is the result of that algorithm, and if it doesn’t we know the number is invalid.
 
-
 ### How it Works
 
 When generating a credit card number, only the first 15 digits are generated, and the last number is calculated from them with the following algorithm:
@@ -37,7 +34,7 @@ Assume an example credit card number 4242 4242 4242 424**x** [**x** will be calc
 1.  From the rightmost digit and moving left, double the value of every second digit, starting by doubling rightmost digit. If the result of this doubling operation is greater than 9 (e.g., 9 × 2 = 18), then add the digits of the result (e.g., 18: 1 + 8 = 9).
 2.  For our example we get 8282 8282 8282 828.
 3.  Sum of all the digits (78).
-4.  Multiply by 9 (78 * 9 = 702).
+4.  Multiply by 9 (78 \* 9 = 702).
 5.  Modulo 10 (702 % 10 = 2)
 
 So there we got it: **x** = **2**, thereby finishing the nice credit card number pattern 4242 4242 4242 4242 😎.
@@ -70,7 +67,7 @@ Luhn::isValid($number);
 
 // or as a validation rule
 $request->validate([
-   'credit\_card' => 'luhn'
+   'credit_card' => 'luhn'
 ]);
 ```
 

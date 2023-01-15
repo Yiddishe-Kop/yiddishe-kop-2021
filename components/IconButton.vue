@@ -4,7 +4,7 @@
     :href="href"
     :to="href"
     v-bind="$attrs"
-    class="inline-flex items-center justify-center font-semibold leading-none uppercase transition-colors duration-150 ease-in-out border rounded-full shadow-sm group whitespace-nowrap focus:outline-none focus:ring"
+    class="inline-flex items-center justify-center font-semibold leading-none uppercase transition-colors duration-150 ease-in-out border rounded-full shadow-sm group whitespace-nowrap dark:border-gray-700 focus:outline-none focus:ring"
     :class="[
       colorClasses,
       sizeClasses,
@@ -103,8 +103,8 @@ export default {
         dark: 'bg-brand-900 border-transparent text-white hover:bg-brand-900/75 focus:bg-brand-900/75 dark:hover:bg-brand-800',
       }[this.color]
     },
-    hasSlotContent() {
-      return !!this.$slots.default
+    isIconButton() {
+      return this.icon && !this.$slots.default
     },
   },
 }
