@@ -5,7 +5,7 @@ theme: '#79729D'
 color: '#fff'
 link: https://breslevsheli.co.il/
 logo: /logos/breslevsheli.svg
-image: https://breslevsheli.co.il/img/hero.jpg
+image: https://breslevsheli.co.il/img/preview.jpg
 startedAt: 2022-11-21
 completedAt: 2023-01-08
 createdAt: 2022-11-21
