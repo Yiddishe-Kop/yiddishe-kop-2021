@@ -65,7 +65,49 @@
         aria-hidden="true"
         class="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-gray-100 dark:from-gray-900"
       ></div>
-      <div class="relative">
+      <div class="mt-24">
+        <div class="lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:grid-flow-col-dense lg:gap-24">
+          <div class="max-w-xl px-4 mx-auto sm:px-6 lg:py-32 lg:max-w-none lg:mx-0 lg:px-0 lg:col-start-2">
+            <div>
+              <div>
+                <span
+                  class="flex items-center justify-center w-12 h-12 bg-gray-100 rounded-full dark:bg-gray-900 ring-brand ring-2"
+                >
+                  <icon name="terminal" class="text-amber-600 dark:text-amber-400 w-7" />
+                </span>
+              </div>
+              <div class="mt-6">
+                <h2 class="text-3xl font-extrabold tracking-tight text-gray-900 dark:text-gray-100">
+                  Daringly Ambitious
+                </h2>
+                <p class="mt-4 text-lg text-gray-500 dark:text-gray-300">
+                  We develop custom software from idea to production. We'll study your workflow, come up with a software
+                  solution tailored to speed up your processes, and build technology to make business operations the
+                  most efficient possible.
+                </p>
+                <div class="mt-6">
+                  <NuxtLink
+                    to="/timeline"
+                    class="inline-flex px-6 py-1 text-base font-medium text-white transition-transform rounded-full shadow-sm dark:text-gray-900 bg-gradient-to-r from-amber-300 to-amber-500 hover:scale-105"
+                  >
+                    Read more
+                  </NuxtLink>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mt-12 sm:mt-16 lg:mt-0 lg:col-start-1">
+            <div class="pr-4 -ml-48 sm:pr-6 md:-ml-16 lg:px-0 lg:m-0 lg:relative lg:h-full">
+              <img
+                class="w-full shadow-xl rounded-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:right-0 lg:h-full lg:w-auto lg:max-w-none"
+                src="/img/jkaraoke-lyrics-editor.jpg"
+                alt="Customer profile user interface"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-24">
         <div class="lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:grid-flow-col-dense lg:gap-24">
           <div class="max-w-xl px-4 mx-auto sm:px-6 lg:py-16 lg:max-w-none lg:mx-0 lg:px-0">
             <div>
