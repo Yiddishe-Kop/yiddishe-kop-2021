@@ -2,10 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+@import 'fonts.scss';
+@import 'transitions.scss';
+
+:root {
+  scroll-behavior: smooth;
+
+  & * {
+    scroll-margin-top: 5rem;
+  }
+}
+
 @layer components {
   button,
   a {
-    @apply rounded focus:outline-none focus:ring-2 ring-amber-400;
+    @apply rounded focus:outline-none focus-visible:ring-2 ring-amber-400;
   }
 
   .btn {

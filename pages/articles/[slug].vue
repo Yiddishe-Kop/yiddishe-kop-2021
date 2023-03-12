@@ -18,7 +18,7 @@
         {{ date(article.createdAt) }}
       </p>
       <h1
-        class="max-w-xl mx-auto mt-2 text-3xl font-extrabold text-center text-gray-900 sm:text-4xl lg:text-5xl dark:text-white"
+        class="max-w-xl mx-auto mt-2 text-3xl font-bold text-center text-gray-900 sm:text-4xl lg:text-5xl dark:text-white"
       >
         {{ article.title }}
       </h1>
@@ -27,17 +27,18 @@
         <span class="ml-1">{{ article.readingTime }}</span>
       </p>
 
-      <div
-        class="py-16 my-16 bg-gray-100 bg-opacity-50 border border-gray-100 dark:border-gray-900 sm:px-12 rounded-xl dark:bg-gray-800 dark:bg-opacity-50 blur-bg"
-      >
-        <ContentRenderer :value="article" class="mx-auto prose dark:prose-dark" />
+      <div class="max-w-3xl py-16 mx-auto my-16">
+        <ContentRenderer
+          :value="article"
+          class="mx-auto prose-sm prose prose-a:text-sky-700 hover:prose-a:decoration-sky-700 prose-a:decoration-sky-400 dark:prose-a:text-sky-300 dark:hover:prose-a:decoration-sky-400 dark:prose-a:decoration-sky-700 max-w-none md:prose-base prose-pre:text-base dark:prose-dark prose-code:font-mono prose-code:bg-pink-100 dark:prose-code:bg-pink-900 prose-code:text-pink-800 dark:prose-code:text-pink-100 font-quattro"
+        />
       </div>
 
       <nav class="grid grid-cols-2 gap-4 text-sm font-semibold text-gray-500">
         <NuxtLink
           v-if="prev"
           :to="prev._path"
-          class="flex items-center p-4 space-x-2 rounded bg-gray-50/25 hover:ring-brand ring-2 ring-white dark:bg-gray-900 hover:bg-amber-100 hover:text-amber-800 dark:hover:text-amber-400"
+          class="flex items-center p-4 space-x-2 rounded bg-gray-50/25 hover:ring-brand ring-2 ring-white dark:ring-gray-700 dark:bg-gray-900 hover:bg-amber-100 hover:text-amber-800 dark:hover:text-amber-400"
         >
           <icon name="arrow-circle-left" class="w-6" />
           <span>{{ prev.title }}</span>
@@ -46,7 +47,7 @@
         <NuxtLink
           v-if="next"
           :to="next._path"
-          class="flex items-center justify-end p-4 space-x-2 text-right rounded bg-gray-50/25 hover:ring-brand ring-2 ring-white dark:bg-gray-900 hover:bg-amber-100 hover:text-amber-800 dark:hover:text-amber-400"
+          class="flex items-center justify-end p-4 space-x-2 text-right rounded bg-gray-50/25 hover:ring-brand ring-2 ring-white dark:ring-gray-700 dark:bg-gray-900 hover:bg-amber-100 hover:text-amber-800 dark:hover:text-amber-400"
         >
           <span>{{ next.title }}</span>
           <icon name="arrow-circle-left" class="w-6 transform rotate-180" />

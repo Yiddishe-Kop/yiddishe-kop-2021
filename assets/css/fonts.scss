@@ -1,24 +1,40 @@
 @font-face {
-  font-family: "Cascadia";
-  src: url("/fonts/CascadiaCode.woff2") format("woff2");
+  font-family: 'iAWriterMono';
+  src: url('/fonts/iAWriterMonoV.ttf');
   font-style: normal;
   font-display: swap;
-  font-weight: 100 900;
+  font-weight: 400 700;
 }
 
 @font-face {
-  font-family: "siddur";
+  font-family: 'Quattro';
+  src: url('/fonts/iAWriterQuattroV.ttf');
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400 700;
+}
+
+@font-face {
+  font-family: 'Quattro';
+  src: url('/fonts/iAWriterQuattroV-Italic.ttf');
+  font-style: italic;
+  font-display: swap;
+  font-weight: 400 700;
+}
+
+@font-face {
+  font-family: 'siddur';
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
-  src: url("/fonts/SiddurOCGX.woff2") format("woff2");
+  src: url('/fonts/SiddurOCGX.woff2') format('woff2');
 }
 
 .font-siddur {
   display: inline-block;
   margin-top: -0.4em;
   font-weight: 700;
-  font-variation-settings: "wght" var(--siddur-weight), "wdth" var(--siddur-width);
+  font-variation-settings: 'wght' var(--siddur-weight), 'wdth' var(--siddur-width);
 }
 
 :root {

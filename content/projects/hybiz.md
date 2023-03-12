@@ -12,5 +12,3 @@ createdAt: 2021-11-21
 ---
 
 ### A modern CRM to help your business scale up
-
-bla bla bla

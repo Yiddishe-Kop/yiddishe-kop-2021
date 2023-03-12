@@ -6,7 +6,7 @@ export default defineNuxtConfig({
   /*
    ** Global CSS
    */
-  css: ['@/assets/css/fonts.scss', '@/assets/css/global.scss', '@/assets/css/transitions.scss'],
+  css: ['@/assets/css/app.scss'],
 
   /*
    ** Headers of the page
@@ -25,8 +25,7 @@ export default defineNuxtConfig({
   /*
    ** Nuxt.js modules
    */
-  modules: ['@nuxt/image-edge', '@nuxt/content'],
-  buildModules: ['@nuxtjs/tailwindcss'],
+  modules: ['@nuxt/image-edge', '@nuxt/content', '@nuxtjs/tailwindcss'],
 
   image: {
     provider: 'auto',
