@@ -2,7 +2,7 @@
 title: Building a project management app
 description: Managing my projects with the Toggl API
 createdAt: 2021-05-27
-image: X_fbh4Utwk4
+image: /img/time-management.jpg
 ---
 
 My day to day work involves writing software for multiple client projects. And as I get paid by the hour, I need a way to track the time I work on each project. Thankfully, there's an excellent time-tracking application called [Toggl](https://toggl.com/track/), which has a nice little desktop app that tracks time spent on each project, and generates nice reports on their web dashboard.

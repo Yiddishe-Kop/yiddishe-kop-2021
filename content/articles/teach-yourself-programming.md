@@ -2,7 +2,7 @@
 title: Teach Yourself Programming
 description: If you enjoy problem-solving, challenges and learning new things - you should give coding a try!
 createdAt: 2021-02-13 23:15:00
-image: /img/framer-code.jpg
+image: /img/baby-coding.jpg
 ---
 
 **Tim Cook** (CEO of Apple) famously said:
@@ -131,3 +131,13 @@ To become a fullstack developer add these:
 If you enjoy challenges, solving problems and learning new things, you'll enjoy programming so much, that it will feel like a big adventure.
 
 Programming is a unique combination of problem-solving, logic, & creativity. It is very rewarding and satisfying when your creations work. And if you enjoy what you do for a living, you won't work a day in your life.
+
+### Appendix
+
+The cover image was generated with [Midjourney](https://www.midjourney.com/home/) AI.
+
+<article-image src="/img/baby-coding.jpg" caption="a cute happy smart baby dressed as a software developer coding and hacking on a Mac, editorial, hyperrealistic, golden hour sunlight --ar 4:3"></article-image>
+
+Another one I've generated for this post that I like:
+
+<article-image src="/img/goat-programmer.jpg" caption="a goat dressed as a software developer coding on a Mac, editorial, hyperrealistic, golden hour rimlight --ar 4:3"></article-image>
