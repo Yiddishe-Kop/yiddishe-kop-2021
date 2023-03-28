@@ -13,14 +13,14 @@
         <li
           v-for="project in projects"
           :key="project._path"
-          class="relative flex flex-col items-center overflow-hidden bg-white rounded-2xl"
+          class="relative flex flex-col items-center overflow-hidden bg-white dark:bg-gray-900 rounded-2xl"
           :style="{
             backgroundColor: `${project.theme}30`,
           }"
         >
           <img class="block h-16 m-4" :src="project.logo" :alt="project.title" />
           <div
-            class="flex flex-col self-stretch flex-1 p-3 mt-4 border-t-2 bg-white/40 dark:bg-gray-700/40"
+            class="flex flex-col self-stretch flex-1 p-3 mt-4 border-t-2 bg-white/40 dark:bg-gray-700/80"
             :style="{
               borderColor: project.theme,
             }"

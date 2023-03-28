@@ -47,7 +47,7 @@
         </div>
         <div class="relative flex items-center p-12 bg-gray-900 text-gray-50 rounded-3xl group" dir="rtl">
           <div class="px-6 pt-2 pb-4 text-6xl font-black text-center border-4 border-gray-300 text-brand rounded-xl">
-            <p class="font-siddur">א</p>
+            <p class="-mt-5 font-siddur">א</p>
           </div>
           <div class="flex flex-col mr-8 space-y-1">
             <h3 class="text-5xl tracking-wide font-siddur">פנינים</h3>
@@ -56,11 +56,14 @@
           <a
             href="https://pninim.yiddishe-kop.com/"
             target="_blank"
-            class="absolute px-4 py-2 text-sm tracking-wider text-gray-900 uppercase transition rounded-lg bg-brand group-hover:text-brand group-hover:bg-gray-700 -bottom-4 left-12"
+            class="absolute flex items-center px-4 py-2 text-sm tracking-wider text-gray-900 uppercase transition rounded-lg bg-brand group-hover:text-brand group-hover:bg-gray-700 -bottom-4 left-12"
           >
-            <span class="text-2xl font-siddur">עיון וכתיבה</span>
+            <span class="inline-block ml-1 -mt-3 text-2xl font-siddur"> עיון וכתיבה </span>
             <octicon name="arrow-left" class="w-5 transition transform group-hover:-translate-x-1" />
           </a>
+        </div>
+        <div class="text-center">
+          <nuxt-link to="apps/gimatrikon" class="btn btn-brand">גימטריקון</nuxt-link>
         </div>
       </div>
     </section>
