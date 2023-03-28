@@ -16,6 +16,7 @@
         class="!block max-w-2xl pb-3 text-center pt-0 mx-auto text-4xl px-6 leading-none bg-gray-200 rounded-full outline-none font-siddur focus:ring-amber-200/40 focus:ring-2 focus:border-amber-600 placeholder:text-gray-400 dark:placeholder:text-gray-700 dark:bg-gray-900"
       />
       <div class="!grid max-w-lg gap-2 mx-auto !my-10 font-siddur text-3xl">
+        <p v-if="gimatriya" class="mb-8 font-sans text-2xl font-black text-center">{{ gimatriya }}</p>
         <transition-group
           v-if="matchingPhrases"
           name="slideIn"
