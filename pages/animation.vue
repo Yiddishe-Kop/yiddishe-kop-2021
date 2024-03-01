@@ -1442,7 +1442,6 @@ definePageMeta({ layout: 'landing' })
   0% {
     width: 0%;
   }
-
   50% {
     width: 100%;
   }
