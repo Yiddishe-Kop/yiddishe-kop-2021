@@ -29,12 +29,6 @@
         since we do not collect any personal information, these third-party services do not have access to any user data
         through our app.
       </p>
-      <h3>Children's Privacy</h3>
-      <p>
-        Daf Yomi is not intended for use by children under the age of 13. We do not knowingly collect personal
-        information from children. If you are a parent or guardian and believe that your child has provided us with
-        personal information, please contact us so that we can delete such information from our systems.
-      </p>
       <h3>Changes to This Privacy Policy</h3>
       <p>
         We reserve the right to update or change our Privacy Policy at any time. Any changes will be reflected in this
