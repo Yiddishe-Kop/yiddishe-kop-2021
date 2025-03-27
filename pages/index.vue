@@ -44,16 +44,16 @@
             <img class="h-12" src="/logos/beitalef.svg" alt="Beit Alef" />
           </a>
 
-          <a href="https://jkaraoke.com/" target="_blank" class="p-6 b-w">
-            <img class="h-12" src="/logos/jkaraoke.svg" alt="jKaraoke" />
+          <a href="https://getnecto.com/" target="_blank" class="p-6 b-w">
+            <img class="h-8" src="/logos/necto.svg" alt="Hybiz" />
           </a>
 
           <a href="https://breslevsheli.co.il/" target="_blank" class="p-6 b-w">
             <img class="relative h-12 bottom-3" src="/logos/breslevsheli.svg" alt="Breslev Sheli" />
           </a>
 
-          <a href="https://hybiz.co.il/" target="_blank" class="p-6 b-w">
-            <img class="h-12" src="/logos/hybiz.svg" alt="Hybiz" />
+          <a href="https://jkaraoke.com/" target="_blank" class="p-6 b-w">
+            <img class="h-12" src="/logos/jkaraoke.svg" alt="jKaraoke" />
           </a>
         </div>
       </div>
