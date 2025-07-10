@@ -136,8 +136,4 @@ Programming is a unique combination of problem-solving, logic, & creativity. It 
 
 The cover image was generated with [Midjourney](https://www.midjourney.com/home/) AI.
 
-<article-image src="/img/baby-coding.jpg" caption="a cute happy smart baby dressed as a software developer coding and hacking on a Mac, editorial, hyperrealistic, golden hour sunlight --ar 4:3"></article-image>
-
-Another one I've generated for this post that I like:
-
-<article-image src="/img/goat-programmer.jpg" caption="a goat dressed as a software developer coding on a Mac, editorial, hyperrealistic, golden hour rimlight --ar 4:3"></article-image>
+<article-image src="/img/learning-code.png"></article-image>
