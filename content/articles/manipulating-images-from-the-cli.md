@@ -2,7 +2,7 @@
 title: Manipulating images from the CLI
 description: An intro to SIPS cli tool
 createdAt: 2020-05-13 09:12:00
-image: p8kaVRe4edM
+image: /img/image-cli.png
 ---
 
 I often need to resize images - for many reasons: to downsize massive images from the camera to a regular size, or to convert Mac screenshots from png to jpg.

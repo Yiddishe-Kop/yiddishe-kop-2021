@@ -1,7 +1,7 @@
 ---
 title: Proper file permissions for Laravel
 description: How to set up proper file permissions for a Laravel project on a Linux server
-image: yekGLpc3vro
+image: /img/file-permissions.png
 createdAt: 2020-12-02
 ---
 

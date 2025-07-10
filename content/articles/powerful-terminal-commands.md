@@ -2,7 +2,7 @@
 title: Powerful Terminal Commands to have in your Toolbox
 description: Some powerful Terminal commands worth having in your toolbox
 createdAt: 2020-07-13
-image: LqKhnDzSF-8
+image: /img/cli-tools.png
 ---
 
 When deploying applications to servers, most of the time you'll be working in the Terminal, or command-line. Yes, the scary (or cool) black screen, which looks like the computers of 50 years ago.

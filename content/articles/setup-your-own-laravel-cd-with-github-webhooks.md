@@ -2,7 +2,7 @@
 title: Setup your own Laravel CD with GitHub webhooks
 description: How to setup continuous Laravel deployment with GitHub webhooks.
 createdAt: 2020-05-04 05:48:00
-image: 842ofHC6MaI
+image: /img/laravel.png
 ---
 
 I recently discovered the [Laravel framework](https://laravel.com) - and I really like it. As I was learning the framework, I wanted to build something with it, as the best way to learn something is by building something with it. So I built a [Torah learning platform](https://torah.yiddishe-kop.com/), which you can visit now...

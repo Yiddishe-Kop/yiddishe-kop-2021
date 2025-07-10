@@ -2,51 +2,47 @@
 title: My PR was denied by Iranian Law
 description: My surprise when my pull-request was denied by Iranian law
 createdAt: 2020-09-03
-image: P_Ne56WEe5s
+image: /img/israel-iran.png
 ---
 
 ### Contributing to the Laravel ecosystem
 
-This morning I discovered a useful [Laravel package](https://github.com/armancodes/laravel-download-link) for generating download links for files, that has some useful features, like expiry time, restricted IP addresses.
+I recently discovered a valuable [Laravel package](https://github.com/armancodes/laravel-download-link) for generating download links for files, featuring useful capabilities such as expiry time and IP address restrictions.
 
-One thing was missing: assigning the DownloadLink for a specific user, so for example when somebody purchases a digital product we can generate a DownloadLink that will only allow him to download the file, and nobody else.
+However, one critical feature was missing: the ability to assign a DownloadLink to a specific user. This would enable scenarios where, for instance, a customer purchasing a digital product could receive a DownloadLink that only permits them to download the file.
 
-So I thought this is a good opportunity to contribute to the Laravel ecosystem 💡. I went ahead and [forked the repo](https://github.com/Yiddishe-Kop/laravel-download-link), added the functionality to assign a DownloadLink to a user, & submitted a [pull-request](https://github.com/armancodes/laravel-download-link/pull/9) (PR) to the owner of the repo, with a detailed explanation what I'm doing.
+Recognizing this as an opportunity to contribute to the Laravel ecosystem, I [forked the repository](https://github.com/Yiddishe-Kop/laravel-download-link), implemented the user assignment functionality, and submitted a comprehensive [pull-request](https://github.com/armancodes/laravel-download-link/pull/9) to the repository owner with detailed documentation of the changes.
 
-The owner of the repo was very fast, and within an hour already added some more features (assigning DownloadLinks to a list of users) and added tests. This is unlike some [other PRs](https://github.com/inertiajs/inertia/pull/141) I opened, that are currently waiting for months...
-
-
+The repository owner responded promptly, adding additional features (including support for assigning DownloadLinks to multiple users) and comprehensive tests within an hour. This swift response contrasted sharply with [other pull requests](https://github.com/inertiajs/inertia/pull/141) I had submitted, which remained pending for months.
 
 ### Tehran, Iran
 
-Some time later I checked back on the PR, and I was surprised to see that it has been closed, and not merged 😕. I opened it up, and this is what greeted me:
+When I later checked the status of my pull request, I was surprised to discover it had been closed without being merged. Upon investigation, I found the following message from the repository owner:
 
 > Hi, Thanks for your great idea. I'm SO SORRY to tell you that I cannot merge this PR. There is a law in my country that we MUST NOT have any relationship with people from Israel or the Israel government. I hope you understand this, and again thanks for your time.
 
-Turns out he's from Tehran, Iran; and he saw on my [GitHub profile](https://github.com/Yiddishe-Kop) that I'm from Jerusalem, Israel.
+The developer was based in Tehran, Iran, and had identified my location as Jerusalem, Israel through my [GitHub profile](https://github.com/Yiddishe-Kop).
 
-I was very surprised and also hurt. This is the first time I experienced the conflict between Israel & Iran first hand. I also never thought that Iran would have has such laws.
+This experience was both surprising and disheartening, representing my first direct encounter with how geopolitical tensions between Israel and Iran manifest in the technical community. I had not previously been aware of such legal restrictions in Iran.
 
-But hey, maybe I'm a Palestinian living in Jerusalem? Or does Iranian law not differentiate?! 🙃 _\[...aaahhh, my profile name is_ **yiddishe-kop** _😉\]_
+The situation raised questions about the scope of these laws – would they apply to a Palestinian resident of Jerusalem, or does Iranian legislation make such distinctions? Given my profile username "yiddishe-kop," my background was perhaps apparent.
 
-I thought for a moment how to respond, and this is how I replied:
+After careful consideration, I responded with the following message:
 
 > That's very sad, @armancodes. I hope one day your country removes this restriction, just like my country has never put such restrictions. However I'm sure that your governments restrictions don't represent your views 🤷‍♂️ . Good luck anyway! 😃
 
-A friend later suggested that I should've responded like so 😅:
+A colleague later humorously suggested an alternative response:
 
-> Hi, I'm from the IRGC secret intelligence _🕵️‍♂️_, we just wanted to test your loyalty to the regime, therefore we create fake accounts. You can merge the PR without any problem
+> Hi, I'm from the IRGC secret intelligence 🕵️‍♂️, we just wanted to test your loyalty to the regime, therefore we create fake accounts. You can merge the PR without any problem
 
-💡 🙃
+### Open Source Community Response
 
-### OpenSource, Earth
+Several days later, this incident was posted on [Hacker News](https://insin.github.io/react-hn/#/story/24364793?_k=l43je0) and gained significant attention, reaching the top of the trending list. The discussion centered around whether the Iranian developer had violated GitHub's Terms of Service and the broader implications of Iranian citizens using GitHub while Iran remains under US sanctions.
 
-Meanwhile, a few days later somebody posted this on [Hackernews](https://insin.github.io/react-hn/#/story/24364793?_k=l43je0), and it was trending on the top of the list. People were discussing if the Iranian violated GitHub's TOS, and how an Iranian is using GitHub when Iran is currently under US sanctions.
+A notable development occurred when [Behdad Esfahbod](https://github.com/behdad), a prominent Iranian-Canadian open-source developer known for major projects like [HarfBuzz](https://github.com/harfbuzz/harfbuzz) (who had recently [experienced difficulties](https://medium.com/@behdadesfahbod/if-you-read-one-thing-from-me-please-be-this-2262ec7b8af2) with the IRGC), [commented on the repository](https://github.com/armancodes/laravel-download-link/pull/9#issuecomment-686413931) with a simple directive: **Just merge it.** Shortly after this intervention, the repository owner locked the conversation thread.
 
-Another interesting development - [Behdad Esfahbod](https://github.com/behdad), an Iranian/Canadian open-source programmer, [well known](https://www.wikiwand.com/en/Behdad_Esfahbod) for his very large open source projects like [HarfBuzz](https://github.com/harfbuzz/harfbuzz), (who recently [had an ordeal](https://medium.com/@behdadesfahbod/if-you-read-one-thing-from-me-please-be-this-2262ec7b8af2) with the IRGC) [commented on the repo](https://github.com/armancodes/laravel-download-link/pull/9#issuecomment-686413931): **Just merge it.** Soon after that, the PR was suddenly locked for conversation by the owner.
+### Moving Forward
 
-### What's with the code?
+As a result of these circumstances, I will likely need to continue developing my fork of the repository independently to meet my project requirements. However, this situation represents a broader loss for the open-source community, where collaboration and shared innovation are foundational principles.
 
-I'll probably just have to continue working on my fork of the repo for my own needs, but without being able to collaborate together, it is a loss for the open source community.
-
-We all hope that the Iranian people will be freed from their ayatollahs, and be able to collaborate with whoever they want.
+The hope remains that political restrictions will eventually be lifted, allowing developers worldwide to collaborate freely based on technical merit rather than geographical or political considerations.

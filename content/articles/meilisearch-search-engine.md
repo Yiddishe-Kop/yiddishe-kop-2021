@@ -2,7 +2,7 @@
 title: Meilisearch search engine
 description: Multi index search with Laravel Scout & Meilisearch
 createdAt: 2022-07-31
-image: afW1hht0NSs
+image: /img/meilisearch.png
 draft: true
 ---
 

@@ -2,19 +2,16 @@
 title: NGINX - Optimizing with Gzip & Cache-Control
 description: Configuring cache control and gzip with nginx
 createdAt: 2020-09-11
-image: woWf_VJ7dNs
+image: /img/nginx.png
 ---
 
 Today I was reading about SEO, and how site speed affects the ranking of a site. I wondered how apps built with the [Laravel](https://laravel.com) framework fare in these speed tests. So I ran [Pninim](https://pninim.yiddishe-kop.com/) through a [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/) test (by Google).
 
 The site scored a **95** 😎 for desktop, and **66** for mobile. I was pretty satisfied by the desktop score, but let's see what we can do to make it even faster.
 
-
-
 ## Browser Caching
 
 First up we can leverage browser caching to speed up subsequent visits to our site.
-
 
 ### How it Works
 
@@ -54,8 +51,6 @@ We reload nginx, and then we see that assets get the right headers:
 ![](https://blog.yiddishe-kop.com/storage/canvas/images/rFTs9lfWVdVB28T9oNO7t5TgCGqtSINLm4chY6vO.png)
 
 Now browsers will load these files from cache on repeat requests.
-
-
 
 ### What about Cache Busting?
 

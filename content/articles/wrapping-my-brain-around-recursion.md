@@ -2,7 +2,7 @@
 title: Wrapping my Brain around Recursion
 description: Trying to understand the concept of recursion in programming
 createdAt: 2020-06-04 16:29:00
-image: YfCVCPMNd38
+image: /img/recursion.png
 ---
 
 When I was at the start of my programming career, whenever I saw something about recursion, I would run away as fast as I could — 😲 RECURSION 😲 — what could be scarier than this complicated concept?
@@ -107,7 +107,7 @@ async rebuildCategoryTree() {
 
 Here are some of the challenges that arose while writing the recursive function:
 
-### 1. Circular Relations** (infinite loops):
+### 1. Circular Relations\*\* (infinite loops):
 
 I was testing the code, and it seemed to be working, but it was taking forever... Although the wiki site I was working with has 83,691 pages, it still seemed to be taking too long.
 
@@ -122,8 +122,8 @@ Once I had that, I could use that object to know if we already visited that bran
 ```js
 if (cachedCat.visited) {
   // STOP! we have an infinite loop!
-  console.log('TERMINATING INFINITE LOOP', cat.title);
-  return cachedCat.subcats;
+  console.log('TERMINATING INFINITE LOOP', cat.title)
+  return cachedCat.subcats
 }
 ```
 
@@ -137,14 +137,14 @@ The `nodemw` library was written quite a few years ago, so all methods were writ
 // BEFORE:
 // callback based function
 getChildren((err, cats) => {
-   // first handle the err (if it exists)
-   if (err) {
-     console.error(err);
-     return;
-   }
-    // Now we can use the categories...
-    cat.subcats = cats
-});
+  // first handle the err (if it exists)
+  if (err) {
+    console.error(err)
+    return
+  }
+  // Now we can use the categories...
+  cat.subcats = cats
+})
 ```
 
 This was nearly impossible to use in a recursive function, because every callback will get called separately at a different time... (probably possible, but makes it much more complicated).
@@ -157,8 +157,7 @@ So I wrote a thin [wrapper class](https://github.com/Yiddishe-Kop/jewishbooks-wi
 
 ```js
 class wikiAPI {
-
-	/**
+  /**
    * Login the user to the wiki
    * @param {string} username
    * @param {string} password
@@ -174,8 +173,7 @@ class wikiAPI {
    */
   edit = util.promisify(this.Bot.edit).bind(this.Bot)
 
-	//...
-
+  //...
 }
 ```
 
@@ -186,7 +184,7 @@ Now I could use `async` `await` , which made things mush easier & cleaner. 😀
 ```js
 // AFTER:
 // Aaaaahhhhh.... much better!
-cat.subcats = await getChildren(subcats);
+cat.subcats = await getChildren(subcats)
 ```
 
 ## Summary

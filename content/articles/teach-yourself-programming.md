@@ -2,7 +2,7 @@
 title: Teach Yourself Programming
 description: If you enjoy problem-solving, challenges and learning new things - you should give coding a try!
 createdAt: 2021-02-13 23:15:00
-image: /img/baby-coding.jpg
+image: /img/learning-code.png
 ---
 
 **Tim Cook** (CEO of Apple) famously said:

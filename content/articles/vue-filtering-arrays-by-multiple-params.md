@@ -2,7 +2,7 @@
 title: Vue - Sorting arrays by multiple params
 description: Filtering arrays by multiple parameters in Vue
 createdAt: 2020-05-13 08:13:00
-image: lRoX0shwjUQ
+image: /img/vue.png
 ---
 
 I'm working on this page where the user can search for videos from multiple sources.
@@ -40,11 +40,7 @@ Once we have the array of videos, we can show them to the user by looping over t
 
 ```html
 <section v-if="videos.length">
-    <video-card-import
-      v-for="video in videos"
-      :video="video"
-      :key="video.id"
-    />
+  <video-card-import v-for="video in videos" :video="video" :key="video.id" />
 </section>
 ```
 
@@ -57,10 +53,7 @@ First let's create the dropdown for the user to choose the sorting method:
 ```html
 <div>
   Sort by:
-  <select
-    name="sort"
-    v-model="sortBy"
-  >
+  <select name="sort" v-model="sortBy">
     <option value="">Default</option>
     <option value="rawViewCount">Views</option>
     <option value="likeCount">Likes</option>

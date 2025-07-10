@@ -2,7 +2,7 @@
 title: Generating a Maze with JS
 description: Using computed properties on Eloquent models like Vue computed properties
 createdAt: 2021-01-09 22:00:00
-image: _qXjdWm8YEo
+image: /img/maze.jpg
 ---
 
 I came across this `MazeGenerator` class on [GitHub](https://github.com/rendertom/Maze-Generator), which I thought looked quite interesting. The only problem with it - was that it renders the maze in text form in the console. Something like this:
@@ -65,7 +65,7 @@ Let's make it a bit more dynamic, by adding controls to customize the maze gener
 
 <maze :cols="20" :rows="20" :cell-size="8"></maze>
 
-For a finishing touch, we can change the cursor to a *not-allowed* icon when going on a wall, with the following css:
+For a finishing touch, we can change the cursor to a _not-allowed_ icon when going on a wall, with the following css:
 
 ```css
 .wall {

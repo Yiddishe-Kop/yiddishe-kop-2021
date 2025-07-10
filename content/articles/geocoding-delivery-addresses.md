@@ -2,7 +2,7 @@
 title: Geocoding Delivery Addresses
 description: Optimizing ecommerce deliveries by creating delivery areas
 createdAt: 2021-12-19 21:30:00
-image: p79nyt2CUj4
+image: /img/geocoding.jpg
 ---
 
 In one of the projects I'm working on ([5Dakot](https://5dakot.com)), I was building the deliveries system, which was initially structured something like this:
@@ -133,7 +133,8 @@ map = new google.maps.Map(document.getElementById('map'), {
 
 // Construct the polygon.
 polygon = new google.maps.Polygon({
-  paths: [ // default starting Polygon
+  paths: [
+    // default starting Polygon
     { lat: 31.755976167072834, lng: 35.14138275146484 },
     { lat: 31.720342984569367, lng: 35.25284960937502 },
     { lat: 31.819437779330364, lng: 35.231975524902325 },
@@ -203,11 +204,11 @@ const autocomplete = new google.maps.places.Autocomplete('input-selector', optio
 
 // handle user select address result
 this.googlePlacesAutocomplete.addListener('place_changed', () => {
-    const place = autocomplete.getPlace()
-    if (place.geometry.location) {
-      this.address.lat = place.geometry.location.lat() // set address lat
-      this.address.lng = place.geometry.location.lng() // set address lng
-    }
+  const place = autocomplete.getPlace()
+  if (place.geometry.location) {
+    this.address.lat = place.geometry.location.lat() // set address lat
+    this.address.lng = place.geometry.location.lng() // set address lng
+  }
 })
 ```
 

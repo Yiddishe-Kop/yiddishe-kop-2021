@@ -2,7 +2,7 @@
 title: Eloquent Computed Properties
 description: Using computed properties on Eloquent models like Vue computed properties
 createdAt: 2020-05-22
-image: 7JX0-bfiuxQ
+image: /img/eloquent.jpg
 ---
 
 As I come from Vue, I was really surprised to learn about this Laravel feature called [**Accessors**](https://laravel.com/docs/7.x/eloquent-mutators#introduction). Let's demonstrate what it is:

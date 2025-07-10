@@ -2,7 +2,7 @@
 title: Setting up a fresh server for Continuous Deployment with Git
 description: How to setup 2-keystroke-deploy with git 😎
 createdAt: 2020-07-05 08:10:00
-image: eygpU6KfOBk
+image: /img/git-deploy.png
 ---
 
 We all want to be able to focus on writing code, without wasting time when deploying changes to production.
@@ -20,8 +20,6 @@ So for quite a while I researched & tried to find the best way to do this. At fi
 
 Last week, I finally found the perfect solution, which lets me deploy the code to production with just **2 keystrokes**: `gp` 😎.
 
-
-
 ## How it works
 
 We're going to use Git (version control software). Git has several hooks that it can call after different stages automatically. We'll use the **post-receive** hook which is called after your repository has received pushed code.
@@ -29,8 +27,6 @@ We're going to use Git (version control software). Git has several hooks that it
 > A **Hook** is a program you can place in a hooks directory to trigger actions at certain points in git’s execution.
 
 In this script we'll do all the above operations.
-
-
 
 ### 1. Login to your remote server
 
@@ -41,7 +37,6 @@ ssh <your_user>@<server_ip_address>
 ```
 
 Make sure that you have Git installed on the server.
-
 
 ### 2. Create a folder for your code
 
@@ -59,7 +54,6 @@ mkdir app-folder
 
 Now let's remember the full path to our app-folder is `/var/www/app-folder/`.
 
-
 ### 3. Initialize a git repository in your home folder
 
 We'll create a git repository in our users' home folder. Let's create a `repo` folder to hold all our future repos:
@@ -76,7 +70,6 @@ git init --bare
 ```
 
 Congratulations, we now have the git repo ready for use!
-
 
 ### 4. Create hook
 
@@ -149,8 +142,6 @@ chmod +x post-receive
 
 The work on your server is done.
 
-
-
 ### 5. Push local code to the server
 
 Back on our local machine, navigate to your project folder, and initialize a git repo (if it isn't already). Then we need to add our remote server as a remote:
@@ -193,7 +184,6 @@ If you don't want to set the remote-server as the default upstream (you may want
 You even get all the output right into your local terminal! Here is the deployment in progress:
 
 ![](https://blog.yiddishe-kop.com/storage/canvas/images/P85QmRzl3wGFyq8PAduopX3ce2UlL0FjpKimwAx1.gif)
-
 
 ### Summary
 

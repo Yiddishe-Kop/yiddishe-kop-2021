@@ -2,7 +2,7 @@
 title: The Web Serial API
 description: Communicating with hardware devices using the Web Serial API
 createdAt: 2021-03-13 21:30:00
-image: yh0UtueiZ-I
+image: /img/web-serial.png
 ---
 
 In one of the projects I'm working on ([5Dakkot](https://5dakot.com)), we were building the order fulfilment software, that is supposed to work like this:
@@ -85,18 +85,18 @@ A Uint8Array is just an array of 8 integers, representing 8 bytes of data.
 When new data arrives from the serial device, `port.readable.getReader().read()` returns two properties asynchronously: the `value` and a `done` boolean. If `done` is true, the serial port has been closed or there is no more data coming in. Calling `port.readable.getReader()` creates a `reader` and locks `readable` to it. While `readable` is locked, the serial port can't be closed.
 
 ```js
-const reader = port.readable.getReader();
+const reader = port.readable.getReader()
 
 // Listen to data coming from the serial device.
 while (true) {
-  const { value, done } = await reader.read();
+  const { value, done } = await reader.read()
   if (done) {
     // Allow the serial port to be closed later.
-    reader.releaseLock();
-    break;
+    reader.releaseLock()
+    break
   }
   // value is a Uint8Array.
-  console.log(value);
+  console.log(value)
 }
 ```
 
@@ -109,20 +109,20 @@ As the data is streamed in, we need to use a [TextDecoderStream](https://develop
 We'll modify the first 3 lines:
 
 ```js
-const textDecoder = new TextDecoderStream();
-const readableStreamClosed = port.readable.pipeTo(textDecoder.writable);
-const reader = textDecoder.readable.getReader();
+const textDecoder = new TextDecoderStream()
+const readableStreamClosed = port.readable.pipeTo(textDecoder.writable)
+const reader = textDecoder.readable.getReader()
 
 // Listen to data coming from the serial device.
 while (true) {
-  const { value, done } = await reader.read();
+  const { value, done } = await reader.read()
   if (done) {
     // Allow the serial port to be closed later.
-    reader.releaseLock();
-    break;
+    reader.releaseLock()
+    break
   }
   // value is now a string.
-  console.log(value);
+  console.log(value)
 }
 ```
 
@@ -135,12 +135,12 @@ To get the weight from the scale, we need to send it a `'w'`, this triggers the 
 To write to the port, pass data to `port.writable.getWriter().write()`. The data needs to be in `Uint8Array` format, but we can use a [TextEncoderStream](https://developer.mozilla.org/en-US/docs/Web/API/TextEncoderStream) to convert strings into bytes:
 
 ```js
-const textEncoder = new TextEncoderStream();
-const writableStreamClosed = textEncoder.readable.pipeTo(port.writable);
+const textEncoder = new TextEncoderStream()
+const writableStreamClosed = textEncoder.readable.pipeTo(port.writable)
 
-const writer = textEncoder.writable.getWriter();
+const writer = textEncoder.writable.getWriter()
 
-await writer.write("w");
+await writer.write('w')
 ```
 
 Now we can send a `'w'`, and expect to get the weight back from the scale!

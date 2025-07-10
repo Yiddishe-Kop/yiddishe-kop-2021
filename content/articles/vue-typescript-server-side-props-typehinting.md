@@ -2,7 +2,7 @@
 title: Typehinting server side props
 description: Adding types to server side props to get the complete Typescript experience with Vue
 createdAt: 2023-01-22
-image: PGdW_bHDbpI
+image: /img/typehinting.jpg
 ---
 
 My current prefered stack is using Laravel for the backend, Vue 3 for the frontend and Inertia.js for the communication between backend & frontend and routing.
