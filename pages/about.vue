@@ -62,8 +62,9 @@
             <octicon name="arrow-left" class="w-5 transition transform group-hover:-translate-x-1" />
           </a>
         </div>
-        <div class="text-center">
+        <div class="text-center flex flex-col items-center space-y-4">
           <nuxt-link to="apps/gimatrikon" class="btn btn-brand">גימטריקון</nuxt-link>
+          <nuxt-link to="apps/daf-yomi-tracker" class="btn btn-brand">דף יומי</nuxt-link>
         </div>
       </div>
     </section>
