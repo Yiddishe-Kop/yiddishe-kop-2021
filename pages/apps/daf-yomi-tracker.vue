@@ -30,7 +30,7 @@
         icon-end="champagne"
         :max="masechet.pages"
         :value="totalPagesDone"
-        class="max-w-screen-sm mt-8 mx-auto text-gray-600"
+        class="max-w-screen-sm mt-8 mx-auto text-gray-600 dark:text-gray-300"
         dir="rtl"
       >
         <template #default="{ percentage }">
@@ -52,7 +52,7 @@
           v-for="daf in dafim"
           :key="daf.number"
           :class="{
-            'bg-white': !daf.pages_done,
+            'bg-white dark:bg-gray-900': !daf.pages_done,
             'bg-green-100': daf.pages_done == 1,
             'bg-green-200': daf.pages_done == 2,
           }"
@@ -70,7 +70,7 @@
           <button
             type="button"
             :class="{
-              'hover:bg-gray-50 text-gray-300': !daf.pages_done,
+              'hover:bg-gray-50 dark:hover:bg-gray-800 text-gray-300': !daf.pages_done,
               'hover:bg-green-300/50 text-green-500': !!daf.pages_done,
             }"
             class="p-3 rounded-r-none self-stretch rounded-l-md transition-colors"
@@ -86,7 +86,7 @@
             <Icon name="champagne" class="w-7 h-7" />
           </div>
           <p
-            class="font-siddur text-2xl md:text-4xl text-center text-gray-700 relative top-4"
+            class="font-siddur text-2xl md:text-4xl text-center text-gray-700 dark:text-gray-300 relative top-4"
             style="--siddur-weight: 900; --siddur-width: 400"
           >
             הדרן עלך!
