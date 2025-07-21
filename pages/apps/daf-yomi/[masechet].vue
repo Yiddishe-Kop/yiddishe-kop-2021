@@ -6,10 +6,14 @@
     <div v-if="isLoading" class="flex justify-center pt-28 pb-20">
       <Loader />
     </div>
-    <div v-else class="relative !my-16 text-center !block px-1">
-      <p class="text-gray-500 font-siddur text-2xl leading-none">מסכת</p>
+    <div v-else class="relative !my-16 text-center !block px-1" dir="rtl">
+      <div class="flex text-gray-500 font-siddur text-2xl leading-none items-center justify-center gap-2">
+        <NuxtLink to="/apps/daf-yomi" class="hover:text-gray-700">תלמוד בבלי</NuxtLink>
+        <Icon name="cheveron-left" class="w-5 relative top-1.5 h-5" />
+        <p class="">מסכת</p>
+      </div>
       <h1
-        class="font-siddur"
+        class="font-siddur pointer-events-none"
         :style="{
           fontSize: `${masechet.name.length * 1.2}vw`,
           marginTop: '-0.4em',
@@ -36,8 +40,8 @@
         <template #default="{ percentage }">
           <div class="flex items-center justify-between pt-1">
             <p class="font-siddur -mt-2 text-lg text-gray-400">
-              <strong class="font-sans text-sm text-gray-700">{{ percentage.toFixed(1) }}%</strong> מתוך
-              {{ romanToHebrewNumber(totalDafim) }} דפים
+              <strong class="text-sm text-gray-700 dark:text-gray-300 font-mono">{{ percentage.toFixed(1) }}%</strong>
+              מתוך {{ romanToHebrewNumber(totalDafim) }} דפים
             </p>
             <p class="font-siddur -mt-2 text-xl text-gray-400" style="--siddur-weight: 800">הדרן עלך!</p>
           </div>
@@ -99,14 +103,16 @@
 
 <script setup lang="ts">
 import { romanToHebrewNumber } from '~/lib/gimatria'
-import { Shas } from '~/lib/shas'
+import { DafData, Shas } from '~/lib/shas'
+
+const { params, path } = useRoute()
 
 definePageMeta({ layout: 'landing' })
 
 const isLoading = ref(false)
 const masechet = reactive({
-  name: '',
-  pages: 0,
+  name: params.masechet as string,
+  pages: Shas.MASECHTOS[params.masechet as string] || 0,
 })
 
 const totalDafim = computed(() => {
@@ -122,12 +128,6 @@ const gridRows = computed(() => {
   return Math.ceil((totalDafim.value - 1) / columns)
 })
 
-type DafData = {
-  number: number
-  hebrew_number: string
-  pages_done: number
-  chazara_times: number
-}
 const dafim = ref<DafData[]>([])
 
 const totalPagesDone = computed(() => {
@@ -140,39 +140,11 @@ const togglePagesDone = (daf: DafData) => {
   } else {
     daf.pages_done++
   }
-  saveData()
-}
-
-const saveData = () => {
-  const key = `daf-yomi-tracker.${masechet.name}`
-  localStorage.setItem(key, JSON.stringify(dafim.value))
-}
-
-const loadData = () => {
-  const key = `daf-yomi-tracker.${masechet.name}`
-  const data = localStorage.getItem(key)
-  if (data) {
-    dafim.value = JSON.parse(data)
-  } else {
-    // Initialize with default values if no data exists
-    dafim.value = Array.from({ length: totalDafim.value - 1 }, (_, i) => ({
-      number: i + 2,
-      hebrew_number: romanToHebrewNumber(i + 2),
-      pages_done: 0,
-      chazara_times: 0,
-    }))
-  }
+  Shas.saveData(masechet.name, dafim.value)
 }
 
 onMounted(async () => {
-  isLoading.value = true
-  const currentMasechet = await new Shas().getCurrentMasechet()
-  if (currentMasechet) {
-    masechet.name = currentMasechet.name
-    masechet.pages = currentMasechet.pages
-    loadData()
-  }
-  isLoading.value = false
+  dafim.value = Shas.loadData(masechet.name)
 })
 
 // Watch for changes to dafim and automatically save
@@ -180,7 +152,7 @@ watch(
   dafim,
   () => {
     if (masechet.name) {
-      saveData()
+      Shas.saveData(masechet.name, dafim.value)
     }
   },
   { deep: true }

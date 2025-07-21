@@ -64,7 +64,7 @@
         </div>
         <div class="text-center flex flex-col items-center space-y-4">
           <nuxt-link to="apps/gimatrikon" class="btn btn-brand">גימטריקון</nuxt-link>
-          <nuxt-link to="apps/daf-yomi-tracker" class="btn btn-brand">דף יומי</nuxt-link>
+          <nuxt-link to="apps/daf-yomi" class="btn btn-brand">דף יומי</nuxt-link>
         </div>
       </div>
     </section>

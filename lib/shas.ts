@@ -1,30 +1,7 @@
-interface SefariaCalendarsResponse {
-  date: string
-  timezone: string
-  calendar_items: {
-    title: {
-      he: string
-      en: string
-    }
-    displayValue: {
-      he: string
-      en: string
-    }
-    url: string
-    ref: string
-    heRef: string
-    order: number
-    category: string
-    extraDetails?: any
-    description?: {
-      he: string
-      en: string
-    }
-  }[]
-}
+import { romanToHebrewNumber } from './gimatria'
 
 export class Shas {
-  MASECHTOS: Record<string, number> = {
+  static MASECHTOS: Record<string, number> = {
     ברכות: 127,
     שבת: 314,
     עירובין: 209,
@@ -64,7 +41,7 @@ export class Shas {
     נדה: 145,
   }
 
-  async getCurrentMasechet(): Promise<{ name: string; pages: number } | null> {
+  static async getCurrentMasechet(): Promise<{ name: string; pages: number } | null> {
     const todaysDaf = await this.getTodaysDaf()
     const masechet = todaysDaf?.split(' ').slice(0, -1).join(' ')
 
@@ -73,10 +50,10 @@ export class Shas {
       return null
     }
 
-    return { name: masechet, pages: this.MASECHTOS[masechet] }
+    return { name: masechet, pages: Shas.MASECHTOS[masechet] }
   }
 
-  async getTodaysDaf(): Promise<string | null> {
+  static async getTodaysDaf(): Promise<string | null> {
     const url = 'https://www.sefaria.org/api/calendars?timezone=Asia/Jerusalem'
 
     const response = await fetch(url)
@@ -88,4 +65,61 @@ export class Shas {
 
     return data.calendar_items.find(item => item.title.en === 'Daf Yomi')?.displayValue.he || null
   }
+
+  static dafimInMasechet(masechet: string): number {
+    return Math.floor((this.MASECHTOS[masechet] || 0) / 2)
+  }
+
+  static loadData(masechet: string): DafData[] {
+    const key = `daf-yomi-tracker.${masechet}`
+    const data = localStorage.getItem(key)
+    if (data) {
+      return JSON.parse(data)
+    } else {
+      // Initialize with default values if no data exists
+      return Array.from({ length: this.dafimInMasechet(masechet) - 1 }, (_, i) => ({
+        number: i + 2,
+        hebrew_number: romanToHebrewNumber(i + 2),
+        pages_done: 0,
+        chazara_times: 0,
+      }))
+    }
+  }
+
+  static saveData(masechet: string, data: DafData[]): void {
+    const key = `daf-yomi-tracker.${masechet}`
+    localStorage.setItem(key, JSON.stringify(data))
+  }
+}
+
+interface SefariaCalendarsResponse {
+  date: string
+  timezone: string
+  calendar_items: {
+    title: {
+      he: string
+      en: string
+    }
+    displayValue: {
+      he: string
+      en: string
+    }
+    url: string
+    ref: string
+    heRef: string
+    order: number
+    category: string
+    extraDetails?: any
+    description?: {
+      he: string
+      en: string
+    }
+  }[]
+}
+
+export type DafData = {
+  number: number
+  hebrew_number: string
+  pages_done: number
+  chazara_times: number
 }
