@@ -2,7 +2,7 @@
 title: "RavText: The Secret Weapon Behind Professional Seforim Publishing"
 description: How a $490 InDesign Extension Solves the Most Complex Challenge in Hebrew Typography
 createdAt: 2026-02-14
-image: YLSwjSy7stw
+image: /img/gemara.jpg
 ---
 
 If you've ever held a Vilna Shas, flipped through a classic edition of the Rambam, or studied from any traditional sefer with commentaries, you've encountered one of the most sophisticated page layouts in all of typography: **צורת הדף** (Tzurat HaDaf) — the traditional "shape of the page."
@@ -92,7 +92,6 @@ If you work with Hebrew texts that need commentary-style layouts, RavText pays f
 
 - **Price:** $490 (one-time license)
 - **Requirements:** InDesign CS6 or later
-- **Training:** Free 8-chapter course available at [kubi.co.il](https://kubi.co.il/blog/8396000) (use code RAV10TXT for 10% off)
 
 ## The Bottom Line
 
